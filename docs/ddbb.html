@@ -17,6 +17,25 @@ span.underline{text-decoration: underline;}
 div.column{display: inline-block; vertical-align: top; width: 50%;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -132,7 +151,7 @@ ul.task-list{list-style: none;}
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ai.html" class="sidebar-item-text sidebar-link">State-of-the-art protein modeling with Colabfold</a>
+  <a href="./ai.html" class="sidebar-item-text sidebar-link">State-of-the-art protein modeling with Deep Learning-based methods</a>
   </div>
 </li>
     </ul>
@@ -158,6 +177,7 @@ ul.task-list{list-style: none;}
   <li><a href="#scop" id="toc-scop" class="nav-link" data-scroll-target="#scop">SCOP</a></li>
   <li><a href="#cath" id="toc-cath" class="nav-link" data-scroll-target="#cath">CATH</a></li>
   </ul></li>
+  <li><a href="#graphical-summary" id="toc-graphical-summary" class="nav-link" data-scroll-target="#graphical-summary">Graphical summary</a></li>
   </ul></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
@@ -210,36 +230,40 @@ ul.task-list{list-style: none;}
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <figure class="figure">
-<img src="pics/ddbb.png" title="Protein databases" class="img-fluid figure-img">
+<img src="pics/ddbb.png" title="Protein databases" class="img-fluid figure-img" width="383">
 </figure>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Major protein databases. Although most of these databases are around 30 years old (or more), since they were created (or renovated) during the last years of the 20th century or the early 21st.</figcaption><p></p>
 </figure>
 </div>
 <p>In bioinformatics, databases are often categorised as primary or secondary.&nbsp;<strong>Primary databases</strong>&nbsp;are populated with experimentally derived data such as nucleotide sequence, protein sequence or macromolecular structure. Importantly, once given a database accession number, the data in primary databases are never changed: they form part of the scientific record. By contrast, <strong>secondary databases</strong>&nbsp;comprise data derived from the results of analysing primary data. Secondary databases often draw upon information from numerous sources, including other databases and the scientific literature. They are highly curated, often using a complex combination of computational algorithms and/or manual analysis and interpretation to derive new knowledge from the public record of science.</p>
 <p>The main protein primary databases are NCBI Protein for protein sequenes and RCSB-PDB for protein structures. Uniprot (see below) also contains a primary sequence database, named TrEMBL. It also incorporated in 2002 PIR-PSD, joining the databases of the Protein information Resource, EMBL and SIB in a single (meta)database (see <a href="https://proteininformationresource.org/pirwww/dbinfo/pir_psd.shtml" class="uri">https://proteininformationresource.org/pirwww/dbinfo/pir_psd.shtml</a>).</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="pics/bbdd_full.svg" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Main features of protein databases</figcaption><p></p>
-</figure>
-</div>
 <section id="sequence-databases" class="level2">
 <h2 class="anchored" data-anchor-id="sequence-databases">Sequence databases</h2>
 <section id="uniprot" class="level3">
 <h3 class="anchored" data-anchor-id="uniprot">Uniprot</h3>
+<p>The <a href="https://www.uniprot.org/">Uniprot</a> databases are maintained by the Uniprot consortium, created in 2002 by <a href="https://en.wikipedia.org/wiki/European_Bioinformatics_Institute">EMBL-EBI</a>, <a href="https://en.wikipedia.org/wiki/Swiss_Institute_of_Bioinformatics">SIB</a> and <a href="https://en.wikipedia.org/wiki/Protein_Information_Resource">PIR</a>. Uniprot can be considered nowadays as a metadatabase as its entries contain information from diverse sources. It was created with two goals, constitute a non-redundant comprehensive protein sequence database and enrich that database with annotation of those proteins. Annotations include, but it is not limited to: protein and gene families, function and structure-function available data, interactions with other proteins or cofactor, localization, patterns of expression, variants… Thus, it aims joining the goals of both primary and secondary DDBBs.</p>
+<p>The central hub of Uniprot databases is <a href="https://www.uniprot.org/help/uniprotkb">Uniprot Knowledgedbase</a>. It is a collection of functional information on proteins, with accurate, consistent and rich annotation. The UniProtKB consists of two internal databases: a section containing manually-annotated records with information extracted from literature, community suggestions and curator-evaluated computational analysis, and a section with computationally analyzed records. For the sake of continuity and name recognition, the two sections are referred to as “UniProtKB/Swiss-Prot” (reviewed, manually annotated) and “UniProtKB/TrEMBL” (unreviewed, automatically annotated), respectively.</p>
+<p>Besides cross-references to structural information, in the last years, UniprotKB has also incorporated structural data from <a href="https://alphafold.ebi.ac.uk/">Alphafold</a> database (created by DeepMind and EBI), <a href="ai.html">see “State-of-the-art protein modeling with Deep Learning-based methods” module</a>.</p>
+<p>Sequences with different detail of annotation can be found in two overlapping and complementary databases in Uniprot: <a href="https://www.uniprot.org/help/uniparc">Uniparc</a> and <a href="https://www.uniprot.org/help/uniref">Uniref</a>. Briefly, UniParc (UniProt Archive) is a comprehensive and non-redundant database that contains most of the publicly available protein sequences in the world. UniParc avoided redundancy by storing each unique sequence only once and giving it a stable and unique identifier (UPI) making it possible to identify the same protein from different source databases. A UPI is never removed, changed or reassigned. On the other hand, UniRef (UniProt Reference Clusters) provide clustered sets of sequences from the UniprotKB (and selected UniParc records) in order to obtain complete coverage of the sequence space at several resolutions while hiding redundant sequences (but not their descriptions) from view. The UniRef100 database combines identical sequences into a single UniRef entry, displaying the sequence of a representative protein, the accession numbers of all the merged entries and links to the corresponding. UniRef90 is built by clustering UniRef100 sequences using the MMseqs2 algorithm <span class="citation" data-cites="steinegger2018">(<a href="#ref-steinegger2018" role="doc-biblioref">Steinegger and Söding 2018</a>)</span> such that each cluster is composed of sequences that have at least 90% sequence identity to and 80% overlap with the longest sequence (a.k.a. <a href="https://www.uniprot.org/help/uniref_seed"><strong>seed sequence</strong></a> ) of the cluster. Similarly, UniRef50 is built by clustering UniRef90 seed sequences that have at least 50% sequence identity to and 80% overlap with the longest sequence in the cluster. UniParc and Uniref contain only protein sequences. All other information about the protein must be retrieved from the source databases using the database cross-references.</p>
 </section>
 <section id="interpro" class="level3">
 <h3 class="anchored" data-anchor-id="interpro">InterPro</h3>
+<p><a href="https://www.ebi.ac.uk/interpro/">InterPro</a> aims to be a functional database, by classifying proteins into families, domains and important sites. To classify proteins in this way, InterPro uses predictive models, known as signatures, provided by several different databases (up to 13) that make up the InterPro consortium. InterPro combines those different signatures representing equivalent families, domains or sites, and provides additional information such as descriptions, literature references and Gene Ontology (GO) terms, to produce a comprehensive resource for protein classification (see <span class="citation" data-cites="blum2021">Blum et al. (<a href="#ref-blum2021" role="doc-biblioref">2021</a>)</span>).</p>
+<p>InterPro database is updated every 2 months and it is a very useful for annotation of ORFans or divergent proteins.</p>
 </section>
 <section id="pfam" class="level3">
 <h3 class="anchored" data-anchor-id="pfam">Pfam</h3>
+<p>Pfam is a protein database that aims to classify sequences by their evolutionary relationships. It was founded in 1995 and it has been very useful for functional annotation of genomic data. The Pfam’s website (<a href="http://pfam.xfam.org/" class="uri">http://pfam.xfam.org/</a>) will be closed by the end of 2022, but the database will not be discontinued.</p>
+<p>Pfam uses <a href="https://www.ebi.ac.uk/training/online/courses/protein-classification-intro-ebi-resources/what-are-protein-signatures/signature-types/what-are-hmms/">HMM</a> profiles (we will discuss about HMMs in the <a href="./homology.html">Homology Modeling</a> module) to classify proteins into families, which are grouped into clans. Check out the EBI course about using Pfam: <a href="https://www.ebi.ac.uk/training/online/courses/pfam-creating-protein-families/" class="uri">https://www.ebi.ac.uk/training/online/courses/pfam-creating-protein-families/</a></p>
+<p>The current release (35.0) contains 19,632 entries (families and clans). Pfam was designed as a database that should be often updated in the fast-forward genomic era. To this aim, they use two alignment types. Each Pfam family has a seed alignment that contains a representative set of sequences for the entry. A profile hidden Markov model (HMM) is automatically built from the seed alignment and searched against a sequence database called <em>pfamseq</em> using the HMMER3 software (<a href="http://hmmer.org/" class="uri">http://hmmer.org/</a>). All sequence regions that satisfy a family-specific curated threshold, also known as the gathering threshold, are aligned to the profile HMM to create the full alignment <span class="citation" data-cites="mistry2020">(<a href="#ref-mistry2020" role="doc-biblioref">Mistry et al. 2020</a>)</span>.</p>
+<p>In addition to the HMM-based Pfam entries (<strong>Pfam-A</strong>), they used to provide a set of unannotated, computationally generated multiple sequence alignments called <strong>Pfam-B</strong>. However, in the last Pfam versions, the Pfam-B alignments are presently only released on the Pfam FTP site.</p>
+<p>Pfam has also been used in the creation of other resources such as, <a href="https://rfam.org/">Rfam</a> (RNA families) and <a href="https://www.dfam.org/">Dfam</a> (transposable DNA elements).</p>
 </section>
 </section>
 <section id="structure-databases" class="level2">
 <h2 class="anchored" data-anchor-id="structure-databases">Structure databases</h2>
 <section id="rcsb-pdb" class="level3">
 <h3 class="anchored" data-anchor-id="rcsb-pdb">RCSB-PDB</h3>
-<p>d</p>
 </section>
 <section id="scop" class="level3">
 <h3 class="anchored" data-anchor-id="scop">SCOP</h3>
@@ -248,17 +272,37 @@ ul.task-list{list-style: none;}
 <section id="cath" class="level3">
 <h3 class="anchored" data-anchor-id="cath">CATH</h3>
 <p>dfa</p>
-<hr>
 </section>
+</section>
+<section id="graphical-summary" class="level2">
+<h2 class="anchored" data-anchor-id="graphical-summary">Graphical summary</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pics/bbdd_full.svg" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Main features of protein databases (updated in 2020)</figcaption><p></p>
+</figure>
+</div>
+<hr>
 </section>
 </section>
 <section id="references" class="level1">
 <h1>References</h1>
 
 
+
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-blum2021" class="csl-entry" role="doc-biblioentry">
+Blum, Matthias, Hsin-Yu Chang, Sara Chuguransky, Tiago Grego, Swaathi Kandasaamy, Alex Mitchell, Gift Nuka, et al. 2021. <span>“The InterPro Protein Families and Domains Database: 20 Years On.”</span> <em>Nucleic Acids Research</em> 49 (D1): D344–54. <a href="https://doi.org/10.1093/nar/gkaa977">https://doi.org/10.1093/nar/gkaa977</a>.
+</div>
+<div id="ref-mistry2020" class="csl-entry" role="doc-biblioentry">
+Mistry, Jaina, Sara Chuguransky, Lowri Williams, Matloob Qureshi, Gustavo&nbsp;A Salazar, Erik L L Sonnhammer, Silvio C E Tosatto, et al. 2020. <span>“Pfam: The Protein Families Database in 2021.”</span> <em>Nucleic Acids Research</em> 49 (D1): D412–19. <a href="https://doi.org/10.1093/nar/gkaa913">https://doi.org/10.1093/nar/gkaa913</a>.
+</div>
+<div id="ref-steinegger2018" class="csl-entry" role="doc-biblioentry">
+Steinegger, Martin, and Johannes Söding. 2018. <span>“Clustering huge protein sequence sets in linear time.”</span> <em>Nature Communications</em> 9 (1): 2542. <a href="https://doi.org/10.1038/s41467-018-04964-5">https://doi.org/10.1038/s41467-018-04964-5</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const icon = "";
