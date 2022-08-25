@@ -1,0 +1,113 @@
+---
+title: "Protein Databases"
+author: "Modesto Redrejo Rodríguez"
+date: "`r Sys.Date()`"
+toc: true 
+toc_float: true
+format:
+  html:
+    theme: simplex
+    toc: true
+    toc-location: left
+    toc-depth: 4
+    number-sections: false
+    code-overflow: wrap
+    link-external-icon: true
+    link-external-newwindow: true
+bibliography: references.bib
+editor_options: 
+  markdown: 
+    wrap: 80
+---
+
+```{r wrap-hook, include=FALSE}
+#Markdown options
+library(knitr)
+library(formatR)
+opts_chunk$set(tidy.opts=list(width.cutoff=50),tidy=TRUE,fig.cap = "", fig.path = "Plot")
+
+#Determine the output format of the document
+outputFormat   = opts_knit$get("rmarkdown.pandoc.to")
+
+
+```
+
+# Structure comparison and alignment
+
+As in the case of sequences, comparison and alignment of protein structures is a
+fundamental and widely used task in computational structure biology. The
+identification and statistical measure of the similarities between two or more
+structures allow their classification and infer functional and evolutionary
+relationships. Moreover, this process is essential during protein modeling,
+allowing to identify and select intermediate models.
+
+It is also important to clear up any possible confusion between alignment and
+superposition, as they are often interchanged in the literature. An structural
+alignment tries to identify similarities and differences between two structures,
+while structure superposition requires the previous knowledge of such
+equivalences. Thus, superposition tires to minimize the distance between already
+known equivalent structures by finding a transformation that produces either the
+lowest root-mean-square deviation (**RMSD**) or the maximal equivalences within
+an RMSD cutoff. A better alignment will allow a better superposition. Thus,
+although alignment and superposition are two different processes, the RMSD can
+be used as an indication of both (the lowest RMSD, the best
+alignment/superposition).
+
+# Major protein databases
+
+This section does not aim to comprehensively review all protein databases in
+detail. Indeed, you probably already know most of the databases we are
+discussing. We will clarify the main differences and applications of Pfam,
+Uniprot, Prosite, PDB, SCOP & CATH. As usual, I encourage you to check out
+online in the references mentioned below for more detailed information.
+
+![Major protein databases. Although most of these databases are around 30 years
+old (or more), since they were created (or renovated) during the last years of
+the 20th century or the early 21st.](pics/ddbb.png "Protein databases")
+
+In bioinformatics, databases are often categorised as primary or
+secondary. **Primary databases** are populated with experimentally derived data
+such as nucleotide sequence, protein sequence or macromolecular structure.
+Importantly, once given a database accession number, the data in primary
+databases are never changed: they form part of the scientific record. By
+contrast, **secondary databases** comprise data derived from the results of
+analysing primary data. Secondary databases often draw upon information from
+numerous sources, including other databases and the scientific literature. They
+are highly curated, often using a complex combination of computational
+algorithms and/or manual analysis and interpretation to derive new knowledge
+from the public record of science.
+
+The main protein primary databases are NCBI Protein for protein sequenes and
+RCSB-PDB for protein structures. Uniprot (see below) also contains a primary
+sequence database, named TrEMBL. It also incorporated in 2002 PIR-PSD, joining
+the databases of the Protein information Resource, EMBL and SIB in a single
+(meta)database (see
+<https://proteininformationresource.org/pirwww/dbinfo/pir_psd.shtml>).
+
+![Main features of protein databases](pics/bbdd_full.svg)
+
+## Sequence databases
+
+### Uniprot
+
+### InterPro
+
+### Pfam
+
+## Structure databases
+
+### RCSB-PDB
+
+d
+
+### SCOP
+
+sd
+
+### CATH
+
+dfa
+
+--------------------------------------------------------------------------------
+
+# References

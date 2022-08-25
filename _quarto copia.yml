@@ -1,0 +1,38 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Structural Bioinformatics 2022-23"
+  navbar:
+    background: primary
+    left:
+      - href: index.qmd
+        text: Home
+      - href: intro.qmd
+        text: Introduction
+      - href: ddbb.qmd
+        text: Protein databases
+      - href: pdb.qmd
+        text: Working with Protein Structures
+      - href: homology.qmd
+        text: Homology modeling
+      - href: ai.qmd
+        text: AI-based modeling
+        
+
+
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    link-external-icon: true
+    link-external-newwindow: true
+  pdf:
+    documentclass: scrreprt
+
+
+

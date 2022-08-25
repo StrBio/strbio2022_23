@@ -1,0 +1,35 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Structural Bioinformatics 2022-23"
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - section: "Basics"
+        contents:
+          - index.qmd
+          - intro.qmd
+          - ddbb.qmd
+          - pdb.qmd
+      - section: "Modeling"
+        contents:
+          - homology.qmd
+          - ai.qmd
+
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    link-external-icon: true
+    link-external-newwindow: true
+  pdf:
+    documentclass: scrreprt
+
+
+

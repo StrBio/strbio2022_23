@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-0.9.318">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Modesto Redrejo Rodríguez">
+<meta name="dcterms.date" content="2022-08-25">
+
+<title>Structural Bioinformatics 2022-23 - Protein Databases</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Protein Databases</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Structural Bioinformatics 2022-23</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Basics</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">About StrBio 22-23</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">Introduction</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ddbb.html" class="sidebar-item-text sidebar-link active">Protein Databases</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pdb.html" class="sidebar-item-text sidebar-link">Working with protein structures</a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Modeling</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./homology.html" class="sidebar-item-text sidebar-link">Homology Modeling</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ai.html" class="sidebar-item-text sidebar-link">State-of-the-art protein modeling with Colabfold</a>
+  </div>
+</li>
+    </ul>
+  </li>
+    </ul>
+    </div>
+    <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#structure-comparison-and-alignment" id="toc-structure-comparison-and-alignment" class="nav-link active" data-scroll-target="#structure-comparison-and-alignment">Structure comparison and alignment</a></li>
+  <li><a href="#major-protein-databases" id="toc-major-protein-databases" class="nav-link" data-scroll-target="#major-protein-databases">Major protein databases</a>
+  <ul class="collapse">
+  <li><a href="#sequence-databases" id="toc-sequence-databases" class="nav-link" data-scroll-target="#sequence-databases">Sequence databases</a>
+  <ul class="collapse">
+  <li><a href="#uniprot" id="toc-uniprot" class="nav-link" data-scroll-target="#uniprot">Uniprot</a></li>
+  <li><a href="#interpro" id="toc-interpro" class="nav-link" data-scroll-target="#interpro">InterPro</a></li>
+  <li><a href="#pfam" id="toc-pfam" class="nav-link" data-scroll-target="#pfam">Pfam</a></li>
+  </ul></li>
+  <li><a href="#structure-databases" id="toc-structure-databases" class="nav-link" data-scroll-target="#structure-databases">Structure databases</a>
+  <ul class="collapse">
+  <li><a href="#rcsb-pdb" id="toc-rcsb-pdb" class="nav-link" data-scroll-target="#rcsb-pdb">RCSB-PDB</a></li>
+  <li><a href="#scop" id="toc-scop" class="nav-link" data-scroll-target="#scop">SCOP</a></li>
+  <li><a href="#cath" id="toc-cath" class="nav-link" data-scroll-target="#cath">CATH</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Protein Databases</h1>
+</div>
+
+
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Modesto Redrejo Rodríguez </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 25, 2022</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<section id="structure-comparison-and-alignment" class="level1">
+<h1>Structure comparison and alignment</h1>
+<p>As in the case of sequences, comparison and alignment of protein structures is a fundamental and widely used task in computational structure biology. The identification and statistical measure of the similarities between two or more structures allow their classification and infer functional and evolutionary relationships. Moreover, this process is essential during protein modeling, allowing to identify and select intermediate models.</p>
+<p>It is also important to clear up any possible confusion between alignment and superposition, as they are often interchanged in the literature. An structural alignment tries to identify similarities and differences between two structures, while structure superposition requires the previous knowledge of such equivalences. Thus, superposition tires to minimize the distance between already known equivalent structures by finding a transformation that produces either the lowest root-mean-square deviation (<strong>RMSD</strong>) or the maximal equivalences within an RMSD cutoff. A better alignment will allow a better superposition. Thus, although alignment and superposition are two different processes, the RMSD can be used as an indication of both (the lowest RMSD, the best alignment/superposition).</p>
+</section>
+<section id="major-protein-databases" class="level1">
+<h1>Major protein databases</h1>
+<p>This section does not aim to comprehensively review all protein databases in detail. Indeed, you probably already know most of the databases we are discussing. We will clarify the main differences and applications of Pfam, Uniprot, Prosite, PDB, SCOP &amp; CATH. As usual, I encourage you to check out online in the references mentioned below for more detailed information.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<figure class="figure">
+<img src="pics/ddbb.png" title="Protein databases" class="img-fluid figure-img">
+</figure>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Major protein databases. Although most of these databases are around 30 years old (or more), since they were created (or renovated) during the last years of the 20th century or the early 21st.</figcaption><p></p>
+</figure>
+</div>
+<p>In bioinformatics, databases are often categorised as primary or secondary.&nbsp;<strong>Primary databases</strong>&nbsp;are populated with experimentally derived data such as nucleotide sequence, protein sequence or macromolecular structure. Importantly, once given a database accession number, the data in primary databases are never changed: they form part of the scientific record. By contrast, <strong>secondary databases</strong>&nbsp;comprise data derived from the results of analysing primary data. Secondary databases often draw upon information from numerous sources, including other databases and the scientific literature. They are highly curated, often using a complex combination of computational algorithms and/or manual analysis and interpretation to derive new knowledge from the public record of science.</p>
+<p>The main protein primary databases are NCBI Protein for protein sequenes and RCSB-PDB for protein structures. Uniprot (see below) also contains a primary sequence database, named TrEMBL. It also incorporated in 2002 PIR-PSD, joining the databases of the Protein information Resource, EMBL and SIB in a single (meta)database (see <a href="https://proteininformationresource.org/pirwww/dbinfo/pir_psd.shtml" class="uri">https://proteininformationresource.org/pirwww/dbinfo/pir_psd.shtml</a>).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pics/bbdd_full.svg" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Main features of protein databases</figcaption><p></p>
+</figure>
+</div>
+<section id="sequence-databases" class="level2">
+<h2 class="anchored" data-anchor-id="sequence-databases">Sequence databases</h2>
+<section id="uniprot" class="level3">
+<h3 class="anchored" data-anchor-id="uniprot">Uniprot</h3>
+</section>
+<section id="interpro" class="level3">
+<h3 class="anchored" data-anchor-id="interpro">InterPro</h3>
+</section>
+<section id="pfam" class="level3">
+<h3 class="anchored" data-anchor-id="pfam">Pfam</h3>
+</section>
+</section>
+<section id="structure-databases" class="level2">
+<h2 class="anchored" data-anchor-id="structure-databases">Structure databases</h2>
+<section id="rcsb-pdb" class="level3">
+<h3 class="anchored" data-anchor-id="rcsb-pdb">RCSB-PDB</h3>
+<p>d</p>
+</section>
+<section id="scop" class="level3">
+<h3 class="anchored" data-anchor-id="scop">SCOP</h3>
+<p>sd</p>
+</section>
+<section id="cath" class="level3">
+<h3 class="anchored" data-anchor-id="cath">CATH</h3>
+<p>dfa</p>
+<hr>
+</section>
+</section>
+</section>
+<section id="references" class="level1">
+<h1>References</h1>
+
+
+</section>
+
+</main> <!-- /main -->
+<script type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          // default icon
+          link.classList.add("external");
+      }
+    }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
