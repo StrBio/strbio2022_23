@@ -158,7 +158,10 @@ div.csl-indent {
   </li>
     </ul>
     </div>
-    <nav id="TOC" role="doc-toc">
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
@@ -182,9 +185,6 @@ div.csl-indent {
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
-</nav>
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -253,7 +253,7 @@ div.csl-indent {
 </section>
 <section id="pfam" class="level3">
 <h3 class="anchored" data-anchor-id="pfam">Pfam</h3>
-<p>Pfam is a protein database that aims to classify sequences by their evolutionary relationships. It was founded in 1995 and it has been very useful for functional annotation of genomic data. The Pfam’s website (<a href="http://pfam.xfam.org/" class="uri">http://pfam.xfam.org/</a>) will be closed by the end of 2022, but the database will not be discontinued.</p>
+<p>Pfam is a protein database that aims to classify sequences by their evolutionary relationships. It was founded in 1995 and it has been very useful for functional annotation of genomic data. The Pfam’s website (<a href="http://pfam.xfam.org/" class="uri">http://pfam.xfam.org/</a>) will be closed by the end of 2022. However, Pfam database will not be discontinued, but integrated into InterPro web site (see the <a href="https://xfam.wordpress.com/2022/08/04/pfam-website-decommission/">Xfam Blog entry</a>).</p>
 <p>Pfam uses <a href="https://www.ebi.ac.uk/training/online/courses/protein-classification-intro-ebi-resources/what-are-protein-signatures/signature-types/what-are-hmms/">HMM</a> profiles (we will discuss about HMMs in the <a href="./homology.html">Homology Modeling</a> module) to classify proteins into families, which are grouped into clans. Check out the EBI course about using Pfam: <a href="https://www.ebi.ac.uk/training/online/courses/pfam-creating-protein-families/" class="uri">https://www.ebi.ac.uk/training/online/courses/pfam-creating-protein-families/</a></p>
 <p>The current release (35.0) contains 19,632 entries (families and clans). Pfam was designed as a database that should be often updated in the fast-forward genomic era. To this aim, they use two alignment types. Each Pfam family has a seed alignment that contains a representative set of sequences for the entry. A profile hidden Markov model (HMM) is automatically built from the seed alignment and searched against a sequence database called <em>pfamseq</em> using the HMMER3 software (<a href="http://hmmer.org/" class="uri">http://hmmer.org/</a>). All sequence regions that satisfy a family-specific curated threshold, also known as the gathering threshold, are aligned to the profile HMM to create the full alignment <span class="citation" data-cites="mistry2020">(<a href="#ref-mistry2020" role="doc-biblioref">Mistry et al. 2020</a>)</span>.</p>
 <p>In addition to the HMM-based Pfam entries (<strong>Pfam-A</strong>), they used to provide a set of unannotated, computationally generated multiple sequence alignments called <strong>Pfam-B</strong>. However, in the last Pfam versions, the Pfam-B alignments are presently only released on the Pfam FTP site.</p>
