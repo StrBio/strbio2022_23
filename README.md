@@ -1,7 +1,6 @@
 # Structural Bioinformatics
 
 
-## Course Disclaimer
 
 This site contains the materials for the Structural Bioinformatics course of fall 2022 in the Master’s Degree in Bioinformatics & Computational Biology @UAM. Detailed academic information about the course contents, dates and assessment only can be found at the UAM Moodle site.
 
