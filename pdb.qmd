@@ -8,7 +8,7 @@ format:
   html:
     theme: simplex
     toc: true
-    toc-location: left
+    toc-location: right
     toc-depth: 4
     number-sections: false
     code-overflow: wrap
@@ -33,7 +33,11 @@ outputFormat   = opts_knit$get("rmarkdown.pandoc.to")
 
 ```
 
+## Protein structure display and the actual protein structure
+
+:::{.callout-caution}
 ## Warning for future structural biologists
+:::
 
 [![Ceci n'est pas une proteine. Source:
 https://swissmodel.expasy.org/static/course/files/PartIII_quality_assesment.pdf](pics/magritte.png "Ceci n'est pas une proteine"){.figure}](https://swissmodel.expasy.org/static/course/files/PartIII_quality_assesment.pdf)
@@ -58,7 +62,12 @@ with previously known structures or prediction models. That does not mean that
 protein structures are useless, they can be very useful, but we must be aware of
 the limitations as well as the applications.
 
-# Protein structures & protein models
+# Experimentally obtained structures
+
+# Protein structure files formats
+
+# Biological macromolecules display applications
+
 
 --------------------------------------------------------------------------------
 

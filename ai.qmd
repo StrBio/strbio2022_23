@@ -1,5 +1,5 @@
 ---
-title: "State-of-the-art protein modeling with Colabfold"
+title: "State-of-the-art protein modeling with Deep Learning-based methods"
 author: "Modesto Redrejo Rodríguez"
 date: "`r Sys.Date()`"
 toc: true 
@@ -8,7 +8,7 @@ format:
   html:
     theme: simplex
     toc: true
-    toc-location: left
+    toc-location: right
     toc-depth: 4
     number-sections: false
     code-overflow: wrap
@@ -28,11 +28,11 @@ protein modeling in the twilight zone, i.e., proteins with only distant homologs
 (\<25-30% identity) in databases. These methods naturally evolved into iterative
 [threading]{.ul} methods, based on multitemplate model construction, implemented
 in [I-TASSER](https://zhanggroup.org/I-TASSER/) [@roy2010],
-[RaptorX](http://raptorx.uchicago.edu/) \[@peng2011\], and
+[RaptorX](http://raptorx.uchicago.edu/) [@peng2011], and
 [HHpred](https://toolkit.tuebingen.mpg.de/tools/hhpred) [@meier2015], among
 others. We are not going to discuss these methods by lack of time and because
 they are currently somewhat disused as Alphafold2 captures all the attention,
-and we will move to the very last advancements. I advise checking the provided
+and we will move to the very last advancements. I strongly encourage checking the provided
 references and the [Useful links](#links) below for a more accurate and
 comprehensive discussion on deep learning-fueled protein modeling.
 

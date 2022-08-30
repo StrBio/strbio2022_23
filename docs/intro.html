@@ -97,6 +97,11 @@ div.csl-indent {
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Structural Bioinformatics 2022-23</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://twitter.com/mredrejo" title="" class="sidebar-tool px-1"><i class="bi bi-twitter"></i></a>
+    <a href="mailto:modesto.redrejo@uam.es" title="" class="sidebar-tool px-1"><i class="bi bi-envelope-paper"></i></a>
+    <a href="https://github.com/strBio/strbio2022_23" title="" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+</div>
     </div>
       </div>
       <div class="mt-2 flex-shrink-0 align-items-center">
@@ -224,12 +229,12 @@ div.csl-indent {
 </section>
 <section id="warning-for-current-and-future-structural-biologists" class="level2">
 <h2 class="anchored" data-anchor-id="warning-for-current-and-future-structural-biologists">Warning for current and future structural biologists</h2>
-<div class="quarto-figure quarto-figure-center">
+<div id="fig-magritte" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <figure class="figure">
 <img src="pics/magritte.png" title="Ceci n'est pas une proteine" class="figure img-fluid figure-img">
 </figure>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Ceci n’est pas une proteine. Source: https://swissmodel.expasy.org/static/course/files/PartIII_quality_assesment.pdf</figcaption><p></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1: Ceci n’est pas une proteine. Source: https://swissmodel.expasy.org/static/course/files/PartIII_quality_assesment.pdf</figcaption><p></p>
 </figure>
 </div>
 <p>The surrealist Belgian painter René Magritte created a collection of surrealistic paintings entitled <a href="https://en.wikipedia.org/wiki/The_Treachery_of_Images" title="Magritte"><strong><em>La trahison des images</em></strong> (1928–1929)</a>. The most renowned of those paintings show a smoking pipe and the following caption underneath: <em>“Ceci n’est pas une pipe”</em> (This is not a pipe). Yes, indeed! It is actually the painting of a pipe.</p>
@@ -238,40 +243,40 @@ div.csl-indent {
 <section id="before-going-forward-protein-structure-101" class="level1">
 <h1>Before going forward: Protein Structure 101</h1>
 <p>Although you can make some protein modeling without being an expert in structural biology, a basic understanding of protein structure is strongly advisable. Over the years, I noticed that graduate students in biology, biomedicine, and related fields have a very different background on protein structure. If you want to review and update your background on protein structure, I recommend you reading Chapter 2 of <span class="citation" data-cites="structur"><span>“Structural Bioinformatics, 2nd Edition | Wiley”</span> (<a href="#ref-structur" role="doc-biblioref">n.d.b</a>)</span>, the great recent review by <span class="citation" data-cites="stollar2020">Stollar and Smith (<a href="#ref-stollar2020" role="doc-biblioref">2020</a>)</span> and the <a href="https://en.wikipedia.org/wiki/Protein_structure">Wikipedia</a> and <a href="https://proteopedia.org/wiki/index.php/Introduction_to_protein_structure">Proteopedia</a> articles on protein structures, which constituted my main source for this brief section.</p>
-<div id="fig-anonymous-1" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-str" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><a href="https://en.wikipedia.org/wiki/Protein_structure"><img src="pics/Protein_structure.png" title="Protein Structure" class="img-fluid figure-img"></a></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Protein structure levels, using human PCNA (PDB 1AXC) as an example.</figcaption><p></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2: Protein structure levels, using human PCNA (PDB 1AXC) as an example.</figcaption><p></p>
 </figure>
 </div>
-<p>Proteins are key components of life, playing key roles in almost any possible vital function, either as structural, or scaffolding elements or as active enzymes that catalyze metabolic reactions. Proteins are built as polymers of amino acids and the sequence of amino acids of a particular protein can be also called the <strong>primary structure</strong> of the protein. Amino acid chains can spontaneously fold up into three-dimensional structures, mostly stabilized by hydrogen bonds between amino acids.&nbsp; The amino acid sequence determines different layers of 3D structure. Each of the 20 natural amino acids has different physicochemical properties that affect its preferred conformation. Thus, the first level of folding is called <strong>secondary structure</strong>, forming common patterns as we will see in a moment.</p>
-<div id="fig-anonymous-2" class="quarto-figure quarto-figure-center anchored">
+<p>Proteins are key components of life, playing key roles in almost any possible vital function, either as structural, or scaffolding elements or as active enzymes that catalyze metabolic reactions. Proteins are built as polymers of amino acids and the sequence of amino acids of a particular protein can be also called the <strong>primary structure</strong> of the protein. Amino acid chains can spontaneously fold up into three-dimensional structures, mostly stabilized by hydrogen bonds between amino acids. The amino acid sequence determines different layers of 3D structure. Each of the 20 natural amino acids has different physicochemical properties that affect its preferred conformation. Thus, the first level of folding is called <strong>secondary structure</strong>, forming common patterns as we will see in a moment.</p>
+<div id="fig-aa" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><a href="https://www.reddit.com/r/chemistry/comments/acyald/venn_diagram_showing_the_properties_of_the_20/"><img src="pics/aa.png" title="Amino acids clasification by type" class="img-fluid figure-img"></a></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Amino acids clasification by type</figcaption><p></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3: Amino acids clasification by type</figcaption><p></p>
 </figure>
 </div>
 <p>These stretches of secondary structure patterns can fold in 3D due to interactions between the side chains of amino acids. This is called protein <strong>tertiary structure</strong>. Finally, two or more individual peptide chains can form multisubunit proteins that have the so-called <strong>quaternary structure</strong>.</p>
 <p>It should be noted that the peptide bond itself cannot rotate as it has a double bond-like character. Therefore, rotation can only occur about the bond between the Cα and the C = O group, (the phi (φ) angle) and the Cα and the NH group, (the psi (ψ) angle). In fact, the polypeptide backbone chain is composed of a repeating series of two rotatable bonds followed by one non-rotatable (peptide) bond. However, not all 360º of the psi and phi angles are possible as neighboring sidechains can clash due to steric hindrance. For certain angles and amino acid combinations, the atoms cannot be in the same physical place and this partly explains why some amino acids have a higher propensity (likelihood) to form different types of secondary structures.</p>
-<div id="fig-anonymous-3" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-bond" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><a href="https://portlandpress.com/essaysbiochem/article/64/4/649/226515/Uncovering-protein-structure"><img src="pics/peptide_bond.png" title="Peptide bond" class="img-fluid figure-img"></a></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Scheme of a generic polypeptide chain. Residue side chains are denoted as R. Coloured rectangles indicate sets of six atoms that are coplanar due to the double-bond character of the peptide bond. Arrows indicate the bonds that are free to rotate with the angle of rotation about the N–Cα known as phi and about the Cα–C known as psi. Note that only peptide backbone bonds are labeled and in most cases the R group bond is free to rotate.</figcaption><p></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4: Scheme of a generic polypeptide chain. Residue side chains are denoted as R. Coloured rectangles indicate sets of six atoms that are coplanar due to the double-bond character of the peptide bond. Arrows indicate the bonds that are free to rotate with the angle of rotation about the N–Cα known as phi and about the Cα–C known as psi. Note that only peptide backbone bonds are labeled and in most cases the R group bond is free to rotate.</figcaption><p></p>
 </figure>
 </div>
 <p>Within these restraints, the two principal local conformations that avoid steric hindrance and maximize backbone–backbone hydrogen bonding are the <strong>α-helix</strong> and the <strong>β-sheet</strong> secondary structures. The α-helix was proposed initially as left-handed by Linus Pauling in 1951, but the crystal structure of myoglobin in 1958 showed that, although both can be found, the right-handed form is the common one. In the common right-handed helices, the backbone NH group hydrogen bonds to the backbone C = O group of the amino acid located four residues earlier along the protein sequence. This results in a polypeptide chain that twists in a regular coil shape with the R-groups pointing outwards away from the peptide backbone. It takes approximately 3.6 residues to complete a full turn of a helix.</p>
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
-<div id="fig-anonymous-4" class="quarto-figure quarto-figure-center anchored" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-alpha" class="quarto-figure quarto-figure-center anchored" style="flex-basis: 50.0%;justify-content: center;">
 <figure class="figure">
 <p><a href="https://en.wikipedia.org/wiki/Alpha_helix"><img src="pics/alpha.gif" title="Alpha helix" class="img-fluid figure-img"></a></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Alpha helix</figcaption><p></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 5: Alpha helix</figcaption><p></p>
 </figure>
 </div>
-<div id="fig-anonymous-5" class="quarto-figure quarto-figure-center anchored" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-beta" class="quarto-figure quarto-figure-center anchored" style="flex-basis: 50.0%;justify-content: center;">
 <figure class="figure">
 <p><a href="https://en.wikipedia.org/wiki/Beta_sheet"><img src="pics/Animated_Beta_sheet.gif" title="Beta sheet" class="img-fluid figure-img"></a></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Beta sheet</figcaption><p></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6: Beta sheet</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -282,26 +287,26 @@ div.csl-indent {
 <section id="ramachandran-plot" class="level3">
 <h3 class="anchored" data-anchor-id="ramachandran-plot">Ramachandran Plot</h3>
 <p>As you probably already figure out, many combinations of φ and ψ angles are forbidden because of the principle of steric exclusion: two atoms cannot be in the same place ad the same time. This was initially shown by <a href="https://en.wikipedia.org/wiki/G._N._Ramachandran">Gopalasamudram Ramachandran</a>, who also devised a plot to visualize the allowed angle values, so-called Ramachandran plot. This plot can represent the angles of a particular amino acid, of all the amino acids in a protein or many proteins. Analysis of φ and ψ angles in known proteins clearly show that roughly three-quarters of all possible φ, ψ combinations are excluded.</p>
-<div id="fig-anonymous-6" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-rama0" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><a href="https://proteopedia.org/wiki/index.php/Ramachandran_Plot"><img src="https://proteopedia.org/wiki/images/9/90/Ramachandran_plot_general_100K.jpg" title="General Ramachandran plot" class="img-fluid figure-img"></a></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">General Ramachandran plot. The density of points reflects how likely is each angle combination, defining the core (red line) and tolerance (orange) regions.</figcaption><p></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 7: General Ramachandran plot. The density of points reflects how likely is each angle combination, defining the core (red line) and tolerance (orange) regions.</figcaption><p></p>
 </figure>
 </div>
 <p>The core regions in the Rama plot also correspond with common secondary structures, as usually represented in textbooks.</p>
-<div class="quarto-figure quarto-figure-center">
+<div id="fig-ram" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <figure class="figure">
-<img src="pics/rama2.png" title="Textbook Rama plot" class="img-fluid figure-img">
+<img src="pics/rama2.png" title="Textbook Rama plot" class="figure img-fluid figure-img">
 </figure>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Definition of secondary structure alternatives by their combination of phi, psi angles.</figcaption><p></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 8: Definition of secondary structure alternatives by their combination of phi, psi angles.</figcaption><p></p>
 </figure>
 </div>
 <p>Functionally and structurally relevant residues are more likely than others to have torsion angles that plot to the <u>allowed but disfavored</u> regions of a Ramachandran plot. The specific geometry of these functionally relevant residues, while somewhat energetically unfavorable, may be important for the protein’s function, catalytic or otherwise. Such conformations need to be stabilized by the protein using H-bonds, steric packing, or other means, and should very seldom occur for highly solvent-exposed residues.</p>
-<div id="fig-anonymous-7" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-rama2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><a href="https://proteopedia.org/wiki/index.php/Ramachandran_Plot"><img src="https://proteopedia.org/wiki/images/8/85/Ramachandran_Gly_Pro_data_and_contours_T8000_small.jpg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Ramachandran plots for glycine (lef) and proline (right) Inner contour encloses 98% and 99.9% of Top structures data, indicating the favored and allowed regions, respectively .</figcaption><p></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 9: Ramachandran plots for glycine (lef) and proline (right) Inner contour encloses 98% and 99.9% of Top structures data, indicating the favored and allowed regions, respectively .</figcaption><p></p>
 </figure>
 </div>
 </section>
@@ -309,10 +314,10 @@ div.csl-indent {
 <h3 class="anchored" data-anchor-id="protein-folds-domains-and-motifs">Protein folds, domains and motifs</h3>
 <p>The final three dimensional tertiary structure of a protein is commonly referred as its <strong>fold</strong>. Within the overall protein fold, we can recognize distinct <strong>domains</strong> and <strong>motifs.</strong> Domains are compact sections of the protein that represent structurally and (usually) functionally independent regions. That means that a domain maintain its main features, even if separated from the overall protein. On the other hand, motifs are small substructures that are not necessarily independent and consist of only a few secondary structure stretches. Indeed, motifs can be also referred as <em>super-secondary</em> structure.</p>
 <p>The diversity of protein folds, domains and motifs, and combination of those, can be used for classification of protein structures hierarchically, as in many other fields of biology. The first classification was proposed in the 70’s and consisted of four groups of folds, as shown in the figure below. All-α proteins are based almost entirely on an α-helical structure, and all β-structure are based on β-sheets. α/β structure is based on am mixture of α-helices and β-sheet, often organized as parallel β-strands connected by α-helices. Finally α+β structures consist of discrete α-helix and β-sheet motifs that are not interwoven (as they are in α/β proteins).</p>
-<div class="quarto-figure quarto-figure-center">
+<div id="fig-chlothia" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="pics/clasif.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">The four structural protein classes in the classification by Chlothia &amp; Levitt. Modified from <span class="citation" data-cites="structur"><span>“Structural Bioinformatics, 2nd Edition | Wiley”</span> (<a href="#ref-structur" role="doc-biblioref">n.d.b</a>)</span> using 1I2T, 1K76, 1H75 and 1EM7 structures.</figcaption><p></p>
+<p><img src="pics/clasif.png" class="figure img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 10: The four structural protein classes in the classification by Chlothia &amp; Levitt. Modified from <span class="citation" data-cites="structur"><span>“Structural Bioinformatics, 2nd Edition | Wiley”</span> (<a href="#ref-structur" role="doc-biblioref">n.d.b</a>)</span> using 1I2T, 1K76, 1H75 and 1EM7 structures.</figcaption><p></p>
 </figure>
 </div>
 <p>As known fold space has become more and more complex, these types of classifications have been adjusted and extended such that a complete hierarchy is created. The most commonly referred approaches to this sort of classification are those used by SCOP and CATH databases.</p>
@@ -322,10 +327,10 @@ div.csl-indent {
 <p><img src="pics/handson.png" title="Hands-on" class="img-fluid"></p>
 <p>There are a few online alternatives to model any peptide sequence and quickly see the effect of amino acid composition in the secondary structure. One of the best-known is Foldit (<a href="http://www.fold.it">www.fold.it</a>, <span class="citation" data-cites="miller2020">Miller et al. (<a href="#ref-miller2020" role="doc-biblioref">2020</a>)</span>), a gaming platform for biochemistry and structural biology teaching. It is a highly recommended alternative for most courses related to protein structure.</p>
 <p>In this course we are going to try a more recent proposal, recently twitted by Sergey Ovchinnikov (see <a href="https://twitter.com/sokrypton/status/1535857255647690753" class="uri">https://twitter.com/sokrypton/status/1535857255647690753</a>). It is based on ColabFold (see <a href="https://github.com/sokrypton/ColabFold" class="uri">https://github.com/sokrypton/ColabFold</a> and <span class="citation" data-cites="mirdita2022">Mirdita et al. (<a href="#ref-mirdita2022" role="doc-biblioref">2022</a>)</span>), an Alphafold2 (see <span class="citation" data-cites="jumper2021">Jumper et al. (<a href="#ref-jumper2021" role="doc-biblioref">2021</a>)</span>) free notebook in <a href="https://colab.research.google.com/?hl=en">Google Colab notebook</a>. All you need is a Google account and the following <em>cheatsheet</em>.</p>
-<div id="fig-anonymous-8" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-single" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><a href="https://twitter.com/sokrypton/status/1535857255647690753"><img src="pics/cheatsheet.png" title="Protein hallucination" class="img-fluid figure-img"></a></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Basic protein amino acids stats for protein design with ColabFold Single</figcaption><p></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 11: Basic protein amino acids stats for protein design with ColabFold Single</figcaption><p></p>
 </figure>
 </div>
 <p>Now go to ColabFold Single: <a href="https://colab.research.google.com/github/sokrypton/af_backprop/blob/beta/examples/AlphaFold_single.ipynb" class="uri">https://colab.research.google.com/github/sokrypton/af_backprop/blob/beta/examples/AlphaFold_single.ipynb</a></p>

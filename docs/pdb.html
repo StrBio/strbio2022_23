@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Modesto Redrejo Rodríguez">
-<meta name="dcterms.date" content="2022-08-25">
+<meta name="dcterms.date" content="2022-08-30">
 
 <title>Structural Bioinformatics 2022-23 - Working with protein structures</title>
 <style>
@@ -78,6 +78,11 @@ ul.task-list{list-style: none;}
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Structural Bioinformatics 2022-23</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://twitter.com/mredrejo" title="" class="sidebar-tool px-1"><i class="bi bi-twitter"></i></a>
+    <a href="mailto:modesto.redrejo@uam.es" title="" class="sidebar-tool px-1"><i class="bi bi-envelope-paper"></i></a>
+    <a href="https://github.com/strBio/strbio2022_23" title="" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+</div>
     </div>
       </div>
       <div class="mt-2 flex-shrink-0 align-items-center">
@@ -146,8 +151,10 @@ ul.task-list{list-style: none;}
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#warning-for-future-structural-biologists" id="toc-warning-for-future-structural-biologists" class="nav-link active" data-scroll-target="#warning-for-future-structural-biologists">Warning for future structural biologists</a></li>
-  <li><a href="#protein-structures-protein-models" id="toc-protein-structures-protein-models" class="nav-link" data-scroll-target="#protein-structures-protein-models">Protein structures &amp; protein models</a></li>
+  <li><a href="#protein-structure-display-and-the-actual-protein-structure" id="toc-protein-structure-display-and-the-actual-protein-structure" class="nav-link active" data-scroll-target="#protein-structure-display-and-the-actual-protein-structure">Protein structure display and the actual protein structure</a></li>
+  <li><a href="#experimentally-obtained-structures" id="toc-experimentally-obtained-structures" class="nav-link" data-scroll-target="#experimentally-obtained-structures">Experimentally obtained structures</a></li>
+  <li><a href="#protein-structure-files-formats" id="toc-protein-structure-files-formats" class="nav-link" data-scroll-target="#protein-structure-files-formats">Protein structure files formats</a></li>
+  <li><a href="#biological-macromolecules-display-applications" id="toc-biological-macromolecules-display-applications" class="nav-link" data-scroll-target="#biological-macromolecules-display-applications">Biological macromolecules display applications</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
@@ -176,7 +183,7 @@ ul.task-list{list-style: none;}
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 25, 2022</p>
+      <p class="date">August 30, 2022</p>
     </div>
   </div>
     
@@ -185,8 +192,21 @@ ul.task-list{list-style: none;}
 
 </header>
 
-<section id="warning-for-future-structural-biologists" class="level2">
-<h2 class="anchored" data-anchor-id="warning-for-future-structural-biologists">Warning for future structural biologists</h2>
+<section id="protein-structure-display-and-the-actual-protein-structure" class="level2">
+<h2 class="anchored" data-anchor-id="protein-structure-display-and-the-actual-protein-structure">Protein structure display and the actual protein structure</h2>
+<div class="callout-caution callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Warning for future structural biologists
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
 <div id="fig-anonymous-1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><a href="https://swissmodel.expasy.org/static/course/files/PartIII_quality_assesment.pdf"><img src="pics/magritte.png" title="Ceci n'est pas une proteine" class="img-fluid figure-img"></a></p>
@@ -196,8 +216,14 @@ ul.task-list{list-style: none;}
 <p>The surrealist Belgian painter René Magritte created a collection of surrealistic paintings entitled <a href="https://en.wikipedia.org/wiki/The_Treachery_of_Images" title="Magritte"><strong><em>La trahison des images</em></strong> (1928–1929)</a>. The most renowned of those paintings show a smoking pipe and the following caption underneath: <em>“Ceci n’est pas une pipe”</em> (This is not a pipe). Yes, indeed! It is actually the painting of a pipe.</p>
 <p>Similarly, a picture of a protein, or a PDB file with the coordinates of a protein structure, is not a protein. It is a representation of ONE structure. Even experimentally determined structures have two main limitations that we should always keep in mind: (1) they are a fixed structure whereas proteins <em>in vivo</em> are flexible and dynamic and (2) they are subjected to experimental error and they often contain regions of low reliability. Moreover, even experimentally obtained macromolecular structures are to some degree models, with a variable ratio between experimental data and computational prediction to match the experimental data (X-ray diffraction, cryo-EM density maps, NMR, SAXS, FRET…) with previously known structures or prediction models. That does not mean that protein structures are useless, they can be very useful, but we must be aware of the limitations as well as the applications.</p>
 </section>
-<section id="protein-structures-protein-models" class="level1">
-<h1>Protein structures &amp; protein models</h1>
+<section id="experimentally-obtained-structures" class="level1">
+<h1>Experimentally obtained structures</h1>
+</section>
+<section id="protein-structure-files-formats" class="level1">
+<h1>Protein structure files formats</h1>
+</section>
+<section id="biological-macromolecules-display-applications" class="level1">
+<h1>Biological macromolecules display applications</h1>
 <hr>
 </section>
 <section id="references" class="level1">

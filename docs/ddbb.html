@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Modesto Redrejo Rodríguez">
-<meta name="dcterms.date" content="2022-08-25">
+<meta name="dcterms.date" content="2022-08-30">
 
 <title>Structural Bioinformatics 2022-23 - Protein Databases</title>
 <style>
@@ -97,6 +97,11 @@ div.csl-indent {
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Structural Bioinformatics 2022-23</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://twitter.com/mredrejo" title="" class="sidebar-tool px-1"><i class="bi bi-twitter"></i></a>
+    <a href="mailto:modesto.redrejo@uam.es" title="" class="sidebar-tool px-1"><i class="bi bi-envelope-paper"></i></a>
+    <a href="https://github.com/strBio/strbio2022_23" title="" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+</div>
     </div>
       </div>
       <div class="mt-2 flex-shrink-0 align-items-center">
@@ -210,7 +215,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 25, 2022</p>
+      <p class="date">August 30, 2022</p>
     </div>
   </div>
     
@@ -221,21 +226,30 @@ div.csl-indent {
 
 <section id="structure-comparison-and-alignment" class="level1">
 <h1>Structure comparison and alignment</h1>
-<p>As in the case of sequences, comparison and alignment of protein structures is a fundamental and widely used task in computational structure biology. The identification and statistical measure of the similarities between two or more structures allow their classification and infer functional and evolutionary relationships. Moreover, this process is essential during protein modeling, allowing to identify and select intermediate models.</p>
+<p>As in the case of sequences, comparison and alignment of protein structures is a fundamental and widely used task in computational structure biology. The identification and statistical measure of the similarities between two or more structures allow their classification and infer functional and evolutionary relationships. Moreover, this process is essential during protein modeling, allowing to identify, assess, and select intermediate models.</p>
 <p>It is also important to clear up any possible confusion between alignment and superposition, as they are often interchanged in the literature. An structural alignment tries to identify similarities and differences between two structures, while structure superposition requires the previous knowledge of such equivalences. Thus, superposition tires to minimize the distance between already known equivalent structures by finding a transformation that produces either the lowest root-mean-square deviation (<strong>RMSD</strong>) or the maximal equivalences within an RMSD cutoff. A better alignment will allow a better superposition. Thus, although alignment and superposition are two different processes, the RMSD can be used as an indication of both (the lowest RMSD, the best alignment/superposition).</p>
+<div id="rmsd" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<figure class="figure">
+<img src="pics/rmsd.png" title="RMSD_example" class="figure img-fluid figure-img">
+</figure>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Structural alignment of three different AP endoncleases with the <u><em>cealign</em></u> algorithm implemented in Pymol. The RMSD and the number of aligned residues for each pair of structures is indicated.</figcaption><p></p>
+</figure>
+</div>
 </section>
 <section id="major-protein-databases" class="level1">
 <h1>Major protein databases</h1>
+<p>Classification of protein sequences allow to understand the diversity of different proteins by their sequence, i.e., the protein sequence space. However, classification of protein structures aim to group proteins based on their structural relationships. Some of these classification schemes explore the concept of structural neighbourhood (structural continuum), whereas other utilize the notion of protein evolution as a driving force of diversification and thus provide a discrete rather than continuum protein structure space <span class="citation" data-cites="andreeva2012">(<a href="#ref-andreeva2012" role="doc-biblioref">Andreeva 2012</a>)</span>.</p>
 <p>This section does not aim to comprehensively review all protein databases in detail. Indeed, you probably already know most of the databases we are discussing. We will clarify the main differences and applications of Pfam, Uniprot, Prosite, PDB, SCOP &amp; CATH. As usual, I encourage you to check out online in the references mentioned below for more detailed information.</p>
-<div class="quarto-figure quarto-figure-center">
+<div id="fig-ddbb" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <figure class="figure">
-<img src="pics/ddbb.png" title="Protein databases" class="img-fluid figure-img" width="383">
+<img src="pics/ddbb.png" title="Protein databases" class="figure img-fluid figure-img" width="383">
 </figure>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Major protein databases. Although most of these databases are around 30 years old (or more), since they were created (or renovated) during the last years of the 20th century or the early 21st.</figcaption><p></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1: Major protein databases. Although most of these databases are around 30 years old (or more), since they were created (or renovated) during the last years of the 20th century or the early 21st.</figcaption><p></p>
 </figure>
 </div>
-<p>In bioinformatics, databases are often categorised as primary or secondary.&nbsp;<strong>Primary databases</strong>&nbsp;are populated with experimentally derived data such as nucleotide sequence, protein sequence or macromolecular structure. Importantly, once given a database accession number, the data in primary databases are never changed: they form part of the scientific record. By contrast, <strong>secondary databases</strong>&nbsp;comprise data derived from the results of analysing primary data. Secondary databases often draw upon information from numerous sources, including other databases and the scientific literature. They are highly curated, often using a complex combination of computational algorithms and/or manual analysis and interpretation to derive new knowledge from the public record of science.</p>
+<p>In bioinformatics, databases are often categorized as primary or secondary. <strong>Primary databases</strong> are populated with experimentally derived data such as nucleotide sequence, protein sequence or macromolecular structure. Importantly, once given a database accession number, the data in primary databases are never changed: they form part of the scientific record. By contrast, <strong>secondary databases</strong> comprise data derived from the results of analysing primary data. Secondary databases often draw upon information from numerous sources, including other databases and the scientific literature. They are highly curated, often using a complex combination of computational algorithms and/or manual analysis and interpretation to derive new knowledge from the public record of science.</p>
 <p>The main protein primary databases are NCBI Protein for protein sequenes and RCSB-PDB for protein structures. Uniprot (see below) also contains a primary sequence database, named TrEMBL. It also incorporated in 2002 PIR-PSD, joining the databases of the Protein information Resource, EMBL and SIB in a single (meta)database (see <a href="https://proteininformationresource.org/pirwww/dbinfo/pir_psd.shtml" class="uri">https://proteininformationresource.org/pirwww/dbinfo/pir_psd.shtml</a>).</p>
 <section id="sequence-databases" class="level2">
 <h2 class="anchored" data-anchor-id="sequence-databases">Sequence databases</h2>
@@ -264,22 +278,26 @@ div.csl-indent {
 <h2 class="anchored" data-anchor-id="structure-databases">Structure databases</h2>
 <section id="rcsb-pdb" class="level3">
 <h3 class="anchored" data-anchor-id="rcsb-pdb">RCSB-PDB</h3>
+<p>Now www.rcsb.org</p>
 </section>
 <section id="scop" class="level3">
 <h3 class="anchored" data-anchor-id="scop">SCOP</h3>
-<p>sd</p>
+<p>The Structural Classification of Proteins (SCOP, <a href="http://scop.mrc-lmb.cam.ac.uk/">http://scop.mrc-lmb.cam.ac.uk</a>) database is a classification of protein domains organised according to their evolutionary and structural relationships <span class="citation" data-cites="andreeva2020">(<a href="#ref-andreeva2020" role="doc-biblioref">Andreeva et al. 2020</a>)</span>.</p>
 </section>
 <section id="cath" class="level3">
 <h3 class="anchored" data-anchor-id="cath">CATH</h3>
-<p>dfa</p>
+<p>CATH (<a href="www.cathdb.info">www.cathdb.info</a>) is a free, publicly available resource that identifies protein domains within proteins from the Protein Data Bank and classifies them into evolutionary related groups according to sequence, structure, and function information. It assumes that evolutionary related proteins with similar folds often exhibit similar functions (this only could be demonstrated if we find intermediates). CATH uses a hierarchical classification scheme where the units compared and classified are structural domains. Domains, defined here as globular structural domains capable of semi-independent folding, are extracted from experimentally determined protein structures available in the PDB database.</p>
+<p>CATH uses a combination of several structure-based (SSAP, CATHEDRAL) and sequence-based (Needleman-Wunsch-based sequence alignments, jackhmmer, Profile Comparer, and HHsearch) algorithms to assess the similarity of domains to each other and to identify protein homologues <span class="citation" data-cites="sillitoe2021">(<a href="#ref-sillitoe2021" role="doc-biblioref">Sillitoe et al. 2021</a>)</span>.</p>
+<p>CATH has a sister resource, Gene3D, that adds in additional protein domain sequences with no known structure, which brings the current total number of domains in CATH-Gene3D up to 95 million.</p>
+<p>CATH database is updated quite regularly through daily snapshots (CATH-B), but a full release with more tools, named CATH+ is released every 12-months. CATH-plus contains functional families (CATH-FunFams), structural clusters and other tools <span class="citation" data-cites="sillitoe2021">(<a href="#ref-sillitoe2021" role="doc-biblioref">Sillitoe et al. 2021</a>)</span>.</p>
 </section>
 </section>
 <section id="graphical-summary" class="level2">
 <h2 class="anchored" data-anchor-id="graphical-summary">Graphical summary</h2>
-<div class="quarto-figure quarto-figure-center">
+<div id="fig-full" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="pics/bbdd_full.svg" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Main features of protein databases (updated in 2020)</figcaption><p></p>
+<p><img src="pics/bbdd_full.svg" class="figure img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2: Main features of protein databases (updated in 2020)</figcaption><p></p>
 </figure>
 </div>
 <hr>
@@ -293,11 +311,20 @@ div.csl-indent {
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-andreeva2012" class="csl-entry" role="doc-biblioentry">
+Andreeva, Antonina. 2012. <span>“Classification of Proteins: Available Structural Space for Molecular Modeling.”</span> In, edited by Andrew J. W. Orry and Ruben Abagyan, 1–31. Totowa, NJ: Humana Press. <a href="https://doi.org/10.1007/978-1-61779-588-6_1">https://doi.org/10.1007/978-1-61779-588-6_1</a>.
+</div>
+<div id="ref-andreeva2020" class="csl-entry" role="doc-biblioentry">
+Andreeva, Antonina, Eugene Kulesha, Julian Gough, and Alexey G. Murzin. 2020. <span>“The SCOP database in 2020: expanded classification of representative family and superfamily domains of known protein structures.”</span> <em>Nucleic Acids Research</em> 48 (D1): D376–82. <a href="https://doi.org/10.1093/nar/gkz1064">https://doi.org/10.1093/nar/gkz1064</a>.
+</div>
 <div id="ref-blum2021" class="csl-entry" role="doc-biblioentry">
 Blum, Matthias, Hsin-Yu Chang, Sara Chuguransky, Tiago Grego, Swaathi Kandasaamy, Alex Mitchell, Gift Nuka, et al. 2021. <span>“The InterPro Protein Families and Domains Database: 20 Years On.”</span> <em>Nucleic Acids Research</em> 49 (D1): D344–54. <a href="https://doi.org/10.1093/nar/gkaa977">https://doi.org/10.1093/nar/gkaa977</a>.
 </div>
 <div id="ref-mistry2020" class="csl-entry" role="doc-biblioentry">
 Mistry, Jaina, Sara Chuguransky, Lowri Williams, Matloob Qureshi, Gustavo&nbsp;A Salazar, Erik L L Sonnhammer, Silvio C E Tosatto, et al. 2020. <span>“Pfam: The Protein Families Database in 2021.”</span> <em>Nucleic Acids Research</em> 49 (D1): D412–19. <a href="https://doi.org/10.1093/nar/gkaa913">https://doi.org/10.1093/nar/gkaa913</a>.
+</div>
+<div id="ref-sillitoe2021" class="csl-entry" role="doc-biblioentry">
+Sillitoe, Ian, Nicola Bordin, Natalie Dawson, Vaishali P. Waman, Paul Ashford, Harry M. Scholes, Camilla S. M. Pang, et al. 2021. <span>“CATH: increased structural coverage of functional space.”</span> <em>Nucleic Acids Research</em> 49 (D1): D266–73. <a href="https://doi.org/10.1093/nar/gkaa1079">https://doi.org/10.1093/nar/gkaa1079</a>.
 </div>
 <div id="ref-steinegger2018" class="csl-entry" role="doc-biblioentry">
 Steinegger, Martin, and Johannes Söding. 2018. <span>“Clustering huge protein sequence sets in linear time.”</span> <em>Nature Communications</em> 9 (1): 2542. <a href="https://doi.org/10.1038/s41467-018-04964-5">https://doi.org/10.1038/s41467-018-04964-5</a>.

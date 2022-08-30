@@ -8,7 +8,7 @@ format:
   html:
     theme: simplex
     toc: true
-    toc-location: left
+    toc-location: right
     toc-depth: 4
     number-sections: false
     code-overflow: wrap
@@ -85,7 +85,8 @@ in biology, biotechnology, and biomedicine are still unforeseen.
 ## Warning for current and future structural biologists
 
 ![Ceci n'est pas une proteine. Source:
-https://swissmodel.expasy.org/static/course/files/PartIII_quality_assesment.pdf](pics/magritte.png "Ceci n'est pas une proteine"){.figure}
+https://swissmodel.expasy.org/static/course/files/PartIII_quality_assesment.pdf](pics/magritte.png "Ceci n'est pas une proteine"){#fig-magritte
+.figure}
 
 The surrealist Belgian painter René Magritte created a collection of
 surrealistic paintings entitled [***La trahison des images***
@@ -122,7 +123,8 @@ articles on protein structures, which constituted my main source for this brief
 section.
 
 [![Protein structure levels, using human PCNA (PDB 1AXC) as an
-example.](pics/Protein_structure.png "Protein Structure")](https://en.wikipedia.org/wiki/Protein_structure)
+example.](pics/Protein_structure.png "Protein Structure"){#fig-str
+.figure}](https://en.wikipedia.org/wiki/Protein_structure)
 
 Proteins are key components of life, playing key roles in almost any possible
 vital function, either as structural, or scaffolding elements or as active
@@ -130,14 +132,15 @@ enzymes that catalyze metabolic reactions. Proteins are built as polymers of
 amino acids and the sequence of amino acids of a particular protein can be also
 called the **primary structure** of the protein. Amino acid chains can
 spontaneously fold up into three-dimensional structures, mostly stabilized by
-hydrogen bonds between amino acids.  The amino acid sequence determines
-different layers of 3D structure. Each of the 20 natural amino acids has
-different physicochemical properties that affect its preferred conformation.
-Thus, the first level of folding is called **secondary structure**, forming
-common patterns as we will see in a moment.
+hydrogen bonds between amino acids. The amino acid sequence determines different
+layers of 3D structure. Each of the 20 natural amino acids has different
+physicochemical properties that affect its preferred conformation. Thus, the
+first level of folding is called **secondary structure**, forming common
+patterns as we will see in a moment.
 
 [![Amino acids clasification by
-type](pics/aa.png "Amino acids clasification by type")](https://www.reddit.com/r/chemistry/comments/acyald/venn_diagram_showing_the_properties_of_the_20/)
+type](pics/aa.png "Amino acids clasification by type"){#fig-aa
+.figure}](https://www.reddit.com/r/chemistry/comments/acyald/venn_diagram_showing_the_properties_of_the_20/)
 
 These stretches of secondary structure patterns can fold in 3D due to
 interactions between the side chains of amino acids. This is called protein
@@ -161,7 +164,8 @@ double-bond character of the peptide bond. Arrows indicate the bonds that are
 free to rotate with the angle of rotation about the N--Cα known as phi and about
 the Cα--C known as psi. Note that only peptide backbone bonds are labeled and in
 most cases the R group bond is free to
-rotate.](pics/peptide_bond.png "Peptide bond")](https://portlandpress.com/essaysbiochem/article/64/4/649/226515/Uncovering-protein-structure)
+rotate.](pics/peptide_bond.png "Peptide bond"){#fig-bond
+.figure}](https://portlandpress.com/essaysbiochem/article/64/4/649/226515/Uncovering-protein-structure)
 
 Within these restraints, the two principal local conformations that avoid steric
 hindrance and maximize backbone--backbone hydrogen bonding are the **α-helix**
@@ -176,11 +180,11 @@ peptide backbone. It takes approximately 3.6 residues to complete a full turn of
 a helix.
 
 ::: {layout-ncol="2"}
-[![Alpha
-helix](pics/alpha.gif "Alpha helix")](https://en.wikipedia.org/wiki/Alpha_helix)
+[![Alpha helix](pics/alpha.gif "Alpha helix"){#fig-alpha
+.figure}](https://en.wikipedia.org/wiki/Alpha_helix)
 
-[![Beta
-sheet](pics/Animated_Beta_sheet.gif "Beta sheet")](https://en.wikipedia.org/wiki/Beta_sheet)
+[![Beta sheet](pics/Animated_Beta_sheet.gif "Beta sheet"){#fig-beta
+.figure}](https://en.wikipedia.org/wiki/Beta_sheet)
 :::
 
 Different amino-acid sequences have different propensities for forming α-helical
@@ -245,13 +249,14 @@ combinations are excluded.
 
 [![General Ramachandran plot. The density of points reflects how likely is each
 angle combination, defining the core (red line) and tolerance (orange)
-regions.](https://proteopedia.org/wiki/images/9/90/Ramachandran_plot_general_100K.jpg "General Ramachandran plot")](https://proteopedia.org/wiki/index.php/Ramachandran_Plot)
+regions.](https://proteopedia.org/wiki/images/9/90/Ramachandran_plot_general_100K.jpg "General Ramachandran plot"){#fig-rama0
+.figure}](https://proteopedia.org/wiki/index.php/Ramachandran_Plot)
 
 The core regions in the Rama plot also correspond with common secondary
 structures, as usually represented in textbooks.
 
 ![Definition of secondary structure alternatives by their combination of phi,
-psi angles.](pics/rama2.png "Textbook Rama plot")
+psi angles.](pics/rama2.png "Textbook Rama plot"){#fig-ram .figure}
 
 Functionally and structurally relevant residues are more likely than others to
 have torsion angles that plot to the [allowed but disfavored]{.ul} regions of a
@@ -264,7 +269,8 @@ should very seldom occur for highly solvent-exposed residues.
 [![Ramachandran plots for glycine (lef) and proline (right) Inner contour
 encloses 98% and 99.9% of Top structures data, indicating the favored and
 allowed regions, respectively
-.](https://proteopedia.org/wiki/images/8/85/Ramachandran_Gly_Pro_data_and_contours_T8000_small.jpg)](https://proteopedia.org/wiki/index.php/Ramachandran_Plot)
+.](https://proteopedia.org/wiki/images/8/85/Ramachandran_Gly_Pro_data_and_contours_T8000_small.jpg){#fig-rama2
+.figure}](https://proteopedia.org/wiki/index.php/Ramachandran_Plot)
 
 ### Protein folds, domains and motifs
 
@@ -289,14 +295,14 @@ interwoven (as they are in α/β proteins).
 
 ![The four structural protein classes in the classification by Chlothia &
 Levitt. Modified from @structur using 1I2T, 1K76, 1H75 and 1EM7
-structures.](pics/clasif.png)
+structures.](pics/clasif.png){#fig-chlothia .figure}
 
 As known fold space has become more and more complex, these types of
 classifications have been adjusted and extended such that a complete hierarchy
 is created. The most commonly referred approaches to this sort of classification
 are those used by SCOP and CATH databases.
 
-### Playing with secondary structures
+### [**Hands on: Playing with secondary structures**]{style="color:green"}
 
 ![](pics/handson.png "Hands-on")
 
@@ -315,7 +321,8 @@ notebook](https://colab.research.google.com/?hl=en). All you need is a Google
 account and the following *cheatsheet*.
 
 [![Basic protein amino acids stats for protein design with ColabFold
-Single](pics/cheatsheet.png "Protein hallucination")](https://twitter.com/sokrypton/status/1535857255647690753)
+Single](pics/cheatsheet.png "Protein hallucination"){#fig-single
+.figure}](https://twitter.com/sokrypton/status/1535857255647690753)
 
 Now go to ColabFold Single:
 <https://colab.research.google.com/github/sokrypton/af_backprop/blob/beta/examples/AlphaFold_single.ipynb>

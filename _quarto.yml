@@ -6,6 +6,13 @@ website:
   title: "Structural Bioinformatics 2022-23"
   sidebar:
     style: "docked"
+    tools:
+      - icon: twitter
+        href: https://twitter.com/mredrejo
+      - icon: envelope-paper
+        href: mailto:modesto.redrejo@uam.es
+      - icon: github
+        href: https://github.com/strBio/strbio2022_23
     search: true
     contents:
       - section: "Basics"
