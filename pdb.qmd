@@ -92,8 +92,8 @@ link between the diffraction pattern and the electron density is not trivial and
 requires some complex maths, called [Fourier
 transforms](http://pruffle.mit.edu/atomiccontrol/education/xray/fourier.php).
 
-[![Schematic workflow of X-ray
-crystallography.](images/paste-F430F5B1.png){#fig-xray
+[![Schematic workflow of X-ray crystallography. From
+[https://www.creative-biostructure.com/comparison-of-crystallography-nmr-and-em_6.htm](https://www.creative-biostructure.com/comparison-of-crystallography-nmr-and-em_6.htmhttps://www.creative-biostructure.com/comparison-of-crystallography-nmr-and-em_6.htm)](images/paste-F430F5B1.png){#fig-xray
 .figure}](https://www.creative-biostructure.com/comparison-of-crystallography-nmr-and-em_6.htm)
 
 X-ray is a powerful method that allows obtaining high-resolution structures at
@@ -127,7 +127,8 @@ the analyzed sample, thus providing characteristic NMR signals. Interpretation
 of these signals by computer-aided methods leads to deciphering of the
 three-dimensional structure.
 
-[![Basis of nuclear magnetic resonance](images/paste-2013F0AC.png){#fig-rmn
+[![Basis of nuclear magnetic resonance. From
+[https://www.creative-biostructure.com/comparison-of-crystallography-nmr-and-em_6.htm](https://www.creative-biostructure.com/comparison-of-crystallography-nmr-and-em_6.htmhttps://www.creative-biostructure.com/comparison-of-crystallography-nmr-and-em_6.htm)](images/paste-2013F0AC.png){#fig-rmn
 .figure}](https://www.creative-biostructure.com/comparison-of-crystallography-nmr-and-em_6.htm)
 
 The most important feature of the NMR method is that the three-dimensional
@@ -141,8 +142,8 @@ large biomolecules, often below 20-30 kDa (see @fig-experimental). Additionally,
 this technique requires relatively large amounts of pure samples (on the order
 of several mg) to achieve a reasonable signal to noise level.
 
-[![Coverage of molecular weight by structural
-technique](images/paste-FA73AF1E.png){#fig-experimental
+[![Coverage of molecular weight by structural technique. From
+@hancock2022.](images/paste-FA73AF1E.png){#fig-experimental
 .figure}](https://doi.org/10.1016/j.jsb.2022.107841)
 
 ## Electron cryomicroscopy
@@ -156,8 +157,8 @@ recorded on the detector. A key subsequent step is signal processing, that
 transform thousands of images of the particles in any orientation into a
 three-dimensional structure of the sample.
 
-[![The process of Cryo-EM single particle analysis
-technique](images/paste-5E29F580.png){#fig-cryoEM
+[![The process of Cryo-EM single particle analysis technique. From
+h[ttps://www.creative-biostructure.com/comparison-of-crystallography-nmr-and-em_6.htm](https://www.creative-biostructure.com/comparison-of-crystallography-nmr-and-em_6.htm)](images/paste-5E29F580.png){#fig-cryoEM
 .figure}](https://www.creative-biostructure.com/comparison-of-crystallography-nmr-and-em_6.htm)
 
 The use of electron microscopy methods for structural biology was traditionally
@@ -171,7 +172,8 @@ and processing that allow obtaining pictures at the atomic level
 Chemistry](https://www.nobelprize.org/prizes/chemistry/2017/press-release/) to
 Jacques Dubochet, Joachim Frank and Richard Henderson.
 
-[![Cryo-electron microscopy revolution](images/paste-E5E5AE75.png){#fig-cryoEM2
+[![Cryo-electron microscopy revolution. From
+<https://www.creative-biostructure.com/comparison-of-crystallography-nmr-and-em_6.htm>](images/paste-E5E5AE75.png){#fig-cryoEM2
 .figure}](https://www.creative-biostructure.com/comparison-of-crystallography-nmr-and-em_6.htm)
 
 ::: {.callout-tip collapse="true"}
