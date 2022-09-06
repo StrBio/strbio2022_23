@@ -136,7 +136,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pdb.html" class="sidebar-item-text sidebar-link">Protein structures</a>
+  <a href="./pdb.html" class="sidebar-item-text sidebar-link">Protein Structures</a>
   </div>
 </li>
     </ul>
@@ -189,10 +189,14 @@ div.csl-indent {
   </ul></li>
   <li><a href="#ddbbs-practice" id="toc-ddbbs-practice" class="nav-link" data-scroll-target="#ddbbs-practice"> <span class="header-section-number">3</span> <span style="color:green"><strong>DDBBs Practice</strong></span></a>
   <ul class="collapse">
-  <li><a href="#classify-the-following-protein-structures-into-groups-and-subgroups" id="toc-classify-the-following-protein-structures-into-groups-and-subgroups" class="nav-link" data-scroll-target="#classify-the-following-protein-structures-into-groups-and-subgroups"> <span class="header-section-number">3.0.1</span> 1. Classify the following protein structures into “groups” and “subgroups”</a></li>
-  <li><a href="#briefly-answer-these-questions" id="toc-briefly-answer-these-questions" class="nav-link" data-scroll-target="#briefly-answer-these-questions"> <span class="header-section-number">3.0.2</span> 2. Briefly answer these questions:</a></li>
+  <li><a href="#classify-the-following-protein-structures-into-groups-and-subgroups" id="toc-classify-the-following-protein-structures-into-groups-and-subgroups" class="nav-link" data-scroll-target="#classify-the-following-protein-structures-into-groups-and-subgroups"> <span class="header-section-number">3.1</span> Classify the following protein structures into “groups” and “subgroups”</a></li>
+  <li><a href="#answer-these-questions" id="toc-answer-these-questions" class="nav-link" data-scroll-target="#answer-these-questions"> <span class="header-section-number">3.2</span> Answer these questions</a>
+  <ul class="collapse">
+  <li><a href="#a.-can-you-suggest-the-structural-and-evolutionary-relationship-between-them" id="toc-a.-can-you-suggest-the-structural-and-evolutionary-relationship-between-them" class="nav-link" data-scroll-target="#a.-can-you-suggest-the-structural-and-evolutionary-relationship-between-them"><strong>a. Can you suggest the structural and evolutionary relationship between them?</strong></a></li>
+  <li><a href="#b.-which-of-the-structures-is-more-difficult-to-group" id="toc-b.-which-of-the-structures-is-more-difficult-to-group" class="nav-link" data-scroll-target="#b.-which-of-the-structures-is-more-difficult-to-group"><strong>b. Which of the structures is more difficult to group</strong></a></li>
+  <li><a href="#c.-which-are-the-proscons-of-each-database" id="toc-c.-which-are-the-proscons-of-each-database" class="nav-link" data-scroll-target="#c.-which-are-the-proscons-of-each-database"><strong>c.&nbsp;Which are the pros/cons of each database?</strong></a></li>
   </ul></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"> <span class="header-section-number">4</span> </a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -233,12 +237,12 @@ div.csl-indent {
 <h1 data-number="1"><span class="header-section-number">1</span> Structure comparison and alignment</h1>
 <p>As in the case of sequences, comparison and alignment of protein structures is a fundamental and widely used task in computational structure biology. The identification and statistical measure of the similarities between two or more structures allow their classification and infer functional and evolutionary relationships. Moreover, this process is essential during protein modeling, allowing to identify, assess, and select intermediate models.</p>
 <p>It is also important to clear up any possible confusion between alignment and superposition, as they are often interchanged in the literature. An structural alignment tries to identify similarities and differences between two structures, while structure superposition requires the previous knowledge of such equivalences. Thus, superposition tires to minimize the distance between already known equivalent structures by finding a transformation that produces either the lowest root-mean-square deviation (<a href="https://en.wikipedia.org/wiki/Root-mean-square_deviation_of_atomic_positions"><strong>RMSD</strong></a>) or the maximal equivalences within an RMSD cutoff. A better alignment will allow a better superposition. Thus, although alignment and superposition are two different processes, the RMSD can be used as an indication of both (the lowest RMSD, the best alignment/superposition).</p>
-<div id="rmsd" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-rmsd" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <figure class="figure">
-<img src="pics/rmsd.png" title="RMSD_example" class="figure img-fluid figure-img">
+<img src="pics/rmsd.png" title="RMSD_example" class="figure img-fluid figure-img" width="500">
 </figure>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Structural alignment of three different AP endoncleases with the <u><em>cealign</em></u> algorithm implemented in Pymol. The RMSD and the number of aligned residues for each pair of structures is indicated.</figcaption><p></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1: Structural alignment of three different AP endoncleases with the <u><em>cealign</em></u> algorithm implemented in Pymol. The RMSD and the number of aligned residues for each pair of structures is indicated.</figcaption><p></p>
 </figure>
 </div>
 </section>
@@ -251,7 +255,7 @@ div.csl-indent {
 <figure class="figure">
 <img src="pics/ddbb.png" title="Protein databases" class="figure img-fluid figure-img" width="383">
 </figure>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1: Major protein databases. Although most of these databases are around 30 years old (or more), since they were created (or renovated) during the last years of the 20th century or the early 21st.</figcaption><p></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2: Major protein databases. Although most of these databases are around 30 years old (or more), since they were created (or renovated) during the last years of the 20th century or the early 21st.</figcaption><p></p>
 </figure>
 </div>
 <p>In bioinformatics, databases are often categorized as primary or secondary. <strong>Primary databases</strong> are populated with experimentally derived data such as nucleotide sequence, protein sequence or macromolecular structure. Importantly, once given a database accession number, the data in primary databases are never changed: they form part of the scientific record. By contrast, <strong>secondary databases</strong> comprise data derived from the results of analysing primary data. Secondary databases often draw upon information from numerous sources, including other databases and the scientific literature. They are highly curated, often using a complex combination of computational algorithms and/or manual analysis and interpretation to derive new knowledge from the public record of science.</p>
@@ -307,7 +311,7 @@ div.csl-indent {
 <div id="fig-full" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><a href="https://github.com/StrBio/strbio2022_23/raw/main/pics/bbdd_full.pdf"><img src="pics/bbdd_full.svg" class="img-fluid figure-img"></a></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2: Main features of protein databases (updated in 2020)</figcaption><p></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3: Main features of protein databases (updated in 2020)</figcaption><p></p>
 </figure>
 </div>
 </section>
@@ -315,8 +319,8 @@ div.csl-indent {
 <section id="ddbbs-practice" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> <span style="color:green"><strong>DDBBs Practice</strong></span></h1>
 <p>Remember to work on groups as assigned. Groups should be the same for all the course exercises.</p>
-<section id="classify-the-following-protein-structures-into-groups-and-subgroups" class="level3" data-number="3.0.1">
-<h3 data-number="3.0.1" class="anchored" data-anchor-id="classify-the-following-protein-structures-into-groups-and-subgroups"><span class="header-section-number">3.0.1</span> 1. Classify the following protein structures into “groups” and “subgroups”</h3>
+<section id="classify-the-following-protein-structures-into-groups-and-subgroups" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="classify-the-following-protein-structures-into-groups-and-subgroups"><span class="header-section-number">3.1</span> Classify the following protein structures into “groups” and “subgroups”</h2>
 <p>Focus only in structural databases (CATH, Scop2), but any given database can be helpful in a different way. Use generic terms, valid for any hierarchical classification, independent of the database(s) used.</p>
 <table class="table">
 <thead>
@@ -358,21 +362,22 @@ div.csl-indent {
 </tbody>
 </table>
 </section>
-<section id="briefly-answer-these-questions" class="level3" data-number="3.0.2">
-<h3 data-number="3.0.2" class="anchored" data-anchor-id="briefly-answer-these-questions"><span class="header-section-number">3.0.2</span> 2. Briefly answer these questions:</h3>
-<p><br>
-</p>
-<p><strong>a. Can you suggest the structural and evolutionary relationship between them?</strong><br>
-<strong>b. Which of the structures is more difficult to group?</strong><br>
-<strong>c.&nbsp;Which are the pros/cons of each database?</strong></p>
-<hr>
+<section id="answer-these-questions" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="answer-these-questions"><span class="header-section-number">3.2</span> Answer these questions</h2>
+<section id="a.-can-you-suggest-the-structural-and-evolutionary-relationship-between-them" class="level4">
+<h4 class="anchored" data-anchor-id="a.-can-you-suggest-the-structural-and-evolutionary-relationship-between-them"><strong>a. Can you suggest the structural and evolutionary relationship between them?</strong></h4>
+</section>
+<section id="b.-which-of-the-structures-is-more-difficult-to-group" class="level4">
+<h4 class="anchored" data-anchor-id="b.-which-of-the-structures-is-more-difficult-to-group"><strong>b. Which of the structures is more difficult to group</strong></h4>
+</section>
+<section id="c.-which-are-the-proscons-of-each-database" class="level4">
+<h4 class="anchored" data-anchor-id="c.-which-are-the-proscons-of-each-database"><strong>c.&nbsp;Which are the pros/cons of each database?</strong></h4>
+<p>Answer briefly.</p>
+
+
+
 </section>
 </section>
-<section id="section" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> </h1>
-
-
-
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
