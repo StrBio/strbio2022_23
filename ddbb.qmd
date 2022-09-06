@@ -11,6 +11,7 @@ format:
     toc-location: right
     toc-depth: 4
     number-sections: true
+    number-depth: 3
     code-overflow: wrap
     link-external-icon: true
     link-external-newwindow: true
@@ -57,7 +58,7 @@ RMSD, the best alignment/superposition).
 ![Structural alignment of three different AP endoncleases with the
 [*cealign*]{.ul} algorithm implemented in Pymol. The RMSD and the number of
 aligned residues for each pair of structures is
-indicated.](pics/rmsd.png "RMSD_example"){#rmsd .figure}
+indicated.](pics/rmsd.png "RMSD_example"){#fig-rmsd .figure width="500"}
 
 # Major protein databases
 
@@ -310,7 +311,7 @@ tools [@sillitoe2021].
 Remember to work on groups as assigned. Groups should be the same for all the
 course exercises.
 
-### 1. Classify the following protein structures into "groups" and "subgroups"
+## Classify the following protein structures into "groups" and "subgroups"
 
 Focus only in structural databases (CATH, Scop2), but any given database can be
 helpful in a different way. Use generic terms, valid for any hierarchical
@@ -329,15 +330,12 @@ classification, independent of the database(s) used.
 | 1AKO       |
 | 6KHY       |
 
-### 2. Briefly answer these questions:
+## Answer these questions
 
-\
+#### **a. Can you suggest the structural and evolutionary relationship between them?**
 
-**a. Can you suggest the structural and evolutionary relationship between
-them?**\
-**b. Which of the structures is more difficult to group?**\
-**c. Which are the pros/cons of each database?**
+#### **b. Which of the structures is more difficult to group**
 
---------------------------------------------------------------------------------
+#### **c. Which are the pros/cons of each database?**
 
-# 
+Answer briefly.

@@ -1,5 +1,5 @@
 ---
-title: "About StrBio 22-23"
+title: "StrBio 2022-23"
 author: "Modesto Redrejo Rodríguez"
 date: "`r Sys.Date()`"
 suppress-bibliography: true
@@ -17,17 +17,17 @@ This site contains the materials for the *Structural Bioinformatics* course of f
 
 [![Link to the website of the Master's Degree in Bioinformatics & Computational Biology at UAM](pics/QR_master.png "Master's Degree in Bioinformatics & Computational Biology")](https://www-uam-es.translate.goog/Medicina/MasterBioinformaticaBiologiaComputacional/1446820907497.htm?language=es&nodepath=M?ster+Universitario+en+Bioinform?tica+y+Biolog?a+Computacional&_x_tr_sl=es&_x_tr_tl=en&_x_tr_hl=es&_x_tr_pto=wapp)
 
-The contents of this short course are also largely inspired in the works of others that shared their course materials, tips and other kind of resources on their own websites, GitHub or Twitter, including Alexandre Bovin, Sergey Ovchinnikov, Martin Steinegger, Carlos Outeiral, among many others. I tried to acknowledge (and link!) each one of those contributions but I'd like to apologize beforehand for those that I may have not mention.
+Besides some already classic books, reviews, and articles that are referenced, the contents of this short course are also largely inspired by the works of others that shared their course materials, tips, and other resources on their own blogs or websites, as well as discussions on Twitter, including [Alexandre Bovin](https://www.uu.nl/staff/amjjbonvin), [Sergey Ovchinnikov](https://twitter.com/sokrypton), [Martin Steinegger](https://twitter.com/thesteinegger) and [Carlos Outeiral](https://twitter.com/c_outeiral?lang=es), among many others. I tried to acknowledge (and link!) each one of those contributions but I'd like to apologize beforehand for those that I may have not mentioned.
 
-The course contains three practical exercises that will guide you through the use of Pymol for molecules visualization and modeling proteins by homology modeling and alphafold. [Moreover, at the end of some sections there are several questions highlighted in green that pretend to motivate you to think about the acquired knowledge and skills and go a little bit forward in the interpretation of the results.]{style="color:green"}
+The course contains three practical exercises that will guide you through the use of Pymol for molecules visualization and modeling proteins by homology modeling and alphafold. [Moreover, in some of the sections there are several exercises/questions, highlighted in green that pretend to motivate you to think about the acquired knowledge and skills and go a little bit forward in the interpretation of the results.]{style="color:green"}
 
 As a suggestion, I would also like to invite you to check the set of exercises on Structural Bioinformatics from the Pontificia Universidad Católica de Chile, described in [Engelberger et al. (2021)](https://pubs.acs.org/doi/10.1021/acs.jchemed.1c00022): <https://github.com/pb3lab/ibm3202>
 
-:::{.callout-warning}
+::: callout-warning
 ## Under construction
 :::
 
-Note that this site is under development and I only expect to have a first complete draft by the end of the semester (December 2022). Any help or suggestions will be very warmly welcome.
+Note that this site is a draft under development and I only expect to have a first complete version by the end of the semester at the earliest (December 2022). Any feedback, help or suggestions will be very warmly welcome.
 
 ![](pics/8275a.jpg "Under construction...")
 

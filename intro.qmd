@@ -37,7 +37,7 @@ outputFormat   = opts_knit$get("rmarkdown.pandoc.to")
 
 ```
 
-## Goals {data-link="Preface"}
+# Goals {data-link="Preface"}
 
 [Structural
 Bioinformatics](https://en.wikipedia.org/wiki/Structural_bioinformatics "Wikipedia")
@@ -218,9 +218,8 @@ The side chain of amino acids also have their torsion angles, referred as χ1,
 for the backbone (ϕ and ψ angles) and the side chain (χ angles) of an amino
 acid. The number of χ angles varies between zero and four for the 20 standard
 amino acids. The figure shows a ball-and-stick representation of glutamate,
-which has three χ angles (from
-@harder2010).](images/paste-6EE800AE.png){#fig-chi
-.figure}](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-11-306)
+which has three χ angles (from ).](images/paste-6EE800AE.png){#fig-chi .figure
+width="450"}](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-11-306)
 
 ### Ramachandran Plot {#sec-rama}
 

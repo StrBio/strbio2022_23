@@ -1,5 +1,5 @@
 ---
-title: "Protein structures"
+title: "Protein Structures"
 author: "Modesto Redrejo Rodríguez"
 date: "`r Sys.Date()`"
 toc: true 
@@ -217,7 +217,7 @@ the experimental data is modeled.
 
 ![The effect of resolution on the quality of the electron density. The Tyr100
 residue from concanavalin A as found in the indicated PDB structures at 3 Å, 2 Å
-and 1.2 Å. Picture inspired in Figure 14.5 from \@structura and rendered with
+and 1.2 Å. Picture inspired in Figure 14.5 from @structura and rendered with
 Pymol (see [concanavalin.pse](../concanavalin.pse) and
 [concanavalin.txt](../concanavalin.txt) in the Repo for details about the
 picture display).](images/paste-C3031EBE.png){#fig-reso .figure}
@@ -249,7 +249,8 @@ defined by data. However, it should be also noted that this parameter can be
 also misleading as it is highly dependent on the procedure used to generate the
 and selection the data that is submitted to the PDB. An experimentalist could
 reduce the RMSD by choosing the "best" few structures for deposition from a much
-larger draft.
+larger draft. Note that the RMSD has many other applications, like comparing
+different structures or models from the same or related sequences.
 
 In the last years, along with the boost in quantity and quality of EM
 structures, new parameters have been proposed. One of them, the
@@ -265,17 +266,19 @@ Q-score values in the reports will be in a range of -1 to +1.
 ## Stereochemical parameters
 
 Given that all structural models contain some degree of error and some of the
-modeling global parameters can be controversial, we can analyze model's
-geometry, stereochemistry and other structural properties to assess structural
-models (experimentally or computationally-obtained). These parameters compare a
+modeling global parameters can be controversial, we can analyze the model's
+geometry, stereochemistry, and other structural properties to assess structural
+models (experimentally or computationally obtained). These parameters compare a
 given structure (protein or nucleic acid) against what is already known about
-these kind of molecules, based in our knowledge from high-res structures. That
+this kind of molecule, based on our knowledge from high-res structures. That
 means that the (best) structures in the current structural space define what is
-"normal" in a protein. The advantage of these analysis and derived parameters is
-that they do not consider the process that lead to the model, the only consider
-the final product and its reliability.
+"normal" in a protein structure. The advantage of these analyses and derived
+parameters is that they do not consider the process that leads to the model,
+they only consider the final product and its reliability. The main disadvantage
+is that the current structural space is biased to proteins of known function and
+with biomedical or biotechnological interest.
 
-One of the most common and powerful method to asses the stereochemistry of a
+One of the most common and powerful methods to asses the stereochemistry of a
 protein is the [Ramachandran plot](intro.html#sec-rama), defined in 1963 and
 still in use.
 
@@ -436,12 +439,12 @@ Other applications that you may know or came into are:
 
 Our PyMOL Practice has two parts.
 
-## [1. A 10-steps self-guided practice](https://www.evernote.com/shard/s62/client/snv?noteGuid=666c39a1-ac03-64c9-b8a0-cab9ff3959c7&noteKey=9d20b6eadae8d130fdbe6652d60237f2&sn=https%3A%2F%2Fwww.evernote.com%2Fshard%2Fs62%2Fsh%2F666c39a1-ac03-64c9-b8a0-cab9ff3959c7%2F9d20b6eadae8d130fdbe6652d60237f2&title=StrBio%2B2022%252F2023%2B-%2B3.%2BPymol%2BPractice)
+## [A 10-steps self-guided practice](https://www.evernote.com/shard/s62/client/snv?noteGuid=666c39a1-ac03-64c9-b8a0-cab9ff3959c7&noteKey=9d20b6eadae8d130fdbe6652d60237f2&sn=https%3A%2F%2Fwww.evernote.com%2Fshard%2Fs62%2Fsh%2F666c39a1-ac03-64c9-b8a0-cab9ff3959c7%2F9d20b6eadae8d130fdbe6652d60237f2&title=StrBio%2B2022%252F2023%2B-%2B3.%2BPymol%2BPractice)
 
 This is a [Evernote](https://evernote.com/intl/es) note that you can consult
 online and also copy into your Evenote account if you wish.
 
-## 2. PyMOL Challenge
+## PyMOL Challenge
 
 Make a ready-to-publish picture of your favorite protein. As a suggestion, you
 can reproduce the top panels in the Figure 1B of @gao2020, but any structure
