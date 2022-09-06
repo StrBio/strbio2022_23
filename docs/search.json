@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "About StrBio 22-23",
+    "title": "StrBio 2022-23",
     "section": "",
-    "text": "This site contains the materials for the Structural Bioinformatics course of fall 2022 in the Master’s Degree in Bioinformatics & Computational Biology @UAM. All these materials is open access and it is shared under CC BY-NC license. Detailed academic information about the course contents, dates and assessment only can be found at the UAM Moodle site.\n\n\n\nLink to the website of the Master’s Degree in Bioinformatics & Computational Biology at UAM\n\n\nThe contents of this short course are also largely inspired in the works of others that shared their course materials, tips and other kind of resources on their own blogs or websites, as well as discussions on Twitter, including Alexandre Bovin, Sergey Ovchinnikov, Martin Steinegger and Carlos Outeiral, among many others. I tried to acknowledge (and link!) each one of those contributions but I’d like to apologize beforehand for those that I may have not mentioned.\nThe course contains three practical exercises that will guide you through the use of Pymol for molecules visualization and modeling proteins by homology modeling and alphafold. Moreover, at the end of some sections there are several questions highlighted in green that pretend to motivate you to think about the acquired knowledge and skills and go a little bit forward in the interpretation of the results.\nAs a suggestion, I would also like to invite you to check the set of exercises on Structural Bioinformatics from the Pontificia Universidad Católica de Chile, described in Engelberger et al. (2021): https://github.com/pb3lab/ibm3202\n\n\n\n\n\n\nUnder construction\n\n\n\n\n\n\nNote that this site is a draft under development and I only expect to have a first complete version by the end of the semester (December 2022). Any help or suggestions will be very warmly welcome.\n\n\n\nPlease let me know if you find some mistake missing reference. Definitely, I’ll appreciate any suggestion or correction. You can reach me by email or  Twitter."
+    "text": "This site contains the materials for the Structural Bioinformatics course of fall 2022 in the Master’s Degree in Bioinformatics & Computational Biology @UAM. All these materials is open access and it is shared under CC BY-NC license. Detailed academic information about the course contents, dates and assessment only can be found at the UAM Moodle site.\n\n\n\nLink to the website of the Master’s Degree in Bioinformatics & Computational Biology at UAM\n\n\nBesides some already classic books, reviews, and articles that are referenced, the contents of this short course are also largely inspired by the works of others that shared their course materials, tips, and other resources on their own blogs or websites, as well as discussions on Twitter, including Alexandre Bovin, Sergey Ovchinnikov, Martin Steinegger and Carlos Outeiral, among many others. I tried to acknowledge (and link!) each one of those contributions but I’d like to apologize beforehand for those that I may have not mentioned.\nThe course contains three practical exercises that will guide you through the use of Pymol for molecules visualization and modeling proteins by homology modeling and alphafold. Moreover, in some of the sections there are several exercises/questions, highlighted in green that pretend to motivate you to think about the acquired knowledge and skills and go a little bit forward in the interpretation of the results.\nAs a suggestion, I would also like to invite you to check the set of exercises on Structural Bioinformatics from the Pontificia Universidad Católica de Chile, described in Engelberger et al. (2021): https://github.com/pb3lab/ibm3202\n\n\n\n\n\n\nUnder construction\n\n\n\n\n\n\nNote that this site is a draft under development and I only expect to have a first complete version by the end of the semester at the earliest (December 2022). Any feedback, help or suggestions will be very warmly welcome.\n\n\n\nPlease let me know if you find some mistake missing reference. Definitely, I’ll appreciate any suggestion or correction. You can reach me by email or  Twitter."
   },
   {
     "objectID": "summary.html",
@@ -123,7 +123,7 @@
     "href": "ddbb.html",
     "title": "Protein Databases",
     "section": "",
-    "text": "As in the case of sequences, comparison and alignment of protein structures is a fundamental and widely used task in computational structure biology. The identification and statistical measure of the similarities between two or more structures allow their classification and infer functional and evolutionary relationships. Moreover, this process is essential during protein modeling, allowing to identify, assess, and select intermediate models.\nIt is also important to clear up any possible confusion between alignment and superposition, as they are often interchanged in the literature. An structural alignment tries to identify similarities and differences between two structures, while structure superposition requires the previous knowledge of such equivalences. Thus, superposition tires to minimize the distance between already known equivalent structures by finding a transformation that produces either the lowest root-mean-square deviation (RMSD) or the maximal equivalences within an RMSD cutoff. A better alignment will allow a better superposition. Thus, although alignment and superposition are two different processes, the RMSD can be used as an indication of both (the lowest RMSD, the best alignment/superposition).\n\n\n\n\n\nStructural alignment of three different AP endoncleases with the cealign algorithm implemented in Pymol. The RMSD and the number of aligned residues for each pair of structures is indicated."
+    "text": "As in the case of sequences, comparison and alignment of protein structures is a fundamental and widely used task in computational structure biology. The identification and statistical measure of the similarities between two or more structures allow their classification and infer functional and evolutionary relationships. Moreover, this process is essential during protein modeling, allowing to identify, assess, and select intermediate models.\nIt is also important to clear up any possible confusion between alignment and superposition, as they are often interchanged in the literature. An structural alignment tries to identify similarities and differences between two structures, while structure superposition requires the previous knowledge of such equivalences. Thus, superposition tires to minimize the distance between already known equivalent structures by finding a transformation that produces either the lowest root-mean-square deviation (RMSD) or the maximal equivalences within an RMSD cutoff. A better alignment will allow a better superposition. Thus, although alignment and superposition are two different processes, the RMSD can be used as an indication of both (the lowest RMSD, the best alignment/superposition).\n\n\n\n\n\nFigure 1: Structural alignment of three different AP endoncleases with the cealign algorithm implemented in Pymol. The RMSD and the number of aligned residues for each pair of structures is indicated."
   },
   {
     "objectID": "ddbb.html#sequence-databases",
@@ -151,7 +151,7 @@
     "href": "ddbb.html#graphical-summary",
     "title": "Protein Databases",
     "section": "2.3 Graphical summary",
-    "text": "2.3 Graphical summary\n\n\n\nFigure 2: Main features of protein databases (updated in 2020)"
+    "text": "2.3 Graphical summary\n\n\n\nFigure 3: Main features of protein databases (updated in 2020)"
   },
   {
     "objectID": "ddbb.html#strDDBB",
@@ -236,5 +236,26 @@
     "title": "Protein Structures",
     "section": "3.2 Stereochemical parameters",
     "text": "3.2 Stereochemical parameters\nGiven that all structural models contain some degree of error and some of the modeling global parameters can be controversial, we can analyze model’s geometry, stereochemistry and other structural properties to assess structural models (experimentally or computationally-obtained). These parameters compare a given structure (protein or nucleic acid) against what is already known about these kind of molecules, based in our knowledge from high-res structures. That means that the (best) structures in the current structural space define what is “normal” in a protein. The advantage of these analysis and derived parameters is that they do not consider the process that lead to the model, the only consider the final product and its reliability.\nOne of the most common and powerful method to asses the stereochemistry of a protein is the Ramachandran plot, defined in 1963 and still in use.\nAnother widely used analysis (and available for all PDB structures) is the side chain torsion angles, usually measured as Side chain outliers. As outlined in the Introduction, amino acid side chains also have some preferred conformations. Like the Ramachandran plot, a plot of the χ1-χ2 torsion angles can indicate problems with a protein model when angle values are outside of the high density values.\nBad contact or clashes indicate a bad model. It is obvious that two atoms cannot be in the same (or very close) spot. We can define this as a situation where two nonbonded atoms have a center-to-center distance that is smaller than the sum of their van der Walls radii."
+  },
+  {
+    "objectID": "ddbb.html#classify-the-following-protein-structures-into-groups-and-subgroups",
+    "href": "ddbb.html#classify-the-following-protein-structures-into-groups-and-subgroups",
+    "title": "Protein Databases",
+    "section": "3.1 Classify the following protein structures into “groups” and “subgroups”",
+    "text": "3.1 Classify the following protein structures into “groups” and “subgroups”\nFocus only in structural databases (CATH, Scop2), but any given database can be helpful in a different way. Use generic terms, valid for any hierarchical classification, independent of the database(s) used.\n\n\n\nStructures\n\n\n\n\n2MNA\n\n\n2WB0\n\n\n1C0A\n\n\n1QUM\n\n\n5ZHZ\n\n\n5CFE\n\n\n1DE9\n\n\n6WCD\n\n\n1AKO\n\n\n6KHY"
+  },
+  {
+    "objectID": "ddbb.html#briefly-answer-these-questions",
+    "href": "ddbb.html#briefly-answer-these-questions",
+    "title": "Protein Databases",
+    "section": "3.2 Briefly answer these questions:",
+    "text": "3.2 Briefly answer these questions:\n\n3.2.1 a. Can you suggest the structural and evolutionary relationship between them?\n\n\n3.2.2 b. Which of the structures is more difficult to group"
+  },
+  {
+    "objectID": "ddbb.html#answer-these-questions",
+    "href": "ddbb.html#answer-these-questions",
+    "title": "Protein Databases",
+    "section": "3.2 Answer these questions",
+    "text": "3.2 Answer these questions\n\na. Can you suggest the structural and evolutionary relationship between them?\n\n\nb. Which of the structures is more difficult to group\n\n\nc. Which are the pros/cons of each database?\nAnswer briefly."
   }
 ]
