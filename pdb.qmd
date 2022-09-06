@@ -39,8 +39,8 @@ outputFormat   = opts_knit$get("rmarkdown.pandoc.to")
 ## Warning for current and future structural biologists
 :::
 
-![Ceci n'est pas une proteine. Source:
-https://swissmodel.expasy.org/static/course/files/PartIII_quality_assesment.pdf](pics/magritte.png "Ceci n'est pas une proteine"){#fig-magritte
+![Ceci n'est pas une proteine. Source: [SwissModel
+site](https://swissmodel.expasy.org/static/course/files/PartIII_quality_assesment.pdf).](pics/magritte.png "Ceci n'est pas une proteine"){#fig-magritte
 .figure}
 
 The surrealist Belgian painter René Magritte created a collection of
@@ -92,9 +92,9 @@ link between the diffraction pattern and the electron density is not trivial and
 requires some complex maths, called [Fourier
 transforms](http://pruffle.mit.edu/atomiccontrol/education/xray/fourier.php).
 
-[![Schematic workflow of X-ray crystallography. From
-[https://www.creative-biostructure.com/comparison-of-crystallography-nmr-and-em_6.htm](https://www.creative-biostructure.com/comparison-of-crystallography-nmr-and-em_6.htmhttps://www.creative-biostructure.com/comparison-of-crystallography-nmr-and-em_6.htm)](images/paste-F430F5B1.png){#fig-xray
-.figure}](https://www.creative-biostructure.com/comparison-of-crystallography-nmr-and-em_6.htm)
+![Schematic workflow of X-ray crystallography. From Creative Structure
+[website](https://www.creative-biostructure.com/comparison-of-crystallography-nmr-and-em_6.htm).](images/paste-F430F5B1.png){#fig-xray
+.figure}
 
 X-ray is a powerful method that allows obtaining high-resolution structures at
 the atomic level of soluble or membrane proteins, either as an apoenzyme or as a
@@ -127,9 +127,9 @@ the analyzed sample, thus providing characteristic NMR signals. Interpretation
 of these signals by computer-aided methods leads to deciphering of the
 three-dimensional structure.
 
-[![Basis of nuclear magnetic resonance. From
-[https://www.creative-biostructure.com/comparison-of-crystallography-nmr-and-em_6.htm](https://www.creative-biostructure.com/comparison-of-crystallography-nmr-and-em_6.htmhttps://www.creative-biostructure.com/comparison-of-crystallography-nmr-and-em_6.htm)](images/paste-2013F0AC.png){#fig-rmn
-.figure}](https://www.creative-biostructure.com/comparison-of-crystallography-nmr-and-em_6.htm)
+![Basis of nuclear magnetic resonance. From Creative Structure
+[website](https://www.creative-biostructure.com/comparison-of-crystallography-nmr-and-em_6.htm).](images/paste-2013F0AC.png){#fig-rmn
+.figure}
 
 The most important feature of the NMR method is that the three-dimensional
 structure of macromolecules in the natural state can be measured directly in
@@ -157,9 +157,10 @@ recorded on the detector. A key subsequent step is signal processing, that
 transform thousands of images of the particles in any orientation into a
 three-dimensional structure of the sample.
 
-[![The process of Cryo-EM single particle analysis technique. From
-h[ttps://www.creative-biostructure.com/comparison-of-crystallography-nmr-and-em_6.htm](https://www.creative-biostructure.com/comparison-of-crystallography-nmr-and-em_6.htm)](images/paste-5E29F580.png){#fig-cryoEM
-.figure}](https://www.creative-biostructure.com/comparison-of-crystallography-nmr-and-em_6.htm)
+![The process of Cryo-EM single particle analysis technique. From Creative
+Structure
+[website](https://www.creative-biostructure.com/comparison-of-crystallography-nmr-and-em_6.htm).](images/paste-5E29F580.png){#fig-cryoEM
+.figure}
 
 The use of electron microscopy methods for structural biology was traditionally
 limited to very large macromolecular complexes, like viral capsids, and only
@@ -172,9 +173,9 @@ and processing that allow obtaining pictures at the atomic level
 Chemistry](https://www.nobelprize.org/prizes/chemistry/2017/press-release/) to
 Jacques Dubochet, Joachim Frank and Richard Henderson.
 
-[![Cryo-electron microscopy revolution. From
-<https://www.creative-biostructure.com/comparison-of-crystallography-nmr-and-em_6.htm>](images/paste-E5E5AE75.png){#fig-cryoEM2
-.figure}](https://www.creative-biostructure.com/comparison-of-crystallography-nmr-and-em_6.htm)
+![Cryo-electron microscopy revolution. From Creative Structure
+[website](https://www.creative-biostructure.com/comparison-of-crystallography-nmr-and-em_6.htm).](images/paste-E5E5AE75.png){#fig-cryoEM2
+.figure}
 
 ::: {.callout-tip collapse="true"}
 ### Tip
@@ -435,7 +436,7 @@ Other applications that you may know or came into are:
     was in 2009. It was a pioneer as a simple molecular display open-source
     application, but it is outdated nowadays.
 
-### 
+
 
 # [**PyMOL Practice**]{style="color:green"}
 
