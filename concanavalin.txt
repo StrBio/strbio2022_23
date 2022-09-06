@@ -1,0 +1,34 @@
+#short script
+fetch 1VAL
+fetch 1CON
+fetch 1JBC
+fetch 1VAL, type=2fofc
+fetch 1CON, type=2fofc
+fetch 1JBC, type=2fofc
+
+#create a mesh representation of the density map from each of the 2fofc data
+#Action > Mesh > @1.0Å
+
+cealign 1CON, 1JBC
+cealign 1VAL, 1JBC
+
+#matrix_copy to move the mesh after align structures
+
+matrix_copy 1JBC, 1JBC_2fofc
+matrix_copy 1CON, 1CON_2fofc
+
+#create a monomer from 1VAL and hide the original object
+select 1VAL and chain A
+create monomer, sele
+cealign 1JBC, monomer
+#hide 1VAL
+
+#select the position of the residue of interest in the Z-axis
+clip slab, 5, monomer and resi 100
+#hide/show each structure
+
+#some cosmetics
+bg_color white
+ray_trace_fog, 1
+set antialias, 6
+  

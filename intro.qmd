@@ -10,7 +10,7 @@ format:
     toc: true
     toc-location: right
     toc-depth: 4
-    number-sections: false
+    number-sections: true
     code-overflow: wrap
     link-external-icon: true
     link-external-newwindow: true
@@ -37,7 +37,7 @@ outputFormat   = opts_knit$get("rmarkdown.pandoc.to")
 
 ```
 
-## Goals and Warnings {data-link="Preface"}
+## Goals {data-link="Preface"}
 
 [Structural
 Bioinformatics](https://en.wikipedia.org/wiki/Structural_bioinformatics "Wikipedia")
@@ -49,7 +49,7 @@ will allow us to precisely reason about the function of these systems and the
 effects of modifications and perturbations.
 
 The goals of SB require at least four different research lines (see Chapter 1 in
-@structura). :
+@structura):
 
 1.  *Visualization* of complex structures with several sources of information:
     sequence, structural data, electrostatic fields, location of functional
@@ -79,40 +79,16 @@ capacities to analyze the structure of proteins and other biological molecules
 and structures (see @callaway2020) and the development of Artificial
 Intelligence (AI)-assisted structure prediction boosted the capacity of
 life-science researchers to address a wide variety of questions regarding
-proteins diversity, evolution and function. The implications of this revolution
-in biology, biotechnology, and biomedicine are still unforeseen.
+proteins diversity, evolution and function. This revolution underwent a great
+acceleration in the last 2-3 years and the implications in biology,
+biotechnology, and biomedicine are still unforeseen.
 
-## Warning for current and future structural biologists
-
-![Ceci n'est pas une proteine. Source:
-https://swissmodel.expasy.org/static/course/files/PartIII_quality_assesment.pdf](pics/magritte.png "Ceci n'est pas une proteine"){#fig-magritte
-.figure}
-
-The surrealist Belgian painter René Magritte created a collection of
-surrealistic paintings entitled [***La trahison des images***
-(1928--1929)](https://en.wikipedia.org/wiki/The_Treachery_of_Images "Magritte").
-The most renowned of those paintings show a smoking pipe and the following
-caption underneath: *"Ceci n'est pas une pipe"* (This is not a pipe). Yes,
-indeed! It is actually the painting of a pipe.
-
-Similarly, a picture of a protein, or a PDB file with the coordinates of a
-protein structure, is not a protein. It is a representation of ONE structure.
-Even experimentally determined structures have two main limitations that we
-should always keep in mind: (1) they are a fixed structure whereas proteins *in
-vivo* are flexible and dynamic and (2) they are subjected to experimental error
-and they often contain regions of low reliability. Moreover, even experimentally
-obtained macromolecular structures are to some degree models, with a variable
-ratio between experimental data and computational prediction to match the
-experimental data (X-ray diffraction, cryo-EM density maps, NMR, SAXS, FRET...)
-with previously known structures or prediction models. That does not mean that
-protein structures are useless, they can be very useful, but we must be aware of
-the limitations as well as the applications.
-
-# Before going forward: Protein Structure 101
+# Before going forward: Protein Structure 101 {#sec-str}
 
 Although you can make some protein modeling without being an expert in
 structural biology, a basic understanding of protein structure is strongly
-advisable. Over the years, I noticed that graduate students in biology,
+advisable. In this course there are some students without a background in
+biology. Moreover, over the years, I noticed that graduate students in biology,
 biomedicine, and related fields have a very different background on protein
 structure. If you want to review and update your background on protein
 structure, I recommend you reading Chapter 2 of @structur, the great recent
@@ -235,7 +211,18 @@ especially common in β-turns (the most common connector between strands), as
 [amino acids](https://en.wikipedia.org/wiki/Amino_acid "Amino acid") with
 positive φ angles.
 
-### Ramachandran Plot
+The side chain of amino acids also have their torsion angles, referred as χ1,
+χ2, χ3...
+
+[![Dihedral angles in glutamate: Dihedral angles are the main degrees of freedom
+for the backbone (ϕ and ψ angles) and the side chain (χ angles) of an amino
+acid. The number of χ angles varies between zero and four for the 20 standard
+amino acids. The figure shows a ball-and-stick representation of glutamate,
+which has three χ angles (from
+@harder2010).](images/paste-6EE800AE.png){#fig-chi
+.figure}](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-11-306)
+
+### Ramachandran Plot {#sec-rama}
 
 As you probably already figure out, many combinations of φ and ψ angles are
 forbidden because of the principle of steric exclusion: two atoms cannot be in
@@ -300,7 +287,8 @@ structures.](pics/clasif.png){#fig-chlothia .figure}
 As known fold space has become more and more complex, these types of
 classifications have been adjusted and extended such that a complete hierarchy
 is created. The most commonly referred approaches to this sort of classification
-are those used by SCOP and CATH databases.
+are those used by SCOP and CATH databases, as we will see in the [Structural
+Databases](ddbb.html#strDDBB) section.
 
 ### [**Hands on: Playing with secondary structures**]{style="color:green"}
 
@@ -341,23 +329,17 @@ interesting examples (IUPAC one-letter amino acid code):
 
 5.  ACTWEGNKLTCA
 
-[**Answer the following questions:**]{style="color:green"}
-
-**\
-[- Why is a poly-K more stable (dark blue) than a poly-A?\
+**1. Answer the following questions:**\
+**- Why is a poly-K more stable (dark blue) than a poly-A?**\
 \
-- Could you predict the structure of a poly-V or a poly-G?\
+**- Could you predict the structure of a poly-V or a poly-G?**\
 \
-- What would happen if you introduce a K5W in the structure number 2? and in the
-4?\
+**- What would happen if you introduce a K5W in the structure number 2? and in
+the 4?**\
 \
-Now, try to create peptides with:\
 \
-- Two helices\
-- A four-strands beta-sheet.\
-- Alpha-beta-beta-alpha.]{style="color:green"}**[\
-]{style="color:green"}
-
---------------------------------------------------------------------------------
-
-# References
+**2. Now, try to create peptides with:**\
+\
+**- Two helices.**\
+**- A four-strands beta-sheet.**\
+**- Alpha-beta-beta-alpha.**\

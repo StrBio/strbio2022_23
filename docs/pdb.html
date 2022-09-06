@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Modesto Redrejo Rodríguez">
-<meta name="dcterms.date" content="2022-08-30">
+<meta name="dcterms.date" content="2022-09-06">
 
-<title>Structural Bioinformatics 2022-23 - Working with protein structures</title>
+<title>Structural Bioinformatics 2022-23 - Protein structures</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -17,6 +17,25 @@ span.underline{text-decoration: underline;}
 div.column{display: inline-block; vertical-align: top; width: 50%;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -64,7 +83,7 @@ ul.task-list{list-style: none;}
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Working with protein structures</h1>
+      <h1 class="quarto-secondary-nav-title">Protein structures</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -117,7 +136,7 @@ ul.task-list{list-style: none;}
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pdb.html" class="sidebar-item-text sidebar-link active">Working with protein structures</a>
+  <a href="./pdb.html" class="sidebar-item-text sidebar-link active">Protein structures</a>
   </div>
 </li>
     </ul>
@@ -151,11 +170,37 @@ ul.task-list{list-style: none;}
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#protein-structure-display-and-the-actual-protein-structure" id="toc-protein-structure-display-and-the-actual-protein-structure" class="nav-link active" data-scroll-target="#protein-structure-display-and-the-actual-protein-structure">Protein structure display and the actual protein structure</a></li>
-  <li><a href="#experimentally-obtained-structures" id="toc-experimentally-obtained-structures" class="nav-link" data-scroll-target="#experimentally-obtained-structures">Experimentally obtained structures</a></li>
-  <li><a href="#protein-structure-files-formats" id="toc-protein-structure-files-formats" class="nav-link" data-scroll-target="#protein-structure-files-formats">Protein structure files formats</a></li>
-  <li><a href="#biological-macromolecules-display-applications" id="toc-biological-macromolecules-display-applications" class="nav-link" data-scroll-target="#biological-macromolecules-display-applications">Biological macromolecules display applications</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#obtaining-and-working-with-protein-structures" id="toc-obtaining-and-working-with-protein-structures" class="nav-link active" data-scroll-target="#obtaining-and-working-with-protein-structures"> <span class="header-section-number">1</span> Obtaining and working with protein structures</a></li>
+  <li><a href="#experimental-determination-of-protein-structures" id="toc-experimental-determination-of-protein-structures" class="nav-link" data-scroll-target="#experimental-determination-of-protein-structures"> <span class="header-section-number">2</span> Experimental determination of protein structures</a>
+  <ul class="collapse">
+  <li><a href="#x-ray-crystallography-or-single-crystal-x-ray-diffraction" id="toc-x-ray-crystallography-or-single-crystal-x-ray-diffraction" class="nav-link" data-scroll-target="#x-ray-crystallography-or-single-crystal-x-ray-diffraction"> <span class="header-section-number">2.1</span> X-Ray crystallography or single crystal X-ray diffraction</a></li>
+  <li><a href="#nuclear-magnetic-resonance" id="toc-nuclear-magnetic-resonance" class="nav-link" data-scroll-target="#nuclear-magnetic-resonance"> <span class="header-section-number">2.2</span> Nuclear Magnetic Resonance</a></li>
+  <li><a href="#electron-cryomicroscopy" id="toc-electron-cryomicroscopy" class="nav-link" data-scroll-target="#electron-cryomicroscopy"> <span class="header-section-number">2.3</span> Electron cryomicroscopy</a></li>
+  </ul></li>
+  <li><a href="#sec-assess" id="toc-sec-assess" class="nav-link" data-scroll-target="#sec-assess"> <span class="header-section-number">3</span> Structural quality assurance</a>
+  <ul class="collapse">
+  <li><a href="#global-parameters-in-experimentally-based-structures" id="toc-global-parameters-in-experimentally-based-structures" class="nav-link" data-scroll-target="#global-parameters-in-experimentally-based-structures"> <span class="header-section-number">3.1</span> Global parameters in experimentally-based structures</a></li>
+  <li><a href="#stereochemical-parameters" id="toc-stereochemical-parameters" class="nav-link" data-scroll-target="#stereochemical-parameters"> <span class="header-section-number">3.2</span> Stereochemical parameters</a></li>
+  </ul></li>
+  <li><a href="#protein-structure-display" id="toc-protein-structure-display" class="nav-link" data-scroll-target="#protein-structure-display"> <span class="header-section-number">4</span> Protein structure display</a>
+  <ul class="collapse">
+  <li><a href="#protein-structure-file-formats" id="toc-protein-structure-file-formats" class="nav-link" data-scroll-target="#protein-structure-file-formats"> <span class="header-section-number">4.1</span> Protein structure file formats</a>
+  <ul class="collapse">
+  <li><a href="#occupancy-and-b-factor" id="toc-occupancy-and-b-factor" class="nav-link" data-scroll-target="#occupancy-and-b-factor"> <span class="header-section-number">4.1.1</span> Occupancy and B-factor</a></li>
+  </ul></li>
+  <li><a href="#biological-macromolecules-display-applications" id="toc-biological-macromolecules-display-applications" class="nav-link" data-scroll-target="#biological-macromolecules-display-applications"> <span class="header-section-number">4.2</span> Biological macromolecules display applications</a>
+  <ul class="collapse">
+  <li><a href="#pymol" id="toc-pymol" class="nav-link" data-scroll-target="#pymol"> <span class="header-section-number">4.2.1</span> PyMOL</a></li>
+  <li><a href="#ucsf-chimerax" id="toc-ucsf-chimerax" class="nav-link" data-scroll-target="#ucsf-chimerax"> <span class="header-section-number">4.2.2</span> UCSF ChimeraX</a></li>
+  <li><a href="#litemol-and-others" id="toc-litemol-and-others" class="nav-link" data-scroll-target="#litemol-and-others"> <span class="header-section-number">4.2.3</span> LiteMol and others</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"> <span class="header-section-number">4.2.4</span> </a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#pymol-practice" id="toc-pymol-practice" class="nav-link" data-scroll-target="#pymol-practice"> <span class="header-section-number">5</span> <span style="color:green"><strong>PyMOL Practice</strong></span></a>
+  <ul class="collapse">
+  <li><a href="#a-10-steps-self-guided-practice" id="toc-a-10-steps-self-guided-practice" class="nav-link" data-scroll-target="#a-10-steps-self-guided-practice"> <span class="header-section-number">5.1</span> <span>1. A 10-steps self-guided practice</span></a></li>
+  <li><a href="#pymol-challenge" id="toc-pymol-challenge" class="nav-link" data-scroll-target="#pymol-challenge"> <span class="header-section-number">5.2</span> 2. PyMOL Challenge</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -164,7 +209,7 @@ ul.task-list{list-style: none;}
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Working with protein structures</h1>
+<h1 class="title d-none d-lg-block">Protein structures</h1>
 </div>
 
 
@@ -183,7 +228,7 @@ ul.task-list{list-style: none;}
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 30, 2022</p>
+      <p class="date">September 6, 2022</p>
     </div>
   </div>
     
@@ -192,47 +237,234 @@ ul.task-list{list-style: none;}
 
 </header>
 
-<section id="protein-structure-display-and-the-actual-protein-structure" class="level2">
-<h2 class="anchored" data-anchor-id="protein-structure-display-and-the-actual-protein-structure">Protein structure display and the actual protein structure</h2>
-<div class="callout-caution callout callout-style-default callout-captioned">
+<section id="obtaining-and-working-with-protein-structures" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Obtaining and working with protein structures</h1>
+<div class="callout-warning callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Warning for future structural biologists
+Warning for current and future structural biologists
 </div>
 </div>
 <div class="callout-body-container callout-body">
 
 </div>
 </div>
-<div id="fig-anonymous-1" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-magritte" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><a href="https://swissmodel.expasy.org/static/course/files/PartIII_quality_assesment.pdf"><img src="pics/magritte.png" title="Ceci n'est pas une proteine" class="img-fluid figure-img"></a></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Ceci n’est pas une proteine. Source: https://swissmodel.expasy.org/static/course/files/PartIII_quality_assesment.pdf</figcaption><p></p>
+<figure class="figure">
+<img src="pics/magritte.png" title="Ceci n'est pas une proteine" class="figure img-fluid figure-img">
+</figure>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1: Ceci n’est pas une proteine. Source: https://swissmodel.expasy.org/static/course/files/PartIII_quality_assesment.pdf</figcaption><p></p>
 </figure>
 </div>
 <p>The surrealist Belgian painter René Magritte created a collection of surrealistic paintings entitled <a href="https://en.wikipedia.org/wiki/The_Treachery_of_Images" title="Magritte"><strong><em>La trahison des images</em></strong> (1928–1929)</a>. The most renowned of those paintings show a smoking pipe and the following caption underneath: <em>“Ceci n’est pas une pipe”</em> (This is not a pipe). Yes, indeed! It is actually the painting of a pipe.</p>
-<p>Similarly, a picture of a protein, or a PDB file with the coordinates of a protein structure, is not a protein. It is a representation of ONE structure. Even experimentally determined structures have two main limitations that we should always keep in mind: (1) they are a fixed structure whereas proteins <em>in vivo</em> are flexible and dynamic and (2) they are subjected to experimental error and they often contain regions of low reliability. Moreover, even experimentally obtained macromolecular structures are to some degree models, with a variable ratio between experimental data and computational prediction to match the experimental data (X-ray diffraction, cryo-EM density maps, NMR, SAXS, FRET…) with previously known structures or prediction models. That does not mean that protein structures are useless, they can be very useful, but we must be aware of the limitations as well as the applications.</p>
+<p>Similarly, a picture of a protein, or a PDB file with the coordinates of a protein structure, is not a protein. It is a representation of ONE structure. Even experimentally determined structures have two main limitations that we should always keep in mind: (1) they are a fixed structure whereas proteins <em>in vivo</em> are flexible and dynamic and (2) they are subjected to experimental error and they often contain regions of low reliability (see below <a href="#sec-assess">Section&nbsp;3</a>). Moreover, even experimentally obtained macromolecular structures are to some degree models, with a variable ratio between experimental data and computational prediction to match the experimental data (X-ray diffraction, cryo-EM density maps, NMR, SAXS, FRET…) with previously known structures or prediction models. Obviously, that does not mean that protein structures are useless, they can be very useful, but we must be aware of the limitations as well as the applications.</p>
 </section>
-<section id="experimentally-obtained-structures" class="level1">
-<h1>Experimentally obtained structures</h1>
+<section id="experimental-determination-of-protein-structures" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Experimental determination of protein structures</h1>
+<p>The structure helps to understand the molecular mechanism of protein function at a higher level of detail. The 3D representation can help to orientate different domains/motifs/residues of interest. This can be essential to understanding the analysis of population or pathogenic variants, drug design, and protein engineering. Moreover, the structures can also help to predict protein function and evolution, as they are more conserved than sequence, i.e., the protein structure space is smaller than the sequence space. However, obtaining detailed and reliable structural data can be technically difficult and time-consuming and, as we will see, modeling protein structures can be often a good complement or alternative. Experimentally-obtained structures usually rely on three alternative techniques, X-ray crystallography, nuclear magnetic resonance (RMN), or electron cryomicroscopy (CryoEM).</p>
+<section id="x-ray-crystallography-or-single-crystal-x-ray-diffraction" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="x-ray-crystallography-or-single-crystal-x-ray-diffraction"><span class="header-section-number">2.1</span> X-Ray crystallography or single crystal X-ray diffraction</h2>
+<p>The X-Ray crystallography or single crystal X-ray diffraction is a method to determine the atomic structure of molecules in regular, crystalline structures. It requires the generation of a crystal of the molecule of interest that is then mounted on a goniometer and illuminated or irradiated with a focused beam of X-rays. The diffraction pattern of the X-rays at the other side of the crystal allow the determination of the atoms positions, as well as their chemical bonds, their crystallographic disorder, and various other information. However, the link between the diffraction pattern and the electron density is not trivial and requires some complex maths, called <a href="http://pruffle.mit.edu/atomiccontrol/education/xray/fourier.php">Fourier transforms</a>.</p>
+<div id="fig-xray" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><a href="https://www.creative-biostructure.com/comparison-of-crystallography-nmr-and-em_6.htm"><img src="images/paste-F430F5B1.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2: Schematic workflow of X-ray crystallography.</figcaption><p></p>
+</figure>
+</div>
+<p>X-ray is a powerful method that allows obtaining high-resolution structures at the atomic level of soluble or membrane proteins, either as an apoenzyme or as a holoenzyme bound to substrate, cofactor or drugs. However, the sample must be crystallizable (i.e.&nbsp;homogeneous), which requires quite an amount of very pure protein. Another con of X-ray structures is that, as mentioned, you only obtain one (or very few) static forms of the protein and the location of hydrogen atoms cannot be determined. It can be predicted, but that still hinders some chemical analysis.</p>
 </section>
-<section id="protein-structure-files-formats" class="level1">
-<h1>Protein structure files formats</h1>
+<section id="nuclear-magnetic-resonance" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="nuclear-magnetic-resonance"><span class="header-section-number">2.2</span> Nuclear Magnetic Resonance</h2>
+<p>All atomic nuclei are charged, fast spinning particles, which gave rise to resonance frequencies that are different for each atom. Therefore, if we apply a magnetic field we can obtain an electromagnetic signal with a frequency characteristic of the magnetic field at the nucleus. That is the basis of nuclear magnetic resonance (NMR).</p>
+<p>Also, we should consider that the movement of the nucleus is not isolated–it interacts with the surrounding atoms both intra- and inter-molecularly. Thus, through nuclear magnetic resonance spectroscopy, structural information of a given molecule can be obtained. Taking protein as an example, its secondary structure, such as α-helix, β-sheet, turn, circular, and curl, reflect the different arrangement of the main chain atoms of protein molecules three-dimensionally. The spacing of the atomic nuclei in different secondary domains, the interaction between nuclei, and the dynamic characteristics of polypeptide segments all directly reflect the three-dimensional structure of proteins. These nuclear features all contribute to spectroscopic behaviors of the analyzed sample, thus providing characteristic NMR signals. Interpretation of these signals by computer-aided methods leads to deciphering of the three-dimensional structure.</p>
+<div id="fig-rmn" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><a href="https://www.creative-biostructure.com/comparison-of-crystallography-nmr-and-em_6.htm"><img src="images/paste-2013F0AC.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3: Basis of nuclear magnetic resonance</figcaption><p></p>
+</figure>
+</div>
+<p>The most important feature of the NMR method is that the three-dimensional structure of macromolecules in the natural state can be measured directly in solution, and NMR may provide unique information about dynamics and intermolecular interactions. The resolution of the macromolecular three-dimensional structure can be as low as sub nanometer. However, the NMR spectrum of biomolecules with large molecular weight is very complicated and difficult to interpret, thereby limiting the application of NMR in analyzing large biomolecules, often below 20-30 kDa (see <a href="#fig-experimental">Figure&nbsp;4</a>). Additionally, this technique requires relatively large amounts of pure samples (on the order of several mg) to achieve a reasonable signal to noise level.</p>
+<div id="fig-experimental" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><a href="https://doi.org/10.1016/j.jsb.2022.107841"><img src="images/paste-FA73AF1E.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4: Coverage of molecular weight by structural technique</figcaption><p></p>
+</figure>
+</div>
 </section>
-<section id="biological-macromolecules-display-applications" class="level1">
-<h1>Biological macromolecules display applications</h1>
-<hr>
+<section id="electron-cryomicroscopy" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="electron-cryomicroscopy"><span class="header-section-number">2.3</span> Electron cryomicroscopy</h2>
+<p>The essential mechanism of Cryo-EM is the same of any electron microscopy method, i. e., electron scattering. Samples are prepared through cryopreservation prior to analysis. The coherent electrons are used as a light source to measure the sample. After the electron beam passes through the sample, a complex lens system converts the scattered signal into a magnified image recorded on the detector. A key subsequent step is signal processing, that transform thousands of images of the particles in any orientation into a three-dimensional structure of the sample.</p>
+<div id="fig-cryoEM" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><a href="https://www.creative-biostructure.com/comparison-of-crystallography-nmr-and-em_6.htm"><img src="images/paste-5E29F580.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 5: The process of Cryo-EM single particle analysis technique</figcaption><p></p>
+</figure>
+</div>
+<p>The use of electron microscopy methods for structural biology was traditionally limited to very large macromolecular complexes, like viral capsids, and only recently it could be used for smaller particles (see <a href="#fig-experimental">Figure&nbsp;4</a>). The number of protein structures being determined by cryo-electron microscopy is growing at an explosive rate in the last 5-10 years. This is thanks to several technical improvements in the technique, spanning sample preparation, analysis and processing that allow obtaining pictures at the atomic level <span class="citation" data-cites="callaway2020">(<a href="#ref-callaway2020" role="doc-biblioref">Callaway 2020</a>)</span>. This advances were acknowledged by the <a href="https://www.nobelprize.org/prizes/chemistry/2017/press-release/">2017 Nobel Prize in Chemistry</a> to Jacques Dubochet, Joachim Frank and Richard Henderson.</p>
+<div id="fig-cryoEM2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><a href="https://www.creative-biostructure.com/comparison-of-crystallography-nmr-and-em_6.htm"><img src="images/paste-E5E5AE75.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6: Cryo-electron microscopy revolution</figcaption><p></p>
+</figure>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target="#callout-2" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Check the already classic article by <span class="citation" data-cites="egelman2016">Egelman (<a href="#ref-egelman2016" role="doc-biblioref">2016</a>)</span> for more a detailed info. And <a href="https://www.chemistryworld.com/news/explainer-what-is-cryo-electron-microscopy/3008091.article">here</a> for a great outreaching article after the Nobel Prize.</p>
+</div>
+</div>
+</div>
+<p>CryoEM is widely use nowadays because, particularly for large molecular complexes or viral particles. Structures can be generated quickly, as it does not require a high amount of protein and it can generate good data even in the presence of impurities. However, new generation microscopes are only affordable by large institutions and small particles can have a high level of noise. Moreover, processing a large amount of images can be limiting to obtain high-quality structures.</p>
 </section>
-<section id="references" class="level1">
-<h1>References</h1>
+</section>
+<section id="sec-assess" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Structural quality assurance</h1>
+<p>As outlined at the beginning of this section, regardless of the origin or determination method, any structure is subjected to error. Experimentally-based structures are actually models that match with the data. The quality of the original data and the care with which the experiments have been performed will determine the reliability of the structural results. As in any other scientific discipline, independently performed experiments can arrive to related models of the same molecule but almost always there are differences; however both can be good models.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Extra info
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Check the detailed documentation about PDB validation report <a href="https://www.wwpdb.org/validation/XrayValidationReportHelp">here</a>.</p>
+</div>
+</div>
+<section id="global-parameters-in-experimentally-based-structures" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="global-parameters-in-experimentally-based-structures"><span class="header-section-number">3.1</span> Global parameters in experimentally-based structures</h2>
+<p>There are a number of diverse parameters that help us to understand the quality and reliability of an structure. First, the <strong>resolution</strong> is a good indicator of the level of detail of the structure, as it can strongly affect affect how the experimental data is modeled.</p>
+<div id="fig-reso" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/paste-C3031EBE.png" class="figure img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 7: The effect of resolution on the quality of the electron density. The Tyr100 residue from concanavalin A as found in the indicated PDB structures at 3 Å, 2 Å and 1.2 Å. Picture inspired in Figure 14.5 from @structura and rendered with Pymol (see <a href="../concanavalin.pse">concanavalin.pse</a> and <a href="../concanavalin.txt">concanavalin.txt</a> in the Repo for details about the picture display).</figcaption><p></p>
+</figure>
+</div>
+<p>Other important parameter is the <strong><em>R</em>-factor</strong>, which assess the difference between the structure factors calculated from the model and those obtained from the experimental data. This is, the <em>R</em>-factor is the deviation of the calculated diffraction pattern of the model and the original experimental diffraction pattern. Typically, good structures with a resolution around 1-3 Å, will have an <em>R-</em>factor of 0.2 (i.e., 20% of deviation). However, it should be noted that this factor is usually reduced after iterative refinement, which downplays its use as an indicative of reliability. A more reliable factor is the <strong><em>R<sub>free</sub></em></strong>. This is less susceptible to manipulation during refinement, as it is based only in a small fraction of the experimental data (5-10%) that is not used throughout the refinement stage.</p>
+<p>A more intuitive, but only qualitative, way of understand the presicion of a given atom’s coordinates is the <em>B-</em>factor. The temperature value or <em>B-</em>factor correlates with the positional errors, although its mathematical definition is more complex. Normal values for a B-factor are within the range 14-30, whereas values above 30 usually indicate that the atom is within a flexible or disordered region, and atoms with a <em>B-</em>factor over 40 are often excluded as being too unreliable.</p>
+<p>The root-mean-squared deviation (<strong>RMSD,</strong> <a href="ddbb.html#sec-alignment">see Structure alignment section</a>) is a traditional estimator of the quality of NMR-solved structures. Regions with high RMSD values are those that are less defined by data. However, it should be also noted that this parameter can be also misleading as it is highly dependent on the procedure used to generate the and selection the data that is submitted to the PDB. An experimentalist could reduce the RMSD by choosing the “best” few structures for deposition from a much larger draft.</p>
+<p>In the last years, along with the boost in quantity and quality of EM structures, new parameters have been proposed. One of them, the <strong><em>Q-</em>factor</strong> has been recently implemented for <a href="https://www.rcsb.org/news/feature/62de9e5235ec5bb4ddb19a43">validation of 3DEM/PDB structures</a>. Briefly, the Q-score calculates the resolvability of atoms by measuring similarity of the map values around each atom relative to a Gaussian-like function for a well resolved atom. Q-score of 1 indicates that the similarity is perfect whilst closer to 0 indicates the similarity is low. If the atom is not well placed in the map then a negative Q-score value may be reported. Therefore, Q-score values in the reports will be in a range of -1 to +1.</p>
+</section>
+<section id="stereochemical-parameters" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="stereochemical-parameters"><span class="header-section-number">3.2</span> Stereochemical parameters</h2>
+<p>Given that all structural models contain some degree of error and some of the modeling global parameters can be controversial, we can analyze model’s geometry, stereochemistry and other structural properties to assess structural models (experimentally or computationally-obtained). These parameters compare a given structure (protein or nucleic acid) against what is already known about these kind of molecules, based in our knowledge from high-res structures. That means that the (best) structures in the current structural space define what is “normal” in a protein. The advantage of these analysis and derived parameters is that they do not consider the process that lead to the model, the only consider the final product and its reliability.</p>
+<p>One of the most common and powerful method to asses the stereochemistry of a protein is the <a href="intro.html#sec-rama">Ramachandran plot</a>, defined in 1963 and still in use.</p>
+<p>Another widely used analysis (and available for all PDB structures) is the side <a href="https://www.wwpdb.org/validation/XrayValidationReportHelp#torsion_angles">chain torsion angles</a>, usually measured as <em><strong>Side chain outliers</strong>.</em> As outlined in the <a href="intro.html#sec-str">Introduction</a>, amino acid side chains also have some preferred conformations. Like the Ramachandran plot, a plot of the χ1-χ2 torsion angles can indicate problems with a protein model when angle values are outside of the high density values.</p>
+<p>Bad contact or <a href="https://www.wwpdb.org/validation/XrayValidationReportHelp#close_contacts">clashes</a> indicate a bad model. It is obvious that two atoms cannot be in the same (or very close) spot. We can define this as a situation where two nonbonded atoms have a center-to-center distance that is smaller than the sum of their van der Walls radii.</p>
+</section>
+</section>
+<section id="protein-structure-display" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Protein structure display</h1>
+<section id="protein-structure-file-formats" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="protein-structure-file-formats"><span class="header-section-number">4.1</span> Protein structure file formats</h2>
+<p>Experimental structural data from different methods is stored in different file formats. For instance, crystallographic raw data is usually saved as <code>*.ccp4</code> files, but Cryo-EM or X-ray density maps can be stored in <code>*.mrc</code> or <code>*.mtz</code> files. Other complex file formats, such as the Extensible Markup Language <code>*.xml</code>, provide a framework for structure complex information and documents like protein structures.</p>
+<p>Along with the establishment of the PDB, a simple format was developed. The PDB format consist of a collection of fixed format records that describe the atomic coordinates, chemical and biochemical features, experimental details of the structure determination, and some structural features such as secondary structure assignments, hydrogen bonding, or active sites. The current version is named PDBx/mmCIF)also incorporates the expanded crystallographic information file format (mmCIF), allowing the representation of large structures, complex chemistry, and new and hybrid experimental methods. Thus a <code>*.pdb</code> and <code>*.cif</code> files can be considered as identical files.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target="#callout-4" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Check PDB-101 course about PDBx/mmCIF format <a href="https://pdb101.rcsb.org/learn/guide-to-understanding-pdb-data/beginner%E2%80%99s-guide-to-pdb-structures-and-the-pdbx-mmcif-format">here</a>.</p>
+</div>
+</div>
+</div>
+<div id="fig-PDBfile" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/paste-96FF761D.png" class="figure img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 8: Coordinates in the PDB file (6KI3)</figcaption><p></p>
+</figure>
+</div>
+<section id="occupancy-and-b-factor" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="occupancy-and-b-factor"><span class="header-section-number">4.1.1</span> Occupancy and B-factor</h3>
+<p>Disregarding the repetition of atom type in the leftmost column, the last columns in the PDB file are the <strong>Occupancy</strong> and the <strong>temperature factor</strong> or the <strong>B-factor</strong>.</p>
+<p>Macromolecular crystals are composed of many individual molecules packed into a symmetrical arrangement. In some crystals, there are slight differences between each of these molecules. For instance, a sidechain on the surface may wag back and forth between several conformations, or a substrate may bind in two orientations in an active site, or a metal ion may be bound to only a few of the molecules. When researchers build the atomic model of these portions, they can use the occupancy to estimate the amount of each conformation that is observed in the crystal.</p>
+<p>Thus, by definition, the sum of <strong>occupancy</strong> values for each atom must be 1. Usually, we will see a single record for an atom, with an occupancy value of 1, indicating that the atom is found in all of the molecules in the same place in the crystal. However, if a metal ion binds to only half of the molecules in the crystal, the researcher will see a weak image of the ion in the electron density map, and can assign an occupancy of 0.5 in the PDB structure file for this atom. Two (or more) atom records are included for each atom, with occupancies like 0.5 and 0.5, or 0.4 and 0.6, or other fractional occupancies that sum to a total of 1.</p>
+<p>On the other hand, <strong>temperature value or <em>B</em>-factor is</strong> a measure of our confidence in the location of each atom, as discussed above (<a href="#sec-assess">Section&nbsp;3</a>). If you find an atom on the surface of a protein with a high temperature factor, keep in mind that this atom is probably moving a lot, and that the coordinates specified in the PDB file are only one possible snapshot of its location. Thus, an atom record with an occupancy &lt;1 can have a low B-factor if that position is certain.</p>
+<p>As you can imagine, this column is also used by computationally-derived models to include a confidence value.</p>
+</section>
+</section>
+<section id="biological-macromolecules-display-applications" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="biological-macromolecules-display-applications"><span class="header-section-number">4.2</span> Biological macromolecules display applications</h2>
+<section id="pymol" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="pymol"><span class="header-section-number">4.2.1</span> PyMOL</h3>
+<p><a href="https://en.wikipedia.org/wiki/PyMOL">PyMOL</a> is a very powerful molecular visualization system written originally by <a href="https://en.wikipedia.org/wiki/Warren_Lyford_DeLano">Warren DeLano</a>. It was released in 2000 and soon became very popular. It’s currently commercialized under License by <a href="https://pymol.org/">Schrödinger</a> but a free license for teaching can be requested. Also, source code is available on GitHub that can be installed on Linux or MAC. More info on <a href="https://en.wikipedia.org/wiki/PyMOL">Wikipedia</a>. You can also check this quick <a href="https://www.uml.edu/docs/PyMOL%20Quick%20Reference%20Guide_tcm18-230352.pdf">Reference guide</a></p>
+<p>PyMOL allows working with different structures representation, but also with raw experimental data in different <a href="https://pymol.org/dokuwiki/doku.php?id=format">formats</a>.</p>
+<p>PyMOL is written in Python and can be used with interactive menus and also with command line. There are a lot of resources that can help you with PyMOL, like a <a href="https://pymol.org/dokuwiki/">Documentation Reference Wiki</a> or a community-supported <a href="https://pymolwiki.org/index.php/Main_Page">PyMOLWiki</a>. Moreover, it allows the implementation of new functionalities as plugins, like <a href="http://schubert.bio.uniroma1.it/pymod/index.html">PyMod</a> or <a href="http://schubert.bio.uniroma1.it/dockingpie/index.html">DockingPie</a>, among others. Finally, as any Python-based program, it can be used within Jupyter notebooks (see <a href="https://www.computer.org/csdl/magazine/cs/2021/02/09354947/1rgCkrAJCko" class="uri">https://www.computer.org/csdl/magazine/cs/2021/02/09354947/1rgCkrAJCko</a>).</p>
+</section>
+<section id="ucsf-chimerax" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="ucsf-chimerax"><span class="header-section-number">4.2.2</span> UCSF ChimeraX</h3>
+<p><a href="https://www.rbvi.ucsf.edu/chimerax/">ChimeraX</a> <span class="citation" data-cites="pettersen2021">(<a href="#ref-pettersen2021" role="doc-biblioref">Pettersen et al. 2021</a>)</span> is a fully open source software, developed by the UCSF as a renovated version of the former <a href="https://www.cgl.ucsf.edu/chimera/">Chimera</a> software, with versions for Linux, MacOS, and Windows. It aims to be a comprehensive structural biology tool, but it is more widely known for its capacities for EM maps. As any other open source software, it has gained new and exciting capacities in the last years, like <a href="https://www.rbvi.ucsf.edu/chimerax/docs/user/vr.html">Virtual Reality capabilities</a> or <a href="https://www.rbvi.ucsf.edu/chimerax/data/alphafold-nov2021/af_sbgrid.html">Alphafold2</a> modeling.</p>
+</section>
+<section id="litemol-and-others" class="level3" data-number="4.2.3">
+<h3 data-number="4.2.3" class="anchored" data-anchor-id="litemol-and-others"><span class="header-section-number">4.2.3</span> LiteMol and others</h3>
+<p><a href="https://www.litemol.org/Viewer">LiteMol Viewer</a> is a powerful HTML5 web application for 3D visualization of molecules and other related data. It is used in a web browser, eliminating the need for external software and also allowing the integration with third-party sites as an embedded plugin, as it is in the <a href="https://www.ebi.ac.uk/pdbe/litemol">PDBe site</a>. More information about LiteMol can be found on <span class="citation" data-cites="sehnal2017">Sehnal et al. (<a href="#ref-sehnal2017" role="doc-biblioref">2017</a>)</span>, the <a href="https://webchem.ncbr.muni.cz/Wiki/LiteMol:UserManual">wiki</a>, or <a href="https://www.youtube.com/channel/UCRoyYUeP1hdH2r8XUW-WMoA">YouTube tutorials</a>.</p>
+<p>The same phylosopy applies to other open-source viewers like <a href="https://nglviewer.org/">NGL Viewer</a> and <a href="https://molstar.org/">Mol*</a>. However, as used by the EMBL-EBI, LiteMol has become more popular.</p>
+<p>Other applications that you may know or came into are:</p>
+<ul>
+<li><p>SwissPDBViewer (aka DeepView), developed to work with SWISS-MODEL homology modeling app, is an application that provides a user-friendly interface allowing to analyze several proteins at the same time. It has currently fallen in disuse as the last version (4.1) is only a 32 bits application.</p></li>
+<li><p>RasMol and OpenRasMol were developed initially in 1992 and its last release was in 2009. It was a pioneer as a simple molecular display open-source application, but it is outdated nowadays.</p></li>
+</ul>
+</section>
+<section id="section" class="level3" data-number="4.2.4">
+<h3 data-number="4.2.4" class="anchored" data-anchor-id="section"><span class="header-section-number">4.2.4</span> </h3>
+</section>
+</section>
+</section>
+<section id="pymol-practice" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> <span style="color:green"><strong>PyMOL Practice</strong></span></h1>
+<p>Our PyMOL Practice has two parts.</p>
+<section id="a-10-steps-self-guided-practice" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="a-10-steps-self-guided-practice"><span class="header-section-number">5.1</span> <a href="https://www.evernote.com/shard/s62/client/snv?noteGuid=666c39a1-ac03-64c9-b8a0-cab9ff3959c7&amp;noteKey=9d20b6eadae8d130fdbe6652d60237f2&amp;sn=https%3A%2F%2Fwww.evernote.com%2Fshard%2Fs62%2Fsh%2F666c39a1-ac03-64c9-b8a0-cab9ff3959c7%2F9d20b6eadae8d130fdbe6652d60237f2&amp;title=StrBio%2B2022%252F2023%2B-%2B3.%2BPymol%2BPractice">1. A 10-steps self-guided practice</a></h2>
+<p>This is a <a href="https://evernote.com/intl/es">Evernote</a> note that you can consult online and also copy into your Evenote account if you wish.</p>
+</section>
+<section id="pymol-challenge" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="pymol-challenge"><span class="header-section-number">5.2</span> 2. PyMOL Challenge</h2>
+<p>Make a ready-to-publish picture of your favorite protein. As a suggestion, you can reproduce the top panels in the Figure 1B of <span class="citation" data-cites="gao2020">Gao et al. (<a href="#ref-gao2020" role="doc-biblioref">2020</a>)</span>, but any structure involving more than one domain and/or with a substrate/cofactor molecule can be a good challenge.</p>
 
 
+
+</section>
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-callaway2020" class="csl-entry" role="doc-biblioentry">
+Callaway, Ewen. 2020. <span>“Revolutionary Cryo-EM Is Taking over Structural Biology.”</span> <em>Nature</em> 578 (7794): 201–1. <a href="https://doi.org/10.1038/d41586-020-00341-9">https://doi.org/10.1038/d41586-020-00341-9</a>.
+</div>
+<div id="ref-egelman2016" class="csl-entry" role="doc-biblioentry">
+Egelman, Edward H. 2016. <span>“The Current Revolution in Cryo-EM.”</span> <em>Biophysical Journal</em> 110 (5): 1008–12. <a href="https://doi.org/10.1016/j.bpj.2016.02.001">https://doi.org/10.1016/j.bpj.2016.02.001</a>.
+</div>
+<div id="ref-gao2020" class="csl-entry" role="doc-biblioentry">
+Gao, Yan, Liming Yan, Yucen Huang, Fengjiang Liu, Yao Zhao, Lin Cao, Tao Wang, et al. 2020. <span>“Structure of the RNA-dependent RNA polymerase from COVID-19 virus.”</span> <em>Science (New York, N.Y.)</em> 368 (6492): 779–82. <a href="https://doi.org/10.1126/science.abb7498">https://doi.org/10.1126/science.abb7498</a>.
+</div>
+<div id="ref-pettersen2021" class="csl-entry" role="doc-biblioentry">
+Pettersen, Eric F., Thomas D. Goddard, Conrad C. Huang, Elaine C. Meng, Gregory S. Couch, Tristan I. Croll, John H. Morris, and Thomas E. Ferrin. 2021. <span>“UCSF ChimeraX: Structure visualization for researchers, educators, and developers.”</span> <em>Protein Science: A Publication of the Protein Society</em> 30 (1): 70–82. <a href="https://doi.org/10.1002/pro.3943">https://doi.org/10.1002/pro.3943</a>.
+</div>
+<div id="ref-sehnal2017" class="csl-entry" role="doc-biblioentry">
+Sehnal, David, Mandar Deshpande, Radka Svobodová Vařeková, Saqib Mir, Karel Berka, Adam Midlik, Lukáš Pravda, Sameer Velankar, and Jaroslav Koča. 2017. <span>“LiteMol suite: interactive web-based visualization of large-scale macromolecular structure data.”</span> <em>Nature Methods</em> 14 (12): 1121–22. <a href="https://doi.org/10.1038/nmeth.4499">https://doi.org/10.1038/nmeth.4499</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const icon = "";

@@ -35,10 +35,9 @@ interpretation and modeling new data on previously released structures. Thus,
 despite substantial efforts that started at the beginning of the 21st century to
 implement high-throughput structural biology methods [see for instance
 @manjasetty2008], the availability of protein structures is more than 1,000
-times less than the number of sequences (231,354,261 sequences for Uniprot and
-192,489 structures in RCSB Protein Databank in July 2022). This difference is
-called the *protein structure gap* and it is constantly widening
-[@muhammed2019].
+times less than the number of sequences (>226M sequences for Uniprot and ∽195k
+structures in RCSB Protein Databank in August 2022). This difference is called
+the *protein structure gap* and it is constantly widening [@muhammed2019].
 
 [![Number of macromolecular structures in RCSB PDB database (accessed 6th July
 2022).](pics/RCSB_stats.png "Number of macromolecular structures in RCSB PDB database.")](https://www.rcsb.org/stats/growth/growth-released-structures)
@@ -185,18 +184,22 @@ more detailed review on homology modeling, I suggest reading @haddad2020a.
 In this course, we are focusing on end-to-end modeling with
 [SWISS-MODEL](https://swissmodel.expasy.org/) [@waterhouse2018], a fully
 automated modeling server that allows you the construction of models without the
-requirement of a strong bioinformatics background or coding skills. [Rather than
-provide just a recipe to make a model in two clics, the goal is to understand
-the process behind, while doing exercises with selected
-examples]{style="color:red"}
+requirement of a strong bioinformatics background or coding skills.
+
+::: {.callout-note }
+
+Rather than provide just a recipe to make a model in two clics, the goal is to
+understand the process behind, while doing exercises with selected
+examples
+:::
 
 SWISS-MODEL has different supported inputs. Usually, you provide a single
 sequence query for template searching, but you can bypass this step and provide
 directly the template you want to use and even a template and a custom
 alignment. We will start with the first alternative.
 
-As an example, we are modeling a human DNA repair protein, **NEIL2,** and a
-**viral DNA polymerase** (HAdV-2 pol).
+[As an example, we are modeling a human DNA repair protein, **NEIL2,** and a
+**viral DNA polymerase** (HAdV-2 pol).]{style="color:green"}
 
 ## Step 1+2. Template search and align. {#template}
 
@@ -423,5 +426,3 @@ model.
 
 [**What do you think you could use our models of NEIL2 and
 HAdV-2pol?**]{style="color:green"}
-
-# References
