@@ -15,9 +15,9 @@ website:
         href: https://github.com/strBio/strbio2022_23
     search: true
     contents:
+      - index.qmd
       - section: "Basics"
         contents:
-          - index.qmd
           - intro.qmd
           - ddbb.qmd
           - pdb.qmd
