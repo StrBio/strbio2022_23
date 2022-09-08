@@ -27,7 +27,8 @@ last decades, particularly after the revolution of high throughput sequencing
 methods.
 
 [![Number of entries in UniProt/TrEMBL (release
-2022_2).](pics/trembl_stats.png "Number of entries in UniProt/TrEMBL")](https://www.ebi.ac.uk/uniprot/TrEMBLstats)
+2022_2).](pics/trembl_stats.png "Number of entries in UniProt/TrEMBL"){#fig-seqs
+.figure}](https://www.ebi.ac.uk/uniprot/TrEMBLstats)
 
 However, experimental determination of 3D protein structures is often difficult,
 time-consuming, and subjected to limitations, such as experimental error, data
@@ -40,7 +41,8 @@ structures in RCSB Protein Databank in August 2022). This difference is called
 the *protein structure gap* and it is constantly widening [@muhammed2019].
 
 [![Number of macromolecular structures in RCSB PDB database (accessed 6th July
-2022).](pics/RCSB_stats.png "Number of macromolecular structures in RCSB PDB database.")](https://www.rcsb.org/stats/growth/growth-released-structures)
+2022).](pics/RCSB_stats.png "Number of macromolecular structures in RCSB PDB database."){#fig-structures
+.figure}](https://www.rcsb.org/stats/growth/growth-released-structures)
 
 Thus, an accurate prediction of the 3D structure of any given protein is needed
 to make up for the lack of experimental data.
@@ -85,7 +87,7 @@ indicates that the amino acid sequence dictates the final structure.
 Notwithstanding some relevant exceptions, this has been largely confirmed.
 
 ![The Anfinsen Dogma: Amino acid sequence dictated the final structure. From
-@anfinsen1973 .](pics/anfinsen.jpg "Anfinsen")
+@anfinsen1973 .](pics/anfinsen.jpg "Anfinsen"){#fig-anfinsen .figure}
 
 One can imagine that *in vivo* native structures of proteins look-alike the
 lowest free energy conformation, i.e., the global energy minimum. That is the
@@ -98,16 +100,21 @@ funnel model. Denatured molecules at the top of the funnel might fold to the
 native state by a myriad of different routes, some of which involve transient
 intermediates (local energy minima) whereas others involve significant kinetic
 traps (misfolded states). From
-.](pics/funnel_1.jpeg "The funnel of protein folding")](https://www.sciencedirect.com/science/article/pii/S0968000400017072?casa_token=BR_maX_GNYYAAAAA:IZrQqI9jIbiv-ZeA6aOMHQxsVcp-wgy0XPFO3DRcFiAi7TSrX-3cc7Jb6dhTHdXSQseEhF3l#BIB49)
+@radford2000.](pics/funnel_1.jpeg "The funnel of protein folding"){#fig-funnel
+.figure}](https://www.sciencedirect.com/science/article/pii/S0968000400017072?casa_token=BR_maX_GNYYAAAAA:IZrQqI9jIbiv-ZeA6aOMHQxsVcp-wgy0XPFO3DRcFiAi7TSrX-3cc7Jb6dhTHdXSQseEhF3l#BIB49)
 
-[In conclusion, prediction of protein structures is possible, as protein folding
+::: callout-important
+### Important
+
+In conclusion, prediction of protein structures is possible, as protein folding
 relies only on the protein sequence, but it will require virtually infinite time
-and computational resources.]{style="color:red"}
+and computational resources.
+:::
 
-Homology modeling is one of the easiest tricks to bypass that limitation.
-Basically, the strategy is adding all the possible extra information to the
-amino acid properties, namely the evolutionary conservation of sequences and
-structures.
+Homology modeling is one of the most convenient *tricks* to bypass that
+limitation. Basically, the strategy is adding all the possible extra information
+to the amino acid properties, namely the evolutionary conservation of sequences
+and structures.
 
 Very often, before generating models you already have some information about
 your protein. For instance, if it is an enzyme you may have spotted the
@@ -118,9 +125,9 @@ as the template(s) for modeling.
 
 # Homology modeling: Conservation is the key
 
-![Protein modeling in a nutshell](pics/modeling.png "Protein modeling")
-
-So, we want to go from the sequence to the structure. But, how do we do it?
+![Protein modeling in a nutshell is about going from the sequence to the
+structure. But, how do we do
+it?](pics/modeling.png "Protein modeling"){#fig-nutshell .figure}
 
 Traditionally and conceptually, the prediction of protein structures can be
 addressed from two different perspectives: comparative modeling and *ab initio*
@@ -132,7 +139,8 @@ was driven by the evolution of methods to identify distant sequence similarities
 that would reflex similar protein folds.
 
 [![Two different approaches for structure
-prediction.](pics/predway.jpeg "Two different approaches for structure prediction.")](http://isw3.naist.jp/IS/Bio-Info-Unit/gogroup/study/study-en.html)
+prediction.](pics/predway.jpeg "Two different approaches for structure prediction."){#fig-modelingways
+.figure}](http://isw3.naist.jp/IS/Bio-Info-Unit/gogroup/study/study-en.html)
 
 The accuracy of homology modeling will be limited by the availability of similar
 structures, *ab initio* predictions are limited by the mathematical models and
@@ -146,9 +154,10 @@ sequence involves a similar 3D structure and function. At the same time,
 although the number of published sequences and structures continually increased,
 the number of unique folds remains almost steady since 2008.
 
-[![Growth of the protein structure database since its inception in 1974. From
-Bonvin
-lab.](pics/rcsb-statistics.png "Protein structures and unique folds")](https://www.bonvinlab.org/education/molmod_online/modelling/)
+![Growth of the protein structure database since its inception in 1974. From
+[Bonvin lab
+site](https://www.bonvinlab.org/education/molmod_online/modelling/).](pics/rcsb-statistics.png "Protein structures and unique folds"){#fig-bovin
+.figure}
 
 That implies that the space of protein sequences is much larger than the space
 of structures. This has been exploited by some structural databases, like
@@ -156,10 +165,10 @@ of structures. This has been exploited by some structural databases, like
 that use hierarchical classifications of structures into very few categories of
 different structures.
 
-[![CATH main categories exemplified the limited structures space, with 86k vs
-500k domains in 2006 and 2022, respectively, but 40 and 41 architectures in the
-same
-years.](pics/cath.png "CATH")](https://www.cathdb.info/wiki/doku/?id=release_notes)
+![[CATH](https://www.cathdb.info/) main categories exemplified the limited
+structures space, with 86k vs 500k domains in 2006 and 2022, respectively, but
+40 and 41 architectures in the same years.](pics/cath.png "CATH"){#fig-cath
+.figure width="632"}
 
 In conclusion, protein structures are more conserved than sequences, which
 allows for model construction by comparison of related proteins. Biological
@@ -170,40 +179,41 @@ story of proteins.
 
 # Homology modeling in four steps
 
-[![Workflow of template-based protein modeling. From Expasy Protein Structure,
+![Workflow of template-based protein modeling. From Expasy [Protein Structure,
 Comparative Protein Modelling, and Visualisation online
-course.](pics/homology_simple_workflow.png "Homology Modeling workflow")](https://swissmodel.expasy.org/static/course/files/PartII_homology_modelling.pdf)
+course](https://swissmodel.expasy.org/static/course/files/PartII_homology_modelling.pdf).](pics/homology_simple_workflow.png "Homology Modeling workflow"){#fig-modelingsteps
+.figure width="397"}
 
 A basic workflow of homology modeling requires three steps: (1) identification
 of the best-suitable template, (2) alignment of the query sequence and the
 template, and (3) construction of the model. These steps can be addressed with
 diverse methodological alternatives and can provide different outputs that must
 be assessed (step 4) in order to decide the best solution for each step. For a
-more detailed review on homology modeling, I suggest reading @haddad2020a.
+more detailed review on homology modeling, I suggest reading @haddad2020.
 
 In this course, we are focusing on end-to-end modeling with
 [SWISS-MODEL](https://swissmodel.expasy.org/) [@waterhouse2018], a fully
 automated modeling server that allows you the construction of models without the
 requirement of a strong bioinformatics background or coding skills.
 
-::: {.callout-note }
-
-Rather than provide just a recipe to make a model in two clics, the goal is to
-understand the process behind, while doing exercises with selected
-examples
-:::
-
 SWISS-MODEL has different supported inputs. Usually, you provide a single
 sequence query for template searching, but you can bypass this step and provide
 directly the template you want to use and even a template and a custom
 alignment. We will start with the first alternative.
 
-[As an example, we are modeling a human DNA repair protein, **NEIL2,** and a
-**viral DNA polymerase** (HAdV-2 pol).]{style="color:green"}
+#### [Homology Modeling Practice A: Quick Modeling with SWISS-MODEL.]{style="color:green"}
+
+As an exercise, we are modeling a human DNA repair protein, NEIL2, and a viral
+DNA polymerase (HAdV-2 pol). We will intersperse discussion about modeling with
+the exercise steps.
+
+::: callout-note
+#### Rather than provide just a recipe to make a model in two clics, the goal is to understand the process behind, while doing exercises with selected examples
+:::
 
 ## Step 1+2. Template search and align. {#template}
 
-#### Where can we search?
+### Where can we search?
 
 Template searching consists in finding a protein with known structure that has a
 sequence similar to our protein. As we mentioned above, the [RCSB Protein Data
@@ -225,10 +235,11 @@ If you want to cheat yourself, I give you the
 [HAdV-2pol](https://rest.uniprot.org/uniprotkb/P03261.fasta) and
 [NEIL2](https://rest.uniprot.org/uniprotkb/Q969S2.fasta) sequences.
 
-#### How can we search accurately and fast?
+### How can we search accurately and fast?
 
 ![Query-template alignment is the base for homology modeling
-[@kelley2009]](pics/template_query.png "Query-template alignment is the base for a new model")
+[@kelley2009]](pics/template_query.png "Query-template alignment is the base for a new model"){#fig-query
+.figure width="631"}
 
 Finding templates require comparing sequences, thus an accurate and powerful
 alignment method is essential. Comparing one protein sequence with a whole
@@ -257,15 +268,17 @@ time. The implementation of these capacities led to the implementation of the
 so-called **fold recognition** in homology modeling.
 
 ![From sequence vs. sequence search to profile-profile comparison
-[@kelley2009].](pics/profiles.jpg "From sequence vs. sequence search to profile-profile comparison")
+[@kelley2009].](pics/profiles.jpg "From sequence vs. sequence search to profile-profile comparison"){#fig-profiles
+.figure width="669"}
 
-Template searches in SWISS-MODEL are carried out with HHblits [@remmert2011], a
-specific profile-profile method. We could search for templates also with Blast
-or other profile-profile methods, like
+Template searches in SWISS-MODEL have evolved through the years and currently,
+this step is performed with HHblits [@remmert2011], a specific profile-profile
+method. We could search for templates also with Blast or other profile-profile
+methods, like
 [Psi-BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastSearch&PROGRAM=blastp&BLAST_PROGRAMS=psiBlast),
 [HHPred](https://toolkit.tuebingen.mpg.de/tools/hhpred), or
-[JackHMMER](https://www.ebi.ac.uk/Tools/hmmer/search/jackhmmer). Then templates
-are ranked by two different numeric parameters ranged between 0 and 1: **GMQE**
+[JackHMMER](https://www.ebi.ac.uk/Tools/hmmer/search/jackhmmer). Then, templates
+are ranked by two different numeric parameters ranging between 0 and 1: **GMQE**
 (global model quality estimate) and **QSQE** (quaternary structure quality
 estimate). Briefly, GMQE uses probability functions to assess several properties
 of the target-template alignment (sequence identity, sequence similarity,
@@ -282,10 +295,10 @@ template, so you'll miss some fun, but you can go back for that later on if you
 change your mind.
 
 [![SWISS-MODEL modeling
-start](pics/seach.png "SWISS-MODEL modeling")](https://swissmodel.expasy.org/interactive)
+start](pics/seach.png "SWISS-MODEL modeling"){#fig-swissmodel
+.figure}](https://swissmodel.expasy.org/interactive)
 
-[**Before building the models, could you foresee which of our queries will give
-rise to a better model? Why?**]{style="color:green"}
+#### [Could you foresee which of our queries will give rise to a better model? Why?]{style="color:green"}
 
 ## Step 3. Model Building.
 
@@ -309,16 +322,21 @@ lab](https://www.bakerlab.org/), implemented in
 [Rosetta](https://www.rosettacommons.org/software) software and the
 [Robetta](https://robetta.bakerlab.org/) server. Other programs, like
 [Modeller](https://salilab.org/modeller/), are based in the satisfaction of
-spatial restraints [@janson2019].
+spatial restraints [@janson2019]. Like Rosetta, Modeller is a command-line tool
+that allow a full customization of the modeling, which requires more knowledge
+about the process but can be very useful for some types of proteins. However,
+both methods have been implemented in some online servers and user-friendly
+applications.
 
 Fragment assembly will use the template core backbone atoms to build a core
 structure of the model, leaving non-conserved regions (mostly loops) for later.
 Then, it will find compatible fragments in a dedicated loop database and also
 use *ab initio* building or missing loops.
 
-[![Backbone and loop modeling. From Expasy Protein Structure, Comparative
+![Backbone and loop modeling. From [Expasy Protein Structure, Comparative
 Protein Modelling, and
-Visualisation.](pics/loops.png "Backbone and loop modeling")](https://swissmodel.expasy.org/static/course/files/PartII_homology_modelling.pdf)
+Visualisation](https://swissmodel.expasy.org/static/course/files/PartII_homology_modelling.pdf).](pics/loops.png "Backbone and loop modeling"){#fig-backbone
+.figure}
 
 Then, side chain of non conserved amino acids in undertook. The goal is findig
 the most likely side chain conformation, using template structure information,
@@ -329,8 +347,9 @@ best model. That means that identification of hydrogen bonds between residues
 side chains and between side chains and the backbone reduce the optimization
 calculations.
 
-[![Side chain modeling. From CMBI Seminars on
-Bioinformatics](pics/Rotamers.gif "Backbone and loop modeling")](https://swift.cmbi.umcn.nl/teach/B1SEM/B1SEM_8.html)
+![Side chain modeling. From [CMBI Seminars on
+Bioinformatics](https://swift.cmbi.umcn.nl/teach/B1SEM/B1SEM_8.html).](pics/Rotamers.gif "Backbone and loop modeling"){#fig-rotamers
+.figure}
 
 Finally, a short energy minimization is carry out to reduce the unfavorable
 contacts and bonds by adapting the angle geometries and relax close contacts.
@@ -349,13 +368,14 @@ multiple models, you can change the display options. You can also download all
 the files and reports on the "Project Data" button.
 
 [![NEIL2 model created with SWISS-MODEL (July
-2022)](pics/neil2.png "NEIL2 model")](https://swissmodel.expasy.org/interactive/TWq8LD/models/)
+2022)](pics/neil2.png "NEIL2 model"){#fig-neil
+.figure}](https://swissmodel.expasy.org/interactive/TWq8LD/models/)
 
 There is also a "Structure Assessment" option. This provide you a detailed
-report of the structural problems of your model. You can see
-[Ramachandran](https://en.wikipedia.org/wiki/Ramachandran_plot "Ramachandran plots in Wikipedia")
-plots that highlight in red the amino acid residues with abnormal phi/psi angles
-in the model and a detailed list of other problems.
+report of the structural problems of your model. You can see [Ramachandran
+plots](intro.html#sec-rama "Ramachandran plots in Wikipedia") that highlight in
+red the amino acid residues with abnormal phi/psi angles in the model and a
+detailed list of other problems.
 
 The GMQE is updated to the QMEAN Zscore and QMEANDisCo [@studer2020]. The QMEAN
 Z-score or the normalized QMEAN score indicates how the model is comparable to
@@ -365,37 +385,62 @@ the number, a plot shows the QMEAN score of our model (red star) within all
 QMEAN scores of experimentally determined structures compared to their size.
 Overall, the Z-score is equivalent to the standard deviation of the mean.
 
-The QMEANDisCO is a single parameter that combines statistical potentials and
-agreement terms with a distance constraints (DisCo) to provide a consensus
-score. DisCo evaluates consistencies of pairwise CA-CA distances from a model
-with constraints extracted from homologous structures. All scores are combined
-using a neural network trained to predict per-residue scores.
+![Per-residue QMEANDisCo scores are mapped as red-to-green colour gradient on a
+model of lbp-8 in Caenorhabditis elegans (UniProtKB: O02324, PDB: 6C1Z).
+Distance constraints have been constructed from an ensemble of experimentally
+determined protein structures that are homologous to lbp-8. The inset depicts
+two example constraints between residues marked with colour-coded spheres in the
+model. From @studer2020.](images/paste-C2BED0C6.png){#fig-disco .figure
+width="572"}
 
-[![HAdV-2 DNA polymerase model obtained with
-SWISS-MODEL.](pics/hadv-pol.png "HAdV-2 DNA polymerase")](https://swissmodel.expasy.org/interactive/GZ8GmU/models/)
+The QMEANDisCO was implemented in SWISS-MODEL in 2020 and it is a powerful,
+single parameter that combines statistical potentials and agreement terms with a
+distance constraints (DisCo) to provide a consensus score. DisCo evaluates
+consistencies of pairwise CA-CA distances from a model with constraints
+extracted from homologous structures. All scores are combined using a neural
+network trained to predict per-residue scores. We can check a global score, but
+also a local score for each residue, that help us to understand which regions of
+the model are more likely to accurately folded (i.e. they are more reliable).
+
+[![HAdV-2 DNA polymerase model obtained with SWISS-MODEL (July
+2022).](pics/hadv-pol.png "HAdV-2 DNA polymerase"){#fig-pol
+.figure}](https://swissmodel.expasy.org/interactive/GZ8GmU/models/)
 
 QMEANDisCo can be used to analyze models obtained with other methods in order to
-make them comparable. There are other model assessing tools commonly used to
-assess protein models, like MoldFold [@mcguffin2021] or VoroMQA
-[@olechnovi2017].
+make them comparable (note that you can use QMEANDisCo for models obtained with
+any method, you just need a `.pdb` file). There are other independent model
+assessing tools commonly used to assess protein models, like
+[VoroMQA](https://bioinformatics.lt/wtsam/voromqa) \[@olechnovi2017\] or
+[MoldFold](https://www.reading.ac.uk/bioinf/ModFOLD/ModFOLD8_form.html)
+[@mcguffin2021]. VoroMQA is very quick method that combines the idea of
+statistical potentials (i.e. a knowledge-based score function) with the use of
+interatomic contact areas to provide a score in the range of \[0,1\]. When
+applied to PDB database, most of the high-quality experimentally-based
+structures have a VoroMQA score \>0.4. Thus, if the score is greater than 0.4,
+then the model is likely good and models with score \<0.3 are likely bad ones.
+Models with score 0.3-0.4 are uncertain and should not be classified with
+VoroMQA. On the other hand, ModFold is a meta-tool that provides you a very
+detailed report (and parseable files) with local and global scores, but it can
+take hours/days to obtain the result, so tend to use it only with selected
+models.
 
 Another key parameter that you should know if you want to compare protein
-strutures is the **alpha carbon RMSD** (root mean square deviation of the alpha
-carbons), sometimes referred in the protein field only as as RMSD. Any protein
-structural alignment will give you this parameter as an estimation of the
-difference of the structures. You can align structure with many online servers,
-like [FATCAT2](http://fatcat.godziklab.org/) or using molecular visualization
-apps, like [ChimeraX](https://www.cgl.ucsf.edu/chimerax/) or
-[Pymol](https://pymol.org/2/) (also available
-[here](https://github.com/schrodinger/pymol-open-source)).
+structures is the **alpha carbon RMSD** (see [Structure alignment
+section](ddbb.html#sec-alignment)). Any protein structural alignment will give
+you this parameter as an estimation of the difference of the structures. You can
+align structure with many online servers, like
+[FATCAT2](http://fatcat.godziklab.org/) or using molecular visualization apps,
+like [ChimeraX](https://www.cgl.ucsf.edu/chimerax/) or
+[PyMOL](https://pymol.org/2/) (see [Protein Structure
+Display](pdb.html#sec-apps) section).
 
-[**Which model is better? Which regions are more difficult to model?
-Why?**]{style="color:green"}
+#### [Which model is better? Which regions are more difficult to model? Why?]{style="color:green"}
 
 ## Corollary: What can I do with my model and what I cannot? {#corollary}
 
-[![Accuracy and application of protein structure models. From
-.](pics/sali.jpeg "Accuracy and application of protein structure models.")](https://www.science.org/doi/10.1126/science.1065659)
+[![Accuracy and application of protein structure models (in 2001). From
+@baker2001.](pics/sali.jpeg "Accuracy and application of protein structure models."){#fig-baker
+.figure}](https://www.science.org/doi/10.1126/science.1065659)
 
 A big power entails a big responsibility. The use of models entails a precaution
 and a need for experimental validation. However, knowing the limitations of our
@@ -426,3 +471,16 @@ model.
 
 [**What do you think you could use our models of NEIL2 and
 HAdV-2pol?**]{style="color:green"}
+
+# [Homology Modeling Practice B: Model your favourite protein (YFP).]{style="color:green"}
+
+1.  Use SWISS-MODEL to model a protein with no structure on PDB database. If
+    your protein has a structure, you can select an ortholog from other
+    organisms (mice, chicken, monkey, dog, fly, yeast...).
+2.  Model it also with RosettaCM at Baker's lab site
+    (https://robetta.bakerlab.org/). Note that you have to select the ***CM***
+    option.
+
+![](images/paste-05D080DB.png){width="518"}
+
+3.  Compare the obtained models and their applications.

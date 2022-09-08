@@ -96,7 +96,7 @@ review by @stollar2020 and the
 [Wikipedia](https://en.wikipedia.org/wiki/Protein_structure) and
 [Proteopedia](https://proteopedia.org/wiki/index.php/Introduction_to_protein_structure)
 articles on protein structures, which constituted my main source for this brief
-section.
+section (follow picture links).
 
 [![Protein structure levels, using human PCNA (PDB 1AXC) as an
 example.](pics/Protein_structure.png "Protein Structure"){#fig-str
@@ -221,7 +221,7 @@ amino acids. The figure shows a ball-and-stick representation of glutamate,
 which has three χ angles (from ).](images/paste-6EE800AE.png){#fig-chi .figure
 width="450"}](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-11-306)
 
-### Ramachandran Plot {#sec-rama}
+## Ramachandran Plot {#sec-rama}
 
 As you probably already figure out, many combinations of φ and ψ angles are
 forbidden because of the principle of steric exclusion: two atoms cannot be in
@@ -258,7 +258,7 @@ allowed regions, respectively
 .](https://proteopedia.org/wiki/images/8/85/Ramachandran_Gly_Pro_data_and_contours_T8000_small.jpg){#fig-rama2
 .figure}](https://proteopedia.org/wiki/index.php/Ramachandran_Plot)
 
-### Protein folds, domains and motifs
+## Protein folds, domains and motifs
 
 The final three dimensional tertiary structure of a protein is commonly referred
 as its **fold**. Within the overall protein fold, we can recognize distinct
@@ -289,7 +289,7 @@ is created. The most commonly referred approaches to this sort of classification
 are those used by SCOP and CATH databases, as we will see in the [Structural
 Databases](ddbb.html#strDDBB) section.
 
-### [**Hands on: Playing with secondary structures**]{style="color:green"}
+## [**Hands on: Playing with secondary structures**]{style="color:green"}
 
 ![](pics/handson.png "Hands-on")
 

@@ -301,7 +301,7 @@ very close) spot. We can define this as a situation where two nonbonded atoms
 have a center-to-center distance that is smaller than the sum of their van der
 Walls radii.
 
-# Protein structure display
+# Protein structure display {#sec-apps}
 
 ## Protein structure file formats
 
@@ -377,9 +377,10 @@ visualization system written originally by [Warren
 DeLano](https://en.wikipedia.org/wiki/Warren_Lyford_DeLano). It was released in
 2000 and soon became very popular. It's currently commercialized under License
 by [Schrödinger](https://pymol.org/) but a free license for teaching can be
-requested. Also, source code is available on GitHub that can be installed on
-Linux or MAC. More info on [Wikipedia](https://en.wikipedia.org/wiki/PyMOL). You
-can also check this quick [Reference
+requested. Also, open source code is available on
+[GitHub](https://github.com/schrodinger/pymol-open-source) that can be installed
+on Linux or MAC. More info on [Wikipedia](https://en.wikipedia.org/wiki/PyMOL).
+You can also check this quick [Reference
 guide](https://www.uml.edu/docs/PyMOL%20Quick%20Reference%20Guide_tcm18-230352.pdf)
 
 PyMOL allows working with different structures representation, but also with raw
@@ -393,9 +394,18 @@ community-supported [PyMOLWiki](https://pymolwiki.org/index.php/Main_Page).
 Moreover, it allows the implementation of new functionalities as plugins, like
 [PyMod](http://schubert.bio.uniroma1.it/pymod/index.html) or
 [DockingPie](http://schubert.bio.uniroma1.it/dockingpie/index.html), among
-others. Finally, as any Python-based program, it can be used within Jupyter
-notebooks (see
-<https://www.computer.org/csdl/magazine/cs/2021/02/09354947/1rgCkrAJCko>).
+others. [PyMod](https://pymolwiki.org/index.php/PyMod) [@janson2021] is designed
+to act as simple and intuitive interface between PyMOL and several
+bioinformatics tools (i.e., PSI-BLAST, Clustal Omega, HMMER, MUSCLE, CAMPO,
+PSIPRED, and MODELLER). Starting from the amino acid sequence of the target
+protein, PyMod is designed to carry out the main steps of the homology modeling
+process (that is, template searching, target-template sequence alignment and
+model building) in order to build a 3D atomic model of a target protein (or
+protein complex). The integration with PyMOL facilitates a detailed analysis of
+the modeling process.
+
+Finally, as any Python-based program, it can be used within Jupyter notebooks
+(see <https://www.computer.org/csdl/magazine/cs/2021/02/09354947/1rgCkrAJCko>).
 
 ### UCSF ChimeraX
 
@@ -422,8 +432,9 @@ can be found on @sehnal2017, the
 tutorials](https://www.youtube.com/channel/UCRoyYUeP1hdH2r8XUW-WMoA).
 
 The same phylosopy applies to other open-source viewers like [NGL
-Viewer](https://nglviewer.org/) and [Mol\*](https://molstar.org/). However, as
-used by the EMBL-EBI, LiteMol has become more popular.
+Viewer](https://nglviewer.org/) and [Mol\*](https://molstar.org/). However,
+since LiteMol was developed by the EMBL-EBI and it is used in ePDB site, it has
+become more popular.
 
 Other applications that you may know or came into are:
 
