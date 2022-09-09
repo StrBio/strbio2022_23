@@ -50,10 +50,12 @@ equivalences. Thus, superposition tires to minimize the distance between already
 known equivalent structures by finding a transformation that produces either the
 lowest root-mean-square deviation
 ([**RMSD**](https://en.wikipedia.org/wiki/Root-mean-square_deviation_of_atomic_positions))
-or the maximal equivalences within an RMSD cutoff. The RMSD can be calculated for any pair of molecules. Regarding proteins, we usually refer to the *RMSD of the alpha-carbons*. A better alignment will allow
-a better superposition. Thus, although alignment and superposition are two
-different processes, the RMSD can be used as an indication of both (the lowest
-RMSD, the best alignment/superposition).
+or the maximal equivalences within an RMSD cutoff. The RMSD can be calculated
+for any pair of molecules. Regarding proteins, we usually refer to the *RMSD of
+the alpha-carbons*. A better alignment will allow a better superposition. Thus,
+although alignment and superposition are two different processes, the RMSD can
+be used as an indication of both (the lowest RMSD, the best
+alignment/superposition).
 
 ![Structural alignment of three different AP endoncleases with the
 [*cealign*]{.ul} algorithm implemented in Pymol. The RMSD and the number of
@@ -214,9 +216,9 @@ Pfam has also been used in the creation of other resources such as
 ### RCSB-PDB
 
 The Protein Data Bank (PDB, [www.rcsb.org](www.rcsb.org)) database is the major
-macromolecule structural database. It contains mostly protein structures, but
-also spans nucleic acids and nucleoprotein complexes. PDB turned 50 in 2021 and
-you can see a detailed overview of its [history in the RCSB-PDB
+macromolecule structural database [@burley2021]. It contains mostly protein
+structures, but also spans nucleic acids and nucleoprotein complexes. PDB turned
+50 in 2021 and you can see a detailed overview of its [history in the RCSB-PDB
 site.](https://www.rcsb.org/pages/about-us/history)
 
 Briefly, the PDB was established in 1971 at Brookhaven National Laboratory with

@@ -142,8 +142,8 @@ large biomolecules, often below 20-30 kDa (see @fig-experimental). Additionally,
 this technique requires relatively large amounts of pure samples (on the order
 of several mg) to achieve a reasonable signal to noise level.
 
-[![Coverage of molecular weight by structural technique. From
-@hancock2022.](images/paste-FA73AF1E.png){#fig-experimental
+[![Coverage of molecular weight by structural technique. From @hancock2022
+.](images/paste-FA73AF1E.png){#fig-experimental
 .figure}](https://doi.org/10.1016/j.jsb.2022.107841)
 
 ## Electron cryomicroscopy
@@ -220,13 +220,12 @@ the experimental data is modeled.
 
 ![The effect of resolution on the quality of the electron density. The Tyr100
 residue from concanavalin A as found in the indicated PDB structures at 3 Å, 2 Å
-and 1.2 Å. Picture inspired in Figure 14.5 from @structura and rendered with
+and 1.2 Å. Picture inspired in Figure 14.5 from @structur and rendered with
 Pymol (see [concanavalin.pse](../concanavalin.pse) and
 [concanavalin.txt](../concanavalin.txt) in the Repo for details about the
 picture display).](images/paste-C3031EBE.png){#fig-reso .figure}
 
-Other important parameter is the ***R*****-factor**, which assess the difference
-between the structure factors calculated from the model and those obtained from
+Other important parameter is the ***R*****-factor**, which assess the difference between the structure factors calculated from the model and those obtained from
 the experimental data. This is, the *R*-factor is the deviation of the
 calculated diffraction pattern of the model and the original experimental
 diffraction pattern. Typically, good structures with a resolution around 1-3 Å,

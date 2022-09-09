@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Modesto Redrejo Rodríguez">
-<meta name="dcterms.date" content="2022-09-08">
+<meta name="dcterms.date" content="2022-09-09">
 
 <title>Structural Bioinformatics 2022-23 - Introduction</title>
 <style>
@@ -111,6 +111,11 @@ div.csl-indent {
       </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">StrBio 2022-23</a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
     <div class="sidebar-item-container"> 
         <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Basics</a>
@@ -119,11 +124,6 @@ div.csl-indent {
       </a>
     </div>
     <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">StrBio 2022-23</a>
-  </div>
-</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./intro.html" class="sidebar-item-text sidebar-link active">Introduction</a>
@@ -204,7 +204,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 8, 2022</p>
+      <p class="date">September 9, 2022</p>
     </div>
   </div>
     
@@ -216,7 +216,7 @@ div.csl-indent {
 <section id="goals" class="level1" data-link="Preface" data-number="1">
 <h1 data-link="Preface" data-number="1"><span class="header-section-number">1</span> Goals</h1>
 <p><a href="https://en.wikipedia.org/wiki/Structural_bioinformatics" title="Wikipedia">Structural Bioinformatics</a> (SB) s a broad discipline that covers structural and computational biology, from visualization and analysis of the structure of biomacromolecules to protein modeling and molecular docking. The great promise of SB is predicated on the belief that a high-resolution structural information about biological systems will allow us to precisely reason about the function of these systems and the effects of modifications and perturbations.</p>
-<p>The goals of SB require at least four different research lines (see Chapter 1 in <span class="citation" data-cites="structura"><span>“Structural Bioinformatics, 2nd Edition | Wiley”</span> (<a href="#ref-structura" role="doc-biblioref">n.d.a</a>)</span>):</p>
+<p>The goals of SB require at least four different research lines (see Chapter 1 in <span class="citation" data-cites="structur">Gu and Bourne (<a href="#ref-structur" role="doc-biblioref">2009</a>)</span>):</p>
 <ol type="1">
 <li><p><em>Visualization</em> of complex structures with several sources of information: sequence, structural data, electrostatic fields, location of functional sites, and areas of variability.</p></li>
 <li><p><em>Classification</em> of the structures, making if necessary to cluster similar structures together in a hierarchical classification allow us to identify common origins and diversification paths. Similar to other fields of biology classification is tedious but required to understand the structural space.</p></li>
@@ -227,7 +227,7 @@ div.csl-indent {
 </section>
 <section id="sec-str" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Before going forward: Protein Structure 101</h1>
-<p>Although you can make some protein modeling without being an expert in structural biology, a basic understanding of protein structure is strongly advisable. In this course there are some students without a background in biology. Moreover, over the years, I noticed that graduate students in biology, biomedicine, and related fields have a very different background on protein structure. If you want to review and update your background on protein structure, I recommend you reading Chapter 2 of <span class="citation" data-cites="structur"><span>“Structural Bioinformatics, 2nd Edition | Wiley”</span> (<a href="#ref-structur" role="doc-biblioref">n.d.b</a>)</span>, the great recent review by <span class="citation" data-cites="stollar2020">Stollar and Smith (<a href="#ref-stollar2020" role="doc-biblioref">2020</a>)</span> and the <a href="https://en.wikipedia.org/wiki/Protein_structure">Wikipedia</a> and <a href="https://proteopedia.org/wiki/index.php/Introduction_to_protein_structure">Proteopedia</a> articles on protein structures, which constituted my main source for this brief section (follow picture links).</p>
+<p>Although you can make some protein modeling without being an expert in structural biology, a basic understanding of protein structure is strongly advisable. In this course there are some students without a background in biology. Moreover, over the years, I noticed that graduate students in biology, biomedicine, and related fields have a very different background on protein structure. If you want to review and update your background on protein structure, I recommend you reading Chapter 2 of <span class="citation" data-cites="structur">Gu and Bourne (<a href="#ref-structur" role="doc-biblioref">2009</a>)</span>, the great recent review by <span class="citation" data-cites="stollar2020">Stollar and Smith (<a href="#ref-stollar2020" role="doc-biblioref">2020</a>)</span> and the <a href="https://en.wikipedia.org/wiki/Protein_structure">Wikipedia</a> and <a href="https://proteopedia.org/wiki/index.php/Introduction_to_protein_structure">Proteopedia</a> articles on protein structures, which constituted my main source for this brief section (follow picture links).</p>
 <div id="fig-str" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><a href="https://en.wikipedia.org/wiki/Protein_structure"><img src="pics/Protein_structure.png" title="Protein Structure" class="img-fluid figure-img"></a></p>
@@ -309,7 +309,7 @@ div.csl-indent {
 <div id="fig-chlothia" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="pics/clasif.png" class="figure img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 10: The four structural protein classes in the classification by Chlothia &amp; Levitt. Modified from <span class="citation" data-cites="structur"><span>“Structural Bioinformatics, 2nd Edition | Wiley”</span> (<a href="#ref-structur" role="doc-biblioref">n.d.b</a>)</span> using 1I2T, 1K76, 1H75 and 1EM7 structures.</figcaption><p></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 10: The four structural protein classes in the classification by Chlothia &amp; Levitt. Modified from <span class="citation" data-cites="structur">Gu and Bourne (<a href="#ref-structur" role="doc-biblioref">2009</a>)</span> using 1I2T, 1K76, 1H75 and 1EM7 structures.</figcaption><p></p>
 </figure>
 </div>
 <p>As known fold space has become more and more complex, these types of classifications have been adjusted and extended such that a complete hierarchy is created. The most commonly referred approaches to this sort of classification are those used by SCOP and CATH databases, as we will see in the <a href="ddbb.html#strDDBB">Structural Databases</a> section.</p>
@@ -358,6 +358,9 @@ div.csl-indent {
 <div id="ref-callaway2020" class="csl-entry" role="doc-biblioentry">
 Callaway, Ewen. 2020. <span>“Revolutionary Cryo-EM Is Taking over Structural Biology.”</span> <em>Nature</em> 578 (7794): 201–1. <a href="https://doi.org/10.1038/d41586-020-00341-9">https://doi.org/10.1038/d41586-020-00341-9</a>.
 </div>
+<div id="ref-structur" class="csl-entry" role="doc-biblioentry">
+Gu, J., and P. E. Bourne. 2009. <em>Structural Bioinformatics, 2nd Edition | Wiley</em>. <a href="https://www.wiley.com/en-us/Structural+Bioinformatics%2C+2nd+Edition-p-9780470181058">https://www.wiley.com/en-us/Structural+Bioinformatics%2C+2nd+Edition-p-9780470181058</a>.
+</div>
 <div id="ref-jumper2021" class="csl-entry" role="doc-biblioentry">
 Jumper, John, Richard Evans, Alexander Pritzel, Tim Green, Michael Figurnov, Olaf Ronneberger, Kathryn Tunyasuvunakool, et al. 2021. <span>“Highly Accurate Protein Structure Prediction with AlphaFold.”</span> <em>Nature</em> 596 (7873): 583–89. <a href="https://doi.org/10.1038/s41586-021-03819-2">https://doi.org/10.1038/s41586-021-03819-2</a>.
 </div>
@@ -369,12 +372,6 @@ Mirdita, Milot, Konstantin Schütze, Yoshitaka Moriwaki, Lim Heo, Sergey Ovchinn
 </div>
 <div id="ref-stollar2020" class="csl-entry" role="doc-biblioentry">
 Stollar, Elliott J, and David P Smith. 2020. <span>“Uncovering Protein Structure.”</span> <em>Essays in Biochemistry</em> 64 (4): 649–80. <a href="https://doi.org/10.1042/EBC20190042">https://doi.org/10.1042/EBC20190042</a>.
-</div>
-<div id="ref-structur" class="csl-entry" role="doc-biblioentry">
-<span>“Structural Bioinformatics, 2nd Edition | Wiley.”</span> n.d.b. <a href="https://www.wiley.com/en-us/Structural+Bioinformatics%2C+2nd+Edition-p-9780470181058">https://www.wiley.com/en-us/Structural+Bioinformatics%2C+2nd+Edition-p-9780470181058</a>.
-</div>
-<div id="ref-structura" class="csl-entry" role="doc-biblioentry">
-———. n.d.a. <a href="https://www.wiley.com/en-us/Structural+Bioinformatics%2C+2nd+Edition-p-9780470181058">https://www.wiley.com/en-us/Structural+Bioinformatics%2C+2nd+Edition-p-9780470181058</a>.
 </div>
 </div></section></div></main> <!-- /main -->
 <script type="application/javascript">

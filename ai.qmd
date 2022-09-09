@@ -20,6 +20,11 @@ editor_options:
     wrap: 80
 ---
 
+::: callout-warning
+## Under construction
+:::
+![](pics/8275a.jpg "Under construction...")
+
 # How did we get to the Era of Alphafold (& rel.)?
 
 As mentioned earlier, the introduction of HMM-based profiles during the first
@@ -51,7 +56,7 @@ diverse fields.
 ![Schematic of how co-evolution methods extract information about protein
 structure from a multiple sequence alignment (MSA). Image modified from doi:
 `10.5281/zenodo.1405369`, which in turn was modified from
-\[@marks2011\].](pics/coevolution.webp)
+@marks2011.](pics/coevolution.webp)
 
 As shown in the picture below, residue contact maps are a 2D matrix-like
 representation of the protein sequence in which each pair of interacting

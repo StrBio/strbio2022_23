@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Modesto Redrejo Rodríguez">
-<meta name="dcterms.date" content="2022-08-25">
+<meta name="dcterms.date" content="2022-09-09">
 
 <title>Structural Bioinformatics 2022-23 - State-of-the-art protein modeling with Deep Learning-based methods</title>
 <style>
@@ -97,6 +97,11 @@ div.csl-indent {
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Structural Bioinformatics 2022-23</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://twitter.com/mredrejo" title="" class="sidebar-tool px-1"><i class="bi bi-twitter"></i></a>
+    <a href="mailto:modesto.redrejo@uam.es" title="" class="sidebar-tool px-1"><i class="bi bi-envelope-paper"></i></a>
+    <a href="https://github.com/strBio/strbio2022_23" title="" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+</div>
     </div>
       </div>
       <div class="mt-2 flex-shrink-0 align-items-center">
@@ -106,6 +111,11 @@ div.csl-indent {
       </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">StrBio 2022-23</a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
     <div class="sidebar-item-container"> 
         <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Basics</a>
@@ -114,11 +124,6 @@ div.csl-indent {
       </a>
     </div>
     <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">About StrBio 22-23</a>
-  </div>
-</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./intro.html" class="sidebar-item-text sidebar-link">Introduction</a>
@@ -131,7 +136,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pdb.html" class="sidebar-item-text sidebar-link">Working with protein structures</a>
+  <a href="./pdb.html" class="sidebar-item-text sidebar-link">Protein Structures</a>
   </div>
 </li>
     </ul>
@@ -204,7 +209,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 25, 2022</p>
+      <p class="date">September 9, 2022</p>
     </div>
   </div>
     
@@ -213,6 +218,20 @@ div.csl-indent {
 
 </header>
 
+<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Under construction
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<p><img src="pics/8275a.jpg" title="Under construction..." class="img-fluid"></p>
 <section id="how-did-we-get-to-the-era-of-alphafold-rel." class="level1">
 <h1>How did we get to the Era of Alphafold (&amp; rel.)?</h1>
 <p>As mentioned earlier, the introduction of HMM-based profiles during the first decade of this century led to a great improvement in template detection and protein modeling in the twilight zone, i.e., proteins with only distant homologs (&lt;25-30% identity) in databases. These methods naturally evolved into iterative <u>threading</u> methods, based on multitemplate model construction, implemented in <a href="https://zhanggroup.org/I-TASSER/">I-TASSER</a> <span class="citation" data-cites="roy2010">(<a href="#ref-roy2010" role="doc-biblioref">Roy, Kucukural, and Zhang 2010</a>)</span>, <a href="http://raptorx.uchicago.edu/">RaptorX</a> <span class="citation" data-cites="peng2011">(<a href="#ref-peng2011" role="doc-biblioref">Peng and Xu 2011</a>)</span>, and <a href="https://toolkit.tuebingen.mpg.de/tools/hhpred">HHpred</a> <span class="citation" data-cites="meier2015">(<a href="#ref-meier2015" role="doc-biblioref">Meier and Söding 2015</a>)</span>, among others. We are not going to discuss these methods by lack of time and because they are currently somewhat disused as Alphafold2 captures all the attention, and we will move to the very last advancements. I strongly encourage checking the provided references and the <a href="#links">Useful links</a> below for a more accurate and comprehensive discussion on deep learning-fueled protein modeling.</p>
@@ -228,7 +247,7 @@ div.csl-indent {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="pics/coevolution.webp" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Schematic of how co-evolution methods extract information about protein structure from a multiple sequence alignment (MSA). Image modified from doi: <code>10.5281/zenodo.1405369</code>, which in turn was modified from [<span class="citation" data-cites="marks2011">Marks et al. (<a href="#ref-marks2011" role="doc-biblioref">2011</a>)</span>].</figcaption><p></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Schematic of how co-evolution methods extract information about protein structure from a multiple sequence alignment (MSA). Image modified from doi: <code>10.5281/zenodo.1405369</code>, which in turn was modified from <span class="citation" data-cites="marks2011">Marks et al. (<a href="#ref-marks2011" role="doc-biblioref">2011</a>)</span>.</figcaption><p></p>
 </figure>
 </div>
 <p>As shown in the picture below, residue contact maps are a 2D matrix-like representation of the protein sequence in which each pair of interacting residues are indicated. An accurate information of protein’s residue–residue contacts is sufficient to elucidate the fold of a protein <span class="citation" data-cites="olmea1997">(<a href="#ref-olmea1997" role="doc-biblioref">Olmea and Valencia 1997</a>)</span>; however predicting that map is not always easy. The introduction of <strong>evolutionary coupling analysis (ECA)</strong>, i.e., extract the residue coevolution from MSAs (piture above) improved contact maps and allowed their implementation for protein folding in several methods, like PSICOV [<span class="citation" data-cites="jones2012">Jones et al. (<a href="#ref-jones2012" role="doc-biblioref">2012</a>)</span>] or Gremlin <span class="citation" data-cites="kamisetty2013">(<a href="#ref-kamisetty2013" role="doc-biblioref">Kamisetty, Ovchinnikov, and Baker 2013</a>)</span>, among others. However, for proteins without many sequence homologs, the predicted contacts were of low quality and insufficient for accurate contact-assisted protein modeling.</p>

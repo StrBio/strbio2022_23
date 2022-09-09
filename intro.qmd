@@ -49,7 +49,7 @@ will allow us to precisely reason about the function of these systems and the
 effects of modifications and perturbations.
 
 The goals of SB require at least four different research lines (see Chapter 1 in
-@structura):
+@structur):
 
 1.  *Visualization* of complex structures with several sources of information:
     sequence, structural data, electrostatic fields, location of functional

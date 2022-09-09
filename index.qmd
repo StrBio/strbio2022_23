@@ -33,4 +33,4 @@ Note that this site is a draft under development and I only expect to have a fir
 
 ## Contact
 
-Please let me know if you find some mistake missing reference. Definitely, I'll appreciate any suggestion or correction. You can reach me by [email](mailto::modesto.redrejo@uam.es) or [![](pics/tw.png "@mredrejo"){width="14" height="11"} Twitter](https://twitter.com/mredrejo "Twitter").
+Please let me know if you find some mistake or a missing reference. Definitely, I'll appreciate any suggestion, request or correction. You can reach me by [email](mailto::modesto.redrejo@uam.es) or [![](pics/tw.png "@mredrejo"){width="14" height="11"} Twitter](https://twitter.com/mredrejo "Twitter").

@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2022-09-08">
+<meta name="dcterms.date" content="2022-09-09">
 
 <title>Structural Bioinformatics 2022-23 - Homology Modeling</title>
 <style>
@@ -214,7 +214,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 8, 2022</p>
+      <p class="date">September 9, 2022</p>
     </div>
   </div>
     
@@ -440,7 +440,7 @@ Rather than provide just a recipe to make a model in two clics, the goal is to u
 </figure>
 </div>
 <p>QMEANDisCo can be used to analyze models obtained with other methods in order to make them comparable (note that you can use QMEANDisCo for models obtained with any method, you just need a <code>.pdb</code> file). There are other independent model assessing tools commonly used to assess protein models, like <a href="https://bioinformatics.lt/wtsam/voromqa">VoroMQA</a> [<span class="citation" data-cites="olechnovi2017">Olechnovič and Venclovas (<a href="#ref-olechnovi2017" role="doc-biblioref">2017</a>)</span>] or <a href="https://www.reading.ac.uk/bioinf/ModFOLD/ModFOLD8_form.html">MoldFold</a> <span class="citation" data-cites="mcguffin2021">(<a href="#ref-mcguffin2021" role="doc-biblioref">McGuffin et al. 2021</a>)</span>. VoroMQA is very quick method that combines the idea of statistical potentials (i.e.&nbsp;a knowledge-based score function) with the use of interatomic contact areas to provide a score in the range of [0,1]. When applied to PDB database, most of the high-quality experimentally-based structures have a VoroMQA score &gt;0.4. Thus, if the score is greater than 0.4, then the model is likely good and models with score &lt;0.3 are likely bad ones. Models with score 0.3-0.4 are uncertain and should not be classified with VoroMQA. On the other hand, ModFold is a meta-tool that provides you a very detailed report (and parseable files) with local and global scores, but it can take hours/days to obtain the result, so tend to use it only with selected models.</p>
-<p>Another key parameter that you should know if you want to compare protein structures is the <strong>alpha carbon RMSD</strong> (see <a href="ddbb.html#sec-alignment">Structure alignment section</a>). Any protein structural alignment will give you this parameter as an estimation of the difference of the structures. You can align structure with many online servers, like <a href="http://fatcat.godziklab.org/">FATCAT2</a> or using molecular visualization apps, like <a href="https://www.cgl.ucsf.edu/chimerax/">ChimeraX</a> or <a href="https://pymol.org/2/">PyMOL</a> (see <a href="pdb.html#sec-apps">Protein Structure Display</a> section).</p>
+<p>Another key parameter that you should know if you want to compare protein structures is the <strong>alpha carbon RMSD</strong> (see <a href="ddbb.html#sec-alignment">Structure alignment section</a>). Any protein structural alignment will give you this parameter as an estimation of the difference of the structures. You can align structure with many online servers, like <a href="https://www.rcsb.org/alignment">RCSB</a>, <a href="http://fatcat.godziklab.org/">FATCAT2</a> or using molecular visualization apps, like <a href="https://www.cgl.ucsf.edu/chimerax/">ChimeraX</a> or <a href="https://pymol.org/2/">PyMOL</a> (see <a href="pdb.html#sec-apps">Protein Structure Display</a> section).</p>
 <section id="which-model-is-better-which-regions-are-more-difficult-to-model-why" class="level4" data-number="3.3.0.1">
 <h4 data-number="3.3.0.1" class="anchored" data-anchor-id="which-model-is-better-which-regions-are-more-difficult-to-model-why"><span class="header-section-number">3.3.0.1</span> <span style="color:green">Which model is better? Which regions are more difficult to model? Why?</span></h4>
 </section>

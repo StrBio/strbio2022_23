@@ -429,10 +429,10 @@ structures is the **alpha carbon RMSD** (see [Structure alignment
 section](ddbb.html#sec-alignment)). Any protein structural alignment will give
 you this parameter as an estimation of the difference of the structures. You can
 align structure with many online servers, like
-[FATCAT2](http://fatcat.godziklab.org/) or using molecular visualization apps,
-like [ChimeraX](https://www.cgl.ucsf.edu/chimerax/) or
-[PyMOL](https://pymol.org/2/) (see [Protein Structure
-Display](pdb.html#sec-apps) section).
+[RCSB](https://www.rcsb.org/alignment), [FATCAT2](http://fatcat.godziklab.org/)
+or using molecular visualization apps, like
+[ChimeraX](https://www.cgl.ucsf.edu/chimerax/) or [PyMOL](https://pymol.org/2/)
+(see [Protein Structure Display](pdb.html#sec-apps) section).
 
 #### [Which model is better? Which regions are more difficult to model? Why?]{style="color:green"}
 
