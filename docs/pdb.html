@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Modesto Redrejo Rodríguez">
-<meta name="dcterms.date" content="2022-09-09">
+<meta name="dcterms.date" content="2022-09-16">
 
 <title>Structural Bioinformatics 2022-23 - Protein Structures</title>
 <style>
@@ -75,6 +75,8 @@ div.csl-indent {
 }</script>
 
 
+<meta name="twitter:title" content="Structural Bioinformatics 2022-23 - Protein Structures">
+<meta name="twitter:card" content="summary">
 </head>
 
 <body class="docked">
@@ -197,8 +199,8 @@ div.csl-indent {
   </ul></li>
   <li><a href="#pymol-practice" id="toc-pymol-practice" class="nav-link" data-scroll-target="#pymol-practice"> <span class="header-section-number">5</span> <span style="color:green"><strong>PyMOL Practice</strong></span></a>
   <ul class="collapse">
-  <li><a href="#a-10-steps-self-guided-practice" id="toc-a-10-steps-self-guided-practice" class="nav-link" data-scroll-target="#a-10-steps-self-guided-practice"> <span class="header-section-number">5.1</span> <span>A 10-steps self-guided practice</span></a></li>
-  <li><a href="#pymol-challenge" id="toc-pymol-challenge" class="nav-link" data-scroll-target="#pymol-challenge"> <span class="header-section-number">5.2</span> PyMOL Challenge</a></li>
+  <li><a href="#part-a-a-10-steps-self-guided-practice" id="toc-part-a-a-10-steps-self-guided-practice" class="nav-link" data-scroll-target="#part-a-a-10-steps-self-guided-practice"> <span class="header-section-number">5.1</span> <span>PART A: A 10-steps self-guided practice</span></a></li>
+  <li><a href="#part-b-pymol-challenge" id="toc-part-b-pymol-challenge" class="nav-link" data-scroll-target="#part-b-pymol-challenge"> <span class="header-section-number">5.2</span> PART B: PyMOL Challenge</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -227,7 +229,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 9, 2022</p>
+      <p class="date">September 16, 2022</p>
     </div>
   </div>
     
@@ -260,7 +262,7 @@ Warning for current and future structural biologists
 </figure>
 </div>
 <p>The surrealist Belgian painter René Magritte created a collection of surrealistic paintings entitled <a href="https://en.wikipedia.org/wiki/The_Treachery_of_Images" title="Magritte"><strong><em>La trahison des images</em></strong> (1928–1929)</a>. The most renowned of those paintings show a smoking pipe and the following caption underneath: <em>“Ceci n’est pas une pipe”</em> (This is not a pipe). Yes, indeed! It is actually the painting of a pipe.</p>
-<p>Similarly, a picture of a protein, or a PDB file with the coordinates of a protein structure, is not a protein. It is a representation of ONE structure. Even experimentally determined structures have two main limitations that we should always keep in mind: (1) they are a fixed structure whereas proteins <em>in vivo</em> are flexible and dynamic and (2) they are subjected to experimental error and they often contain regions of low reliability (see below <a href="#sec-assess">Section&nbsp;3</a>). Moreover, even experimentally obtained macromolecular structures are to some degree models, with a variable ratio between experimental data and computational prediction to match the experimental data (X-ray diffraction, cryo-EM density maps, NMR, SAXS, FRET…) with previously known structures or prediction models. Obviously, that does not mean that protein structures are useless, they can be very useful, but we must be aware of the limitations as well as the applications.</p>
+<p>Similarly, a picture of a protein, or a PDB file with the coordinates of a protein structure, is not a protein. It is a representation of ONE possible structure of that protein. Even experimentally determined structures have two main limitations that we should always keep in mind: (1) they are a fixed structure (except RMN-based) whereas proteins <em>in vivo</em> are flexible and dynamic and (2) they are subjected to experimental error and they often contain regions of low reliability (see below <a href="#sec-assess">Section&nbsp;3</a>). Moreover, even experimentally obtained macromolecular structures are to some degree models, with a variable ratio between experimental data and computational prediction to match the experimental data (X-ray diffraction, cryo-EM density maps, NMR, SAXS, FRET…) with previously known structures or prediction models. Obviously, that does not mean that protein structures are useless, they can be very useful, but we must be aware of the limitations as well as the applications.</p>
 </section>
 <section id="experimental-determination-of-protein-structures" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Experimental determination of protein structures</h1>
@@ -274,7 +276,7 @@ Warning for current and future structural biologists
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2: Schematic workflow of X-ray crystallography. From Creative Structure <a href="https://www.creative-biostructure.com/comparison-of-crystallography-nmr-and-em_6.htm">website</a>.</figcaption><p></p>
 </figure>
 </div>
-<p>X-ray is a powerful method that allows obtaining high-resolution structures at the atomic level of soluble or membrane proteins, either as an apoenzyme or as a holoenzyme bound to substrate, cofactor or drugs. However, the sample must be crystallizable (i.e.&nbsp;homogeneous), which requires quite an amount of very pure protein. Another con of X-ray structures is that, as mentioned, you only obtain one (or very few) static forms of the protein and the location of hydrogen atoms cannot be determined. It can be predicted, but that still hinders some chemical analysis.</p>
+<p>X-ray is a powerful method that allows obtaining high-resolution structures at the atomic level of soluble or membrane proteins, either as an apoenzyme or as a holoenzyme bound to substrate, cofactor or drugs. However, the sample must be crystallizable (i.e.&nbsp;homogeneous), which requires quite an amount of very pure protein. Another con of X-ray structures is that, as mentioned, you only obtain one (or very few) static forms of the protein and the location of hydrogen atoms cannot be determined by conventional diffraction methods—the fact that they have only one electron—makes them very hard to detect with x-rays accurately because x-rays scatter from the electron density. They can be predicted, but that still hinders some chemical analysis.</p>
 </section>
 <section id="nuclear-magnetic-resonance" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="nuclear-magnetic-resonance"><span class="header-section-number">2.2</span> Nuclear Magnetic Resonance</h2>
@@ -432,12 +434,12 @@ Tip
 <section id="pymol-practice" class="level1" data-number="5">
 <h1 data-number="5"><span class="header-section-number">5</span> <span style="color:green"><strong>PyMOL Practice</strong></span></h1>
 <p>Our PyMOL Practice has two parts.</p>
-<section id="a-10-steps-self-guided-practice" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="a-10-steps-self-guided-practice"><span class="header-section-number">5.1</span> <a href="https://www.evernote.com/shard/s62/client/snv?noteGuid=666c39a1-ac03-64c9-b8a0-cab9ff3959c7&amp;noteKey=9d20b6eadae8d130fdbe6652d60237f2&amp;sn=https%3A%2F%2Fwww.evernote.com%2Fshard%2Fs62%2Fsh%2F666c39a1-ac03-64c9-b8a0-cab9ff3959c7%2F9d20b6eadae8d130fdbe6652d60237f2&amp;title=StrBio%2B2022%252F2023%2B-%2B3.%2BPymol%2BPractice">A 10-steps self-guided practice</a></h2>
+<section id="part-a-a-10-steps-self-guided-practice" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="part-a-a-10-steps-self-guided-practice"><span class="header-section-number">5.1</span> <a href="https://www.evernote.com/shard/s62/sh/666c39a1-ac03-64c9-b8a0-cab9ff3959c7/9d20b6eadae8d130fdbe6652d60237f2">PART A: A 10-steps self-guided practice</a></h2>
 <p>This is a <a href="https://evernote.com/intl/es">Evernote</a> note that you can consult online and also copy into your Evenote account if you wish.</p>
 </section>
-<section id="pymol-challenge" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="pymol-challenge"><span class="header-section-number">5.2</span> PyMOL Challenge</h2>
+<section id="part-b-pymol-challenge" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="part-b-pymol-challenge"><span class="header-section-number">5.2</span> PART B: PyMOL Challenge</h2>
 <p>Make a ready-to-publish picture of your favorite protein. As a suggestion, you can reproduce the top panels in the Figure 1B of <span class="citation" data-cites="gao2020">Gao et al. (<a href="#ref-gao2020" role="doc-biblioref">2020</a>)</span>, but any structure involving more than one domain and/or with a substrate/cofactor molecule can be a good challenge.</p>
 
 

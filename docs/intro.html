@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Modesto Redrejo Rodríguez">
-<meta name="dcterms.date" content="2022-09-09">
+<meta name="dcterms.date" content="2022-09-16">
 
 <title>Structural Bioinformatics 2022-23 - Introduction</title>
 <style>
@@ -75,6 +75,8 @@ div.csl-indent {
 }</script>
 
 
+<meta name="twitter:title" content="Structural Bioinformatics 2022-23 - Introduction">
+<meta name="twitter:card" content="summary">
 </head>
 
 <body class="docked">
@@ -204,7 +206,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 9, 2022</p>
+      <p class="date">September 16, 2022</p>
     </div>
   </div>
     
@@ -252,15 +254,17 @@ div.csl-indent {
 <p>Within these restraints, the two principal local conformations that avoid steric hindrance and maximize backbone–backbone hydrogen bonding are the <strong>α-helix</strong> and the <strong>β-sheet</strong> secondary structures. The α-helix was proposed initially as left-handed by Linus Pauling in 1951, but the crystal structure of myoglobin in 1958 showed that, although both can be found, the right-handed form is the common one. In the common right-handed helices, the backbone NH group hydrogen bonds to the backbone C = O group of the amino acid located four residues earlier along the protein sequence. This results in a polypeptide chain that twists in a regular coil shape with the R-groups pointing outwards away from the peptide backbone. It takes approximately 3.6 residues to complete a full turn of a helix.</p>
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
-<div id="fig-alpha" class="quarto-figure quarto-figure-center anchored" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-alpha" class="quarto-figure quarto-figure-center anchored" style="flex-basis: 100.0%;justify-content: center;">
 <figure class="figure">
-<p><a href="https://en.wikipedia.org/wiki/Alpha_helix"><img src="pics/alpha.gif" title="Alpha helix" class="img-fluid figure-img"></a></p>
+<p><a href="https://en.wikipedia.org/wiki/Alpha_helix"><img src="pics/alpha.png" title="Alpha helix" class="img-fluid figure-img"></a></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4: Alpha helix</figcaption><p></p>
 </figure>
 </div>
-<div id="fig-beta" class="quarto-figure quarto-figure-center anchored" style="flex-basis: 50.0%;justify-content: center;">
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div id="fig-beta" class="quarto-figure quarto-figure-center anchored" style="flex-basis: 100.0%;justify-content: center;">
 <figure class="figure">
-<p><a href="https://en.wikipedia.org/wiki/Beta_sheet"><img src="pics/Animated_Beta_sheet.gif" title="Beta sheet" class="img-fluid figure-img"></a></p>
+<p><a href="https://en.wikipedia.org/wiki/Beta_sheet"><img src="pics/beta.png" title="Beta sheet" class="img-fluid figure-img"></a></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 5: Beta sheet</figcaption><p></p>
 </figure>
 </div>
@@ -281,7 +285,7 @@ div.csl-indent {
 <p>As you probably already figure out, many combinations of φ and ψ angles are forbidden because of the principle of steric exclusion: two atoms cannot be in the same place ad the same time. This was initially shown by <a href="https://en.wikipedia.org/wiki/G._N._Ramachandran">Gopalasamudram Ramachandran</a>, who also devised a plot to visualize the allowed angle values, so-called Ramachandran plot. This plot can represent the angles of a particular amino acid, of all the amino acids in a protein or many proteins. Analysis of φ and ψ angles in known proteins clearly show that roughly three-quarters of all possible φ, ψ combinations are excluded.</p>
 <div id="fig-rama0" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><a href="https://proteopedia.org/wiki/index.php/Ramachandran_Plot"><img src="https://proteopedia.org/wiki/images/9/90/Ramachandran_plot_general_100K.jpg" title="General Ramachandran plot" class="img-fluid figure-img"></a></p>
+<p><a href="https://proteopedia.org/wiki/index.php/Ramachandran_Plot"><img src="pics/Ramachandran_plot_general_100K.jpg" title="General Ramachandran plot" class="img-fluid figure-img"></a></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 7: General Ramachandran plot. The density of points reflects how likely is each angle combination, defining the core (red line) and tolerance (orange) regions.</figcaption><p></p>
 </figure>
 </div>
@@ -297,7 +301,7 @@ div.csl-indent {
 <p>Functionally and structurally relevant residues are more likely than others to have torsion angles that plot to the <u>allowed but disfavored</u> regions of a Ramachandran plot. The specific geometry of these functionally relevant residues, while somewhat energetically unfavorable, may be important for the protein’s function, catalytic or otherwise. Such conformations need to be stabilized by the protein using H-bonds, steric packing, or other means, and should very seldom occur for highly solvent-exposed residues.</p>
 <div id="fig-rama2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><a href="https://proteopedia.org/wiki/index.php/Ramachandran_Plot"><img src="https://proteopedia.org/wiki/images/8/85/Ramachandran_Gly_Pro_data_and_contours_T8000_small.jpg" class="img-fluid figure-img"></a></p>
+<p><a href="https://proteopedia.org/wiki/index.php/Ramachandran_Plot"><img src="pics/Ramachandran_Gly_Pro_data_and_contours_T8000_small.jpg" class="img-fluid figure-img"></a></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 9: Ramachandran plots for glycine (lef) and proline (right) Inner contour encloses 98% and 99.9% of Top structures data, indicating the favored and allowed regions, respectively .</figcaption><p></p>
 </figure>
 </div>
@@ -342,7 +346,7 @@ div.csl-indent {
 <strong>- What would happen if you introduce a K5W in the structure number 2? and in the 4?</strong><br>
 <br>
 <br>
-<strong>2. Now, try to create peptides with:</strong><br>
+<strong>2. Now, try to create peptides with a custom motif, such as:</strong><br>
 <br>
 <strong>- Two helices.</strong><br>
 <strong>- A four-strands beta-sheet.</strong><br>

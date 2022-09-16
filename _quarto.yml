@@ -3,6 +3,7 @@ project:
   output-dir: docs
 
 website:
+  twitter-card: true
   title: "Structural Bioinformatics 2022-23"
   sidebar:
     style: "docked"
@@ -35,8 +36,10 @@ format:
     toc: true
     link-external-icon: true
     link-external-newwindow: true
+    cover-image: pics/cover.png
   pdf:
-    documentclass: scrreprt
+    documentclass: scrbook
+    cover-image: pics/cover.png
 
 
 

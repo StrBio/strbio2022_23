@@ -155,11 +155,11 @@ twists in a regular coil shape with the R-groups pointing outwards away from the
 peptide backbone. It takes approximately 3.6 residues to complete a full turn of
 a helix.
 
-::: {layout-ncol="2"}
-[![Alpha helix](pics/alpha.gif "Alpha helix"){#fig-alpha
+::: {layout-ncol="1"}
+[![Alpha helix](pics/alpha.png "Alpha helix"){#fig-alpha
 .figure}](https://en.wikipedia.org/wiki/Alpha_helix)
 
-[![Beta sheet](pics/Animated_Beta_sheet.gif "Beta sheet"){#fig-beta
+[![Beta sheet](pics/beta.png "Beta sheet"){#fig-beta
 .figure}](https://en.wikipedia.org/wiki/Beta_sheet)
 :::
 
@@ -235,7 +235,7 @@ combinations are excluded.
 
 [![General Ramachandran plot. The density of points reflects how likely is each
 angle combination, defining the core (red line) and tolerance (orange)
-regions.](https://proteopedia.org/wiki/images/9/90/Ramachandran_plot_general_100K.jpg "General Ramachandran plot"){#fig-rama0
+regions.](pics/Ramachandran_plot_general_100K.jpg "General Ramachandran plot"){#fig-rama0
 .figure}](https://proteopedia.org/wiki/index.php/Ramachandran_Plot)
 
 The core regions in the Rama plot also correspond with common secondary
@@ -255,7 +255,7 @@ should very seldom occur for highly solvent-exposed residues.
 [![Ramachandran plots for glycine (lef) and proline (right) Inner contour
 encloses 98% and 99.9% of Top structures data, indicating the favored and
 allowed regions, respectively
-.](https://proteopedia.org/wiki/images/8/85/Ramachandran_Gly_Pro_data_and_contours_T8000_small.jpg){#fig-rama2
+.](pics/Ramachandran_Gly_Pro_data_and_contours_T8000_small.jpg){#fig-rama2
 .figure}](https://proteopedia.org/wiki/index.php/Ramachandran_Plot)
 
 ## Protein folds, domains and motifs
@@ -337,7 +337,7 @@ interesting examples (IUPAC one-letter amino acid code):
 the 4?**\
 \
 \
-**2. Now, try to create peptides with:**\
+**2. Now, try to create peptides with a custom motif, such as:**\
 \
 **- Two helices.**\
 **- A four-strands beta-sheet.**\

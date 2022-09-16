@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2022-09-09">
+<meta name="dcterms.date" content="2022-09-16">
 
 <title>Structural Bioinformatics 2022-23 - Homology Modeling</title>
 <style>
@@ -74,6 +74,8 @@ div.csl-indent {
 }</script>
 
 
+<meta name="twitter:title" content="Structural Bioinformatics 2022-23 - Homology Modeling">
+<meta name="twitter:card" content="summary">
 </head>
 
 <body class="docked">
@@ -192,7 +194,7 @@ div.csl-indent {
   </ul></li>
   <li><a href="#corollary" id="toc-corollary" class="nav-link" data-scroll-target="#corollary"> <span class="header-section-number">3.4</span> Corollary: What can I do with my model and what I cannot?</a></li>
   </ul></li>
-  <li><a href="#homology-modeling-practice-b-model-your-favourite-protein-yfp." id="toc-homology-modeling-practice-b-model-your-favourite-protein-yfp." class="nav-link" data-scroll-target="#homology-modeling-practice-b-model-your-favourite-protein-yfp."> <span class="header-section-number">4</span> <span style="color:green">Homology Modeling Practice B: Model your favourite protein (YFP).</span></a></li>
+  <li><a href="#homology-modeling-practice" id="toc-homology-modeling-practice" class="nav-link" data-scroll-target="#homology-modeling-practice"> <span class="header-section-number">4</span> <span>Homology Modeling Practice</span></a></li>
   </ul>
 </nav>
     </div>
@@ -214,7 +216,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 9, 2022</p>
+      <p class="date">September 16, 2022</p>
     </div>
   </div>
     
@@ -261,7 +263,7 @@ div.csl-indent {
 <div id="fig-funnel" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><a href="https://www.sciencedirect.com/science/article/pii/S0968000400017072?casa_token=BR_maX_GNYYAAAAA:IZrQqI9jIbiv-ZeA6aOMHQxsVcp-wgy0XPFO3DRcFiAi7TSrX-3cc7Jb6dhTHdXSQseEhF3l#BIB49"><img src="pics/funnel_1.jpeg" title="The funnel of protein folding" class="img-fluid figure-img"></a></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4: Schematic diagram of a protein folding energy landscape according to the funnel model. Denatured molecules at the top of the funnel might fold to the native state by a myriad of different routes, some of which involve transient intermediates (local energy minima) whereas others involve significant kinetic traps (misfolded states). From <span class="citation" data-cites="radford2000">Radford (<a href="#ref-radford2000" role="doc-biblioref">2000</a>)</span>.</figcaption><p></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4: Schematic diagram of a protein folding energy landscape according to the funnel model. Denatured molecules at the top of the funnel might fold to the native state by a myriad of different routes, some of which involve transient intermediates (local energy minima) whereas others involve significant kinetic traps (misfolded states). From .</figcaption><p></p>
 </figure>
 </div>
 <div class="callout-important callout callout-style-default callout-captioned">
@@ -408,7 +410,7 @@ Rather than provide just a recipe to make a model in two clics, the goal is to u
 <div id="fig-rotamers" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <figure class="figure">
-<img src="pics/Rotamers.gif" title="Backbone and loop modeling" class="figure img-fluid figure-img">
+<img src="pics/Rotamers.png" title="Backbone and loop modeling" class="figure img-fluid figure-img">
 </figure>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 14: Side chain modeling. From <a href="https://swift.cmbi.umcn.nl/teach/B1SEM/B1SEM_8.html">CMBI Seminars on Bioinformatics</a>.</figcaption><p></p>
 </figure>
@@ -450,7 +452,7 @@ Rather than provide just a recipe to make a model in two clics, the goal is to u
 <div id="fig-baker" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><a href="https://www.science.org/doi/10.1126/science.1065659"><img src="pics/sali.jpeg" title="Accuracy and application of protein structure models." class="img-fluid figure-img"></a></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 18: Accuracy and application of protein structure models (in 2001). From <span class="citation" data-cites="baker2001">Baker and Sali (<a href="#ref-baker2001" role="doc-biblioref">2001</a>)</span>.</figcaption><p></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 18: Accuracy and application of protein structure models (in 2001). From .</figcaption><p></p>
 </figure>
 </div>
 <p>A big power entails a big responsibility. The use of models entails a precaution and a need for experimental validation. However, knowing the limitations of our model is required for a realist use of it; and limits are defined by the model quality.</p>
@@ -460,16 +462,9 @@ Rather than provide just a recipe to make a model in two clics, the goal is to u
 <p><span style="color:green"><strong>What do you think you could use our models of NEIL2 and HAdV-2pol?</strong></span></p>
 </section>
 </section>
-<section id="homology-modeling-practice-b-model-your-favourite-protein-yfp." class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> <span style="color:green">Homology Modeling Practice B: Model your favourite protein (YFP).</span></h1>
-<ol type="1">
-<li>Use SWISS-MODEL to model a protein with no structure on PDB database. If your protein has a structure, you can select an ortholog from other organisms (mice, chicken, monkey, dog, fly, yeast…).</li>
-<li>Model it also with RosettaCM at Baker’s lab site (https://robetta.bakerlab.org/). Note that you have to select the <strong><em>CM</em></strong> option.</li>
-</ol>
-<p><img src="images/paste-05D080DB.png" class="img-fluid" width="518"></p>
-<ol start="3" type="1">
-<li>Compare the obtained models and their applications.</li>
-</ol>
+<section id="homology-modeling-practice" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> <a href="https://www.evernote.com/shard/s62/sh/1d73369b-368c-612f-a046-83f521f497e5/c64575610629aa27013352f3ebde4422" style="color:green">Homology Modeling Practice</a></h1>
+<p>This is a <a href="https://evernote.com/intl/es">Evernote</a> note that you can consult online and also copy into your Evenote account if you wish.</p>
 
 
 
@@ -481,9 +476,6 @@ Adiyaman, Recep, and Liam James McGuffin. 2019. <span>“Methods for the Refinem
 </div>
 <div id="ref-anfinsen1973" class="csl-entry" role="doc-biblioentry">
 Anfinsen, C. B. 1973. <span>“Principles that govern the folding of protein chains.”</span> <em>Science (New York, N.Y.)</em> 181 (4096): 223–30. <a href="https://doi.org/10.1126/science.181.4096.223">https://doi.org/10.1126/science.181.4096.223</a>.
-</div>
-<div id="ref-baker2001" class="csl-entry" role="doc-biblioentry">
-Baker, David, and Andrej Sali. 2001. <span>“Protein Structure Prediction and Structural Genomics.”</span> <em>Science</em> 294 (5540): 93–96. <a href="https://doi.org/10.1126/science.1065659">https://doi.org/10.1126/science.1065659</a>.
 </div>
 <div id="ref-haddad2020" class="csl-entry" role="doc-biblioentry">
 Haddad, Yazan, Vojtech Adam, and Zbynek Heger. 2020. <span>“Ten Quick Tips for Homology Modeling of High-Resolution Protein 3d Structures.”</span> <em>PLOS Computational Biology</em> 16 (4): e1007449. <a href="https://doi.org/10.1371/journal.pcbi.1007449">https://doi.org/10.1371/journal.pcbi.1007449</a>.
@@ -508,9 +500,6 @@ Muhammed, Muhammed Tilahun, and Esin Aki-Yalcin. 2019. <span>“Homology modelin
 </div>
 <div id="ref-olechnovi2017" class="csl-entry" role="doc-biblioentry">
 Olechnovič, Kliment, and Česlovas Venclovas. 2017. <span>“VoroMQA: Assessment of protein structure quality using interatomic contact areas.”</span> <em>Proteins</em> 85 (6): 1131–45. <a href="https://doi.org/10.1002/prot.25278">https://doi.org/10.1002/prot.25278</a>.
-</div>
-<div id="ref-radford2000" class="csl-entry" role="doc-biblioentry">
-Radford, Sheena E. 2000. <span>“Protein Folding: Progress Made and Promises Ahead.”</span> <em>Trends in Biochemical Sciences</em> 25 (12): 611–18. <a href="https://doi.org/10.1016/S0968-0004(00)01707-2">https://doi.org/10.1016/S0968-0004(00)01707-2</a>.
 </div>
 <div id="ref-remmert2011" class="csl-entry" role="doc-biblioentry">
 Remmert, Michael, Andreas Biegert, Andreas Hauser, and Johannes Söding. 2011. <span>“HHblits: lightning-fast iterative protein sequence searching by HMM-HMM alignment.”</span> <em>Nature Methods</em> 9 (2): 173–75. <a href="https://doi.org/10.1038/nmeth.1818">https://doi.org/10.1038/nmeth.1818</a>.

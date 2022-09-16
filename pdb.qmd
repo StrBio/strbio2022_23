@@ -51,9 +51,9 @@ caption underneath: *"Ceci n'est pas une pipe"* (This is not a pipe). Yes,
 indeed! It is actually the painting of a pipe.
 
 Similarly, a picture of a protein, or a PDB file with the coordinates of a
-protein structure, is not a protein. It is a representation of ONE structure.
+protein structure, is not a protein. It is a representation of ONE possible structure of that protein.
 Even experimentally determined structures have two main limitations that we
-should always keep in mind: (1) they are a fixed structure whereas proteins *in
+should always keep in mind: (1) they are a fixed structure (except RMN-based) whereas proteins *in
 vivo* are flexible and dynamic and (2) they are subjected to experimental error
 and they often contain regions of low reliability (see below @sec-assess).
 Moreover, even experimentally obtained macromolecular structures are to some
@@ -102,7 +102,7 @@ holoenzyme bound to substrate, cofactor or drugs. However, the sample must be
 crystallizable (i.e. homogeneous), which requires quite an amount of very pure
 protein. Another con of X-ray structures is that, as mentioned, you only obtain
 one (or very few) static forms of the protein and the location of hydrogen atoms
-cannot be determined. It can be predicted, but that still hinders some chemical
+cannot be determined by conventional diffraction methods—the fact that they have only one electron—makes them very hard to detect with x-rays accurately because x-rays scatter from the electron density. They can be predicted, but that still hinders some chemical
 analysis.
 
 ## Nuclear Magnetic Resonance
@@ -450,12 +450,12 @@ Other applications that you may know or came into are:
 
 Our PyMOL Practice has two parts.
 
-## [A 10-steps self-guided practice](https://www.evernote.com/shard/s62/client/snv?noteGuid=666c39a1-ac03-64c9-b8a0-cab9ff3959c7&noteKey=9d20b6eadae8d130fdbe6652d60237f2&sn=https%3A%2F%2Fwww.evernote.com%2Fshard%2Fs62%2Fsh%2F666c39a1-ac03-64c9-b8a0-cab9ff3959c7%2F9d20b6eadae8d130fdbe6652d60237f2&title=StrBio%2B2022%252F2023%2B-%2B3.%2BPymol%2BPractice)
+## [PART A: A 10-steps self-guided practice](https://www.evernote.com/shard/s62/sh/666c39a1-ac03-64c9-b8a0-cab9ff3959c7/9d20b6eadae8d130fdbe6652d60237f2)
 
 This is a [Evernote](https://evernote.com/intl/es) note that you can consult
 online and also copy into your Evenote account if you wish.
 
-## PyMOL Challenge
+## PART B: PyMOL Challenge
 
 Make a ready-to-publish picture of your favorite protein. As a suggestion, you
 can reproduce the top panels in the Figure 1B of @gao2020, but any structure

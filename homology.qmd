@@ -100,7 +100,7 @@ funnel model. Denatured molecules at the top of the funnel might fold to the
 native state by a myriad of different routes, some of which involve transient
 intermediates (local energy minima) whereas others involve significant kinetic
 traps (misfolded states). From
-@radford2000.](pics/funnel_1.jpeg "The funnel of protein folding"){#fig-funnel
+.](pics/funnel_1.jpeg "The funnel of protein folding"){#fig-funnel
 .figure}](https://www.sciencedirect.com/science/article/pii/S0968000400017072?casa_token=BR_maX_GNYYAAAAA:IZrQqI9jIbiv-ZeA6aOMHQxsVcp-wgy0XPFO3DRcFiAi7TSrX-3cc7Jb6dhTHdXSQseEhF3l#BIB49)
 
 ::: callout-important
@@ -348,7 +348,7 @@ side chains and between side chains and the backbone reduce the optimization
 calculations.
 
 ![Side chain modeling. From [CMBI Seminars on
-Bioinformatics](https://swift.cmbi.umcn.nl/teach/B1SEM/B1SEM_8.html).](pics/Rotamers.gif "Backbone and loop modeling"){#fig-rotamers
+Bioinformatics](https://swift.cmbi.umcn.nl/teach/B1SEM/B1SEM_8.html).](pics/Rotamers.png "Backbone and loop modeling"){#fig-rotamers
 .figure}
 
 Finally, a short energy minimization is carry out to reduce the unfavorable
@@ -439,7 +439,7 @@ or using molecular visualization apps, like
 ## Corollary: What can I do with my model and what I cannot? {#corollary}
 
 [![Accuracy and application of protein structure models (in 2001). From
-@baker2001.](pics/sali.jpeg "Accuracy and application of protein structure models."){#fig-baker
+.](pics/sali.jpeg "Accuracy and application of protein structure models."){#fig-baker
 .figure}](https://www.science.org/doi/10.1126/science.1065659)
 
 A big power entails a big responsibility. The use of models entails a precaution
@@ -472,15 +472,8 @@ model.
 [**What do you think you could use our models of NEIL2 and
 HAdV-2pol?**]{style="color:green"}
 
-# [Homology Modeling Practice B: Model your favourite protein (YFP).]{style="color:green"}
+# [Homology Modeling Practice](https://www.evernote.com/shard/s62/sh/1d73369b-368c-612f-a046-83f521f497e5/c64575610629aa27013352f3ebde4422){style="color:green"}
 
-1.  Use SWISS-MODEL to model a protein with no structure on PDB database. If
-    your protein has a structure, you can select an ortholog from other
-    organisms (mice, chicken, monkey, dog, fly, yeast...).
-2.  Model it also with RosettaCM at Baker's lab site
-    (https://robetta.bakerlab.org/). Note that you have to select the ***CM***
-    option.
+This is a [Evernote](https://evernote.com/intl/es) note that you can consult
+online and also copy into your Evenote account if you wish.
 
-![](images/paste-05D080DB.png){width="518"}
-
-3.  Compare the obtained models and their applications.
