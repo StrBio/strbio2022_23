@@ -100,7 +100,9 @@ RCSB-PDB for protein structures. Uniprot (see below) also contains a primary
 sequence database, named TrEMBL. It also incorporated in 2002 PIR-PSD, joining
 the databases of the Protein information Resource, EMBL and SIB in a single
 (meta)database (see
-<https://proteininformationresource.org/pirwww/dbinfo/pir_psd.shtml>).
+<https://proteininformationresource.org/pirwww/dbinfo/pir_psd.shtml>). On the
+other hand, RCSB-PDB is the major structural primary database, whereas SCOP2 and
+CATH are secondary databases.
 
 ## Sequence databases
 
@@ -164,14 +166,14 @@ the database cross-references.
 
 ### InterPro
 
-[InterPro](https://www.ebi.ac.uk/interpro/) aims to be a functional database, by
-classifying proteins into families, domains, and important sites. To classify
-proteins in this way, InterPro uses predictive models, known as signatures,
-provided by several different databases (up to 13) that make up the InterPro
-consortium. InterPro combines those different signatures representing equivalent
-families, domains, or sites, and provides additional information such as
-descriptions, literature references, and Gene Ontology (GO) terms, to produce a
-comprehensive resource for protein classification (see @blum2021).
+[InterPro](https://www.ebi.ac.uk/interpro/) aims to be a functional secondary
+database, by classifying proteins into families, domains, and important sites.
+To classify proteins in this way, InterPro uses predictive models, known as
+signatures, provided by several different databases (up to 13) that make up the
+InterPro consortium. InterPro combines those different signatures representing
+equivalent families, domains, or sites, and provides additional information such
+as descriptions, literature references, and Gene Ontology (GO) terms, to produce
+a comprehensive resource for protein classification (see @blum2021).
 
 InterPro database is updated every 2 months and it is very useful for
 **annotation** of ORFans or divergent proteins.
@@ -202,10 +204,10 @@ software (<http://hmmer.org/>). All sequence regions that satisfy a
 family-specific curated threshold, also known as the gathering threshold, are
 aligned to the profile HMM to create the full alignment [@mistry2020].
 
-In addition to the HMM-based Pfam entries (**Pfam-A**), are used to provide a
-set of unannotated, computationally generated multiple sequence alignments
-called **Pfam-B**. However, in the last Pfam versions, the Pfam-B alignments are
-presently only released on the Pfam FTP site.
+In addition to the HMM-based Pfam entries (**Pfam-A**), the Pfam profiles are
+used to provide a set of unannotated, computationally generated multiple
+sequence alignments called **Pfam-B**. However, in the last Pfam versions, the
+Pfam-B alignments are presently only released on the Pfam FTP site.
 
 Pfam has also been used in the creation of other resources such as
 [Rfam](https://rfam.org/) (RNA families) and [Dfam](https://www.dfam.org/)
@@ -216,10 +218,10 @@ Pfam has also been used in the creation of other resources such as
 ### RCSB-PDB
 
 The Protein Data Bank (PDB, [www.rcsb.org](www.rcsb.org)) database is the major
-macromolecule structural database [@burley2021]. It contains mostly protein
-structures, but also spans nucleic acids and nucleoprotein complexes. PDB turned
-50 in 2021 and you can see a detailed overview of its [history in the RCSB-PDB
-site.](https://www.rcsb.org/pages/about-us/history)
+macromolecule structural primary database [@burley2021]. It contains mostly
+protein structures, but also spans nucleic acids and nucleoprotein complexes.
+PDB turned 50 in 2021 and you can see a detailed overview of its [history in the
+RCSB-PDB site.](https://www.rcsb.org/pages/about-us/history)
 
 Briefly, the PDB was established in 1971 at Brookhaven National Laboratory with
 only 7 structures. Then, the **Research Collaboratory for Structural
@@ -305,7 +307,7 @@ tools [@sillitoe2021].
 ## Graphical summary
 
 [![Main features of protein databases (updated in
-2020)](pics/bbdd_full.svg){#fig-full
+2020)](pics/bbdd_full.png){#fig-full
 .figure}](https://github.com/StrBio/strbio2022_23/raw/main/pics/bbdd_full.pdf)
 
 # [**DDBBs Practice**]{style="color:green"}

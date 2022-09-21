@@ -194,14 +194,14 @@ more detailed review on homology modeling, I suggest reading @haddad2020.
 In this course, we are focusing on end-to-end modeling with
 [SWISS-MODEL](https://swissmodel.expasy.org/) [@waterhouse2018], a fully
 automated modeling server that allows you the construction of models without the
-requirement of a strong bioinformatics background or coding skills.
+requirement of a strong bioinformatics background or coding skills. The early versions of SWISS-MODEL only allowed modeling sequences with close homologs in databases but, as discussed below, implementation of advances in template recognition and model building, increased the modeling proficiency and accuracy, particularly during the last decade.
 
 SWISS-MODEL has different supported inputs. Usually, you provide a single
 sequence query for template searching, but you can bypass this step and provide
 directly the template you want to use and even a template and a custom
 alignment. We will start with the first alternative.
 
-#### [Homology Modeling Practice A: Quick Modeling with SWISS-MODEL.]{style="color:green"}
+#### [In-class Homology Modeling exercise: Quick Modeling with SWISS-MODEL.]{style="color:green"}
 
 As an exercise, we are modeling a human DNA repair protein, NEIL2, and a viral
 DNA polymerase (HAdV-2 pol). We will intersperse discussion about modeling with
@@ -288,14 +288,12 @@ and template; all normalized by alignment length) to predict the expected
 quality of the resulting model. QSQE assesses the oligomeric state probability
 of the model.
 
-Now, paste your sequences and click on Search.
-
 Note: If you click on "Build Model", it will directly use the top-ranked
 template, so you'll miss some fun, but you can go back for that later on if you
 change your mind.
 
 [![SWISS-MODEL modeling
-start](pics/seach.png "SWISS-MODEL modeling"){#fig-swissmodel
+start. Just paste your sequences and click on Search.](pics/seach.png "SWISS-MODEL modeling"){#fig-swissmodel
 .figure}](https://swissmodel.expasy.org/interactive)
 
 #### [Could you foresee which of our queries will give rise to a better model? Why?]{style="color:green"}
@@ -315,18 +313,14 @@ or with different coverage or % identity.
 
 Once the template(s) is selected, model coordinates are constructed based on the
 alignment of the query and template sequence. SWISS-MODEL uses a fragment
-assembly, as well as
-[RosettaCM](https://new.rosettacommons.org/demos/latest/tutorials/rosetta_cm/rosetta_cm_tutorial),
-another very well-known homology modeling algorithm by the [Baker
-lab](https://www.bakerlab.org/), implemented in
-[Rosetta](https://www.rosettacommons.org/software) software and the
-[Robetta](https://robetta.bakerlab.org/) server. Other programs, like
-[Modeller](https://salilab.org/modeller/), are based in the satisfaction of
-spatial restraints [@janson2019]. Like Rosetta, Modeller is a command-line tool
-that allow a full customization of the modeling, which requires more knowledge
+assembly, which is also the bases of *Fold-recognition* or *Threading* methods (see...).
+Other programs, like
+[Modeller](https://salilab.org/modeller/), are based in the satisfaction of general
+spatial restraints [@janson2019]. Modeller is a command-line tool
+that allow full customization of the modeling, which requires more knowledge
 about the process but can be very useful for some types of proteins. However,
 both methods have been implemented in some online servers and user-friendly
-applications.
+applications, including ChimeraX and Pymol. Modeller can be also called from the HHPred output (if you included PDB as a searchable database), which is very convenient to model remote homologs using several templates in a few minutes.
 
 Fragment assembly will use the template core backbone atoms to build a core
 structure of the model, leaving non-conserved regions (mostly loops) for later.
@@ -338,20 +332,20 @@ Protein Modelling, and
 Visualisation](https://swissmodel.expasy.org/static/course/files/PartII_homology_modelling.pdf).](pics/loops.png "Backbone and loop modeling"){#fig-backbone
 .figure}
 
-Then, side chain of non conserved amino acids in undertook. The goal is findig
+Then, side chain of non conserved amino acids is undertook. The goal is finding
 the most likely side chain conformation, using template structure information,
-rotamer libraries (from known protein structures) and energetic and packaging
+rotamer libraries (from a curated set known protein structures) and energetic and packaging
 criteria. If many side chains have to be placed in the structure it will lead to
-a "chicken and egg problem". Thus, the more residues correctly positioned, the
-best model. That means that identification of hydrogen bonds between residues
+a "chicken and egg problem", as positioning one rotamer would affect others. That means that identification of possible hydrogen bonds between residues
 side chains and between side chains and the backbone reduce the optimization
-calculations.
+calculations. At the end of the day, the more residues correctly positioned, the
+best model. 
 
 ![Side chain modeling. From [CMBI Seminars on
 Bioinformatics](https://swift.cmbi.umcn.nl/teach/B1SEM/B1SEM_8.html).](pics/Rotamers.png "Backbone and loop modeling"){#fig-rotamers
 .figure}
 
-Finally, a short energy minimization is carry out to reduce the unfavorable
+Finally, a short energy minimization is carried out to reduce the unfavorable
 contacts and bonds by adapting the angle geometries and relax close contacts.
 This energy minimization step or refinement can be useful to achieve better
 models but only when the folding is already accurate.
@@ -359,7 +353,7 @@ models but only when the folding is already accurate.
 ## Step 4. Result assessing.
 
 The computer always give you a model but it doesn't mean that you have a model
-that makes sense. How can we know if we can rely in the model? Output models are
+that makes sense. How can we know if we can rely on the model? Output models are
 colored in a temperature color scale, from navy blue (good quality) to red (bad
 quality). That can help us to understand our model in a first sight. Also, this
 is an interactive site and you can zoom-in, zoom-out the model. Many other

@@ -41,8 +41,8 @@ outputFormat   = opts_knit$get("rmarkdown.pandoc.to")
 
 [Structural
 Bioinformatics](https://en.wikipedia.org/wiki/Structural_bioinformatics "Wikipedia")
-(SB) s a broad discipline that covers structural and computational biology, from
-visualization and analysis of the structure of biomacromolecules to protein
+(SB) is a broad discipline that covers structural and computational biology,
+from visualization and analysis of the structure of biomacromolecules to protein
 modeling and molecular docking. The great promise of SB is predicated on the
 belief that a high-resolution structural information about biological systems
 will allow us to precisely reason about the function of these systems and the
@@ -156,10 +156,11 @@ peptide backbone. It takes approximately 3.6 residues to complete a full turn of
 a helix.
 
 ::: {layout-ncol="1"}
-[![Alpha helix](pics/alpha.png "Alpha helix"){#fig-alpha
+[![Alpha helix.](pics/alpha.png "Alpha helix"){#fig-alpha
 .figure}](https://en.wikipedia.org/wiki/Alpha_helix)
 
-[![Beta sheet](pics/beta.png "Beta sheet"){#fig-beta
+[![Detailed description of a beta sheet made up of three beta
+strands.](pics/beta.png "Beta sheet"){#fig-beta
 .figure}](https://en.wikipedia.org/wiki/Beta_sheet)
 :::
 
@@ -225,7 +226,7 @@ width="450"}](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-
 
 As you probably already figure out, many combinations of φ and ψ angles are
 forbidden because of the principle of steric exclusion: two atoms cannot be in
-the same place ad the same time. This was initially shown by [Gopalasamudram
+the same place at the same time. This was initially shown by [Gopalasamudram
 Ramachandran](https://en.wikipedia.org/wiki/G._N._Ramachandran), who also
 devised a plot to visualize the allowed angle values, so-called Ramachandran
 plot. This plot can represent the angles of a particular amino acid, of all the
@@ -245,12 +246,12 @@ structures, as usually represented in textbooks.
 psi angles.](pics/rama2.png "Textbook Rama plot"){#fig-ram .figure}
 
 Functionally and structurally relevant residues are more likely than others to
-have torsion angles that plot to the [allowed but disfavored]{.ul} regions of a
-Ramachandran plot. The specific geometry of these functionally relevant
-residues, while somewhat energetically unfavorable, may be important for the
-protein's function, catalytic or otherwise. Such conformations need to be
-stabilized by the protein using H-bonds, steric packing, or other means, and
-should very seldom occur for highly solvent-exposed residues.
+have torsion angles that can be distributed into the [allowed but
+disfavored]{.ul} regions of a Ramachandran plot. The specific geometry of these
+functionally relevant residues, while somewhat energetically unfavorable, may be
+important for the protein's function, catalytic or otherwise. Such conformations
+need to be stabilized by the protein using H-bonds, steric packing, or other
+means, and should very seldom occur for highly solvent-exposed residues.
 
 [![Ramachandran plots for glycine (lef) and proline (right) Inner contour
 encloses 98% and 99.9% of Top structures data, indicating the favored and
@@ -274,7 +275,7 @@ can be used for classification of protein structures hierarchically, as in many
 other fields of biology. The first classification was proposed in the 70's and
 consisted of four groups of folds, as shown in the figure below. All-α proteins
 are based almost entirely on an α-helical structure, and all β-structure are
-based on β-sheets. α/β structure is based on am mixture of α-helices and
+based on β-sheets. α/β structure is based on as mixture of α-helices and
 β-sheet, often organized as parallel β-strands connected by α-helices. Finally
 α+β structures consist of discrete α-helix and β-sheet motifs that are not
 interwoven (as they are in α/β proteins).

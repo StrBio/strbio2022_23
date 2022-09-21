@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Modesto Redrejo Rodríguez">
-<meta name="dcterms.date" content="2022-09-16">
+<meta name="dcterms.date" content="2022-09-20">
 
 <title>Structural Bioinformatics 2022-23 - Introduction</title>
 <style>
@@ -158,7 +158,12 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ai.html" class="sidebar-item-text sidebar-link">State-of-the-art protein modeling with Deep Learning-based methods</a>
+  <a href="./advanced.html" class="sidebar-item-text sidebar-link">Advanced homology modeling</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ai.html" class="sidebar-item-text sidebar-link">State-of-the-art protein modeling (in 2022)</a>
   </div>
 </li>
     </ul>
@@ -206,7 +211,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 16, 2022</p>
+      <p class="date">September 20, 2022</p>
     </div>
   </div>
     
@@ -217,7 +222,7 @@ div.csl-indent {
 
 <section id="goals" class="level1" data-link="Preface" data-number="1">
 <h1 data-link="Preface" data-number="1"><span class="header-section-number">1</span> Goals</h1>
-<p><a href="https://en.wikipedia.org/wiki/Structural_bioinformatics" title="Wikipedia">Structural Bioinformatics</a> (SB) s a broad discipline that covers structural and computational biology, from visualization and analysis of the structure of biomacromolecules to protein modeling and molecular docking. The great promise of SB is predicated on the belief that a high-resolution structural information about biological systems will allow us to precisely reason about the function of these systems and the effects of modifications and perturbations.</p>
+<p><a href="https://en.wikipedia.org/wiki/Structural_bioinformatics" title="Wikipedia">Structural Bioinformatics</a> (SB) is a broad discipline that covers structural and computational biology, from visualization and analysis of the structure of biomacromolecules to protein modeling and molecular docking. The great promise of SB is predicated on the belief that a high-resolution structural information about biological systems will allow us to precisely reason about the function of these systems and the effects of modifications and perturbations.</p>
 <p>The goals of SB require at least four different research lines (see Chapter 1 in <span class="citation" data-cites="structur">Gu and Bourne (<a href="#ref-structur" role="doc-biblioref">2009</a>)</span>):</p>
 <ol type="1">
 <li><p><em>Visualization</em> of complex structures with several sources of information: sequence, structural data, electrostatic fields, location of functional sites, and areas of variability.</p></li>
@@ -257,7 +262,7 @@ div.csl-indent {
 <div id="fig-alpha" class="quarto-figure quarto-figure-center anchored" style="flex-basis: 100.0%;justify-content: center;">
 <figure class="figure">
 <p><a href="https://en.wikipedia.org/wiki/Alpha_helix"><img src="pics/alpha.png" title="Alpha helix" class="img-fluid figure-img"></a></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4: Alpha helix</figcaption><p></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4: Alpha helix.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -265,7 +270,7 @@ div.csl-indent {
 <div id="fig-beta" class="quarto-figure quarto-figure-center anchored" style="flex-basis: 100.0%;justify-content: center;">
 <figure class="figure">
 <p><a href="https://en.wikipedia.org/wiki/Beta_sheet"><img src="pics/beta.png" title="Beta sheet" class="img-fluid figure-img"></a></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 5: Beta sheet</figcaption><p></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 5: Detailed description of a beta sheet made up of three beta strands.</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -282,7 +287,7 @@ div.csl-indent {
 </div>
 <section id="sec-rama" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="sec-rama"><span class="header-section-number">2.1</span> Ramachandran Plot</h2>
-<p>As you probably already figure out, many combinations of φ and ψ angles are forbidden because of the principle of steric exclusion: two atoms cannot be in the same place ad the same time. This was initially shown by <a href="https://en.wikipedia.org/wiki/G._N._Ramachandran">Gopalasamudram Ramachandran</a>, who also devised a plot to visualize the allowed angle values, so-called Ramachandran plot. This plot can represent the angles of a particular amino acid, of all the amino acids in a protein or many proteins. Analysis of φ and ψ angles in known proteins clearly show that roughly three-quarters of all possible φ, ψ combinations are excluded.</p>
+<p>As you probably already figure out, many combinations of φ and ψ angles are forbidden because of the principle of steric exclusion: two atoms cannot be in the same place at the same time. This was initially shown by <a href="https://en.wikipedia.org/wiki/G._N._Ramachandran">Gopalasamudram Ramachandran</a>, who also devised a plot to visualize the allowed angle values, so-called Ramachandran plot. This plot can represent the angles of a particular amino acid, of all the amino acids in a protein or many proteins. Analysis of φ and ψ angles in known proteins clearly show that roughly three-quarters of all possible φ, ψ combinations are excluded.</p>
 <div id="fig-rama0" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><a href="https://proteopedia.org/wiki/index.php/Ramachandran_Plot"><img src="pics/Ramachandran_plot_general_100K.jpg" title="General Ramachandran plot" class="img-fluid figure-img"></a></p>
@@ -298,7 +303,7 @@ div.csl-indent {
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 8: Definition of secondary structure alternatives by their combination of phi, psi angles.</figcaption><p></p>
 </figure>
 </div>
-<p>Functionally and structurally relevant residues are more likely than others to have torsion angles that plot to the <u>allowed but disfavored</u> regions of a Ramachandran plot. The specific geometry of these functionally relevant residues, while somewhat energetically unfavorable, may be important for the protein’s function, catalytic or otherwise. Such conformations need to be stabilized by the protein using H-bonds, steric packing, or other means, and should very seldom occur for highly solvent-exposed residues.</p>
+<p>Functionally and structurally relevant residues are more likely than others to have torsion angles that can be distributed into the <u>allowed but disfavored</u> regions of a Ramachandran plot. The specific geometry of these functionally relevant residues, while somewhat energetically unfavorable, may be important for the protein’s function, catalytic or otherwise. Such conformations need to be stabilized by the protein using H-bonds, steric packing, or other means, and should very seldom occur for highly solvent-exposed residues.</p>
 <div id="fig-rama2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><a href="https://proteopedia.org/wiki/index.php/Ramachandran_Plot"><img src="pics/Ramachandran_Gly_Pro_data_and_contours_T8000_small.jpg" class="img-fluid figure-img"></a></p>
@@ -309,7 +314,7 @@ div.csl-indent {
 <section id="protein-folds-domains-and-motifs" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="protein-folds-domains-and-motifs"><span class="header-section-number">2.2</span> Protein folds, domains and motifs</h2>
 <p>The final three dimensional tertiary structure of a protein is commonly referred as its <strong>fold</strong>. Within the overall protein fold, we can recognize distinct <strong>domains</strong> and <strong>motifs.</strong> Domains are compact sections of the protein that represent structurally and (usually) functionally independent regions. That means that a domain maintain its main features, even if separated from the overall protein. On the other hand, motifs are small substructures that are not necessarily independent and consist of only a few secondary structure stretches. Indeed, motifs can be also referred as <em>super-secondary</em> structure.</p>
-<p>The diversity of protein folds, domains and motifs, and combination of those, can be used for classification of protein structures hierarchically, as in many other fields of biology. The first classification was proposed in the 70’s and consisted of four groups of folds, as shown in the figure below. All-α proteins are based almost entirely on an α-helical structure, and all β-structure are based on β-sheets. α/β structure is based on am mixture of α-helices and β-sheet, often organized as parallel β-strands connected by α-helices. Finally α+β structures consist of discrete α-helix and β-sheet motifs that are not interwoven (as they are in α/β proteins).</p>
+<p>The diversity of protein folds, domains and motifs, and combination of those, can be used for classification of protein structures hierarchically, as in many other fields of biology. The first classification was proposed in the 70’s and consisted of four groups of folds, as shown in the figure below. All-α proteins are based almost entirely on an α-helical structure, and all β-structure are based on β-sheets. α/β structure is based on as mixture of α-helices and β-sheet, often organized as parallel β-strands connected by α-helices. Finally α+β structures consist of discrete α-helix and β-sheet motifs that are not interwoven (as they are in α/β proteins).</p>
 <div id="fig-chlothia" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="pics/clasif.png" class="figure img-fluid figure-img"></p>

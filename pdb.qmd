@@ -68,7 +68,7 @@ applications.
 
 The structure helps to understand the molecular mechanism of protein function at
 a higher level of detail. The 3D representation can help to orientate different
-domains/motifs/residues of interest. This can be essential to understanding the
+domains/motifs/residues of interest. This can be essential to understand the
 analysis of population or pathogenic variants, drug design, and protein
 engineering. Moreover, the structures can also help to predict protein function
 and evolution, as they are more conserved than sequence, i.e., the protein
@@ -333,7 +333,7 @@ Check PDB-101 course about PDBx/mmCIF format
 
 ### Occupancy and B-factor
 
-Disregarding the repetition of atom type in the leftmost column, the last
+Disregarding the repetition of atom type in the rightmost column, the last
 columns in the PDB file are the **Occupancy** and the **temperature factor** or
 the **B-factor**.
 

@@ -25,7 +25,9 @@ website:
       - section: "Modeling"
         contents:
           - homology.qmd
+          - advanced.qmd
           - ai.qmd
+      - links.qmd
 
 
 bibliography: references.bib

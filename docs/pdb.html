@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Modesto Redrejo Rodríguez">
-<meta name="dcterms.date" content="2022-09-16">
+<meta name="dcterms.date" content="2022-09-20">
 
 <title>Structural Bioinformatics 2022-23 - Protein Structures</title>
 <style>
@@ -158,6 +158,11 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./advanced.html" class="sidebar-item-text sidebar-link">From advanced homology modeling to deep Learning-based methods</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./ai.html" class="sidebar-item-text sidebar-link">State-of-the-art protein modeling with Deep Learning-based methods</a>
   </div>
 </li>
@@ -229,7 +234,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 16, 2022</p>
+      <p class="date">September 20, 2022</p>
     </div>
   </div>
     
@@ -266,7 +271,7 @@ Warning for current and future structural biologists
 </section>
 <section id="experimental-determination-of-protein-structures" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Experimental determination of protein structures</h1>
-<p>The structure helps to understand the molecular mechanism of protein function at a higher level of detail. The 3D representation can help to orientate different domains/motifs/residues of interest. This can be essential to understanding the analysis of population or pathogenic variants, drug design, and protein engineering. Moreover, the structures can also help to predict protein function and evolution, as they are more conserved than sequence, i.e., the protein structure space is smaller than the sequence space. However, obtaining detailed and reliable structural data can be technically difficult and time-consuming and, as we will see, modeling protein structures can be often a good complement or alternative. Experimentally-obtained structures usually rely on three alternative techniques, X-ray crystallography, nuclear magnetic resonance (RMN), or electron cryomicroscopy (CryoEM).</p>
+<p>The structure helps to understand the molecular mechanism of protein function at a higher level of detail. The 3D representation can help to orientate different domains/motifs/residues of interest. This can be essential to understand the analysis of population or pathogenic variants, drug design, and protein engineering. Moreover, the structures can also help to predict protein function and evolution, as they are more conserved than sequence, i.e., the protein structure space is smaller than the sequence space. However, obtaining detailed and reliable structural data can be technically difficult and time-consuming and, as we will see, modeling protein structures can be often a good complement or alternative. Experimentally-obtained structures usually rely on three alternative techniques, X-ray crystallography, nuclear magnetic resonance (RMN), or electron cryomicroscopy (CryoEM).</p>
 <section id="x-ray-crystallography-or-single-crystal-x-ray-diffraction" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="x-ray-crystallography-or-single-crystal-x-ray-diffraction"><span class="header-section-number">2.1</span> X-Ray crystallography or single crystal X-ray diffraction</h2>
 <p>The X-Ray crystallography or single crystal X-ray diffraction is a method to determine the atomic structure of molecules in regular, crystalline structures. It requires the generation of a crystal of the molecule of interest that is then mounted on a goniometer and illuminated or irradiated with a focused beam of X-rays. The diffraction pattern of the X-rays at the other side of the crystal allow the determination of the atoms positions, as well as their chemical bonds, their crystallographic disorder, and various other information. However, the link between the diffraction pattern and the electron density is not trivial and requires some complex maths, called <a href="http://pruffle.mit.edu/atomiccontrol/education/xray/fourier.php">Fourier transforms</a>.</p>
@@ -399,7 +404,7 @@ Tip
 </div>
 <section id="occupancy-and-b-factor" class="level3" data-number="4.1.1">
 <h3 data-number="4.1.1" class="anchored" data-anchor-id="occupancy-and-b-factor"><span class="header-section-number">4.1.1</span> Occupancy and B-factor</h3>
-<p>Disregarding the repetition of atom type in the leftmost column, the last columns in the PDB file are the <strong>Occupancy</strong> and the <strong>temperature factor</strong> or the <strong>B-factor</strong>.</p>
+<p>Disregarding the repetition of atom type in the rightmost column, the last columns in the PDB file are the <strong>Occupancy</strong> and the <strong>temperature factor</strong> or the <strong>B-factor</strong>.</p>
 <p>Macromolecular crystals are composed of many individual molecules packed into a symmetrical arrangement. In some crystals, there are slight differences between each of these molecules. For instance, a sidechain on the surface may wag back and forth between several conformations, or a substrate may bind in two orientations in an active site, or a metal ion may be bound to only a few of the molecules. When researchers build the atomic model of these portions, they can use the occupancy to estimate the amount of each conformation that is observed in the crystal.</p>
 <p>Thus, by definition, the sum of <strong>occupancy</strong> values for each atom must be 1. Usually, we will see a single record for an atom, with an occupancy value of 1, indicating that the atom is found in all of the molecules in the same place in the crystal. However, if a metal ion binds to only half of the molecules in the crystal, the researcher will see a weak image of the ion in the electron density map, and can assign an occupancy of 0.5 in the PDB structure file for this atom. Two (or more) atom records are included for each atom, with occupancies like 0.5 and 0.5, or 0.4 and 0.6, or other fractional occupancies that sum to a total of 1.</p>
 <p>On the other hand, <strong>temperature value or <em>B</em>-factor is</strong> a measure of our confidence in the location of each atom, as discussed above (<a href="#sec-assess">Section&nbsp;3</a>). If you find an atom on the surface of a protein with a high temperature factor, keep in mind that this atom is probably moving a lot, and that the coordinates specified in the PDB file are only one possible snapshot of its location. Thus, an atom record with an occupancy &lt;1 can have a low B-factor if that position is certain.</p>

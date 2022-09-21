@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2022-09-16">
+<meta name="dcterms.date" content="2022-09-20">
 
 <title>Structural Bioinformatics 2022-23 - Homology Modeling</title>
 <style>
@@ -157,6 +157,11 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./advanced.html" class="sidebar-item-text sidebar-link">From advanced homology modeling to deep Learning-based methods</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./ai.html" class="sidebar-item-text sidebar-link">State-of-the-art protein modeling with Deep Learning-based methods</a>
   </div>
 </li>
@@ -178,7 +183,7 @@ div.csl-indent {
   <li><a href="#homology-modeling-conservation-is-the-key" id="toc-homology-modeling-conservation-is-the-key" class="nav-link" data-scroll-target="#homology-modeling-conservation-is-the-key"> <span class="header-section-number">2</span> Homology modeling: Conservation is the key</a></li>
   <li><a href="#homology-modeling-in-four-steps" id="toc-homology-modeling-in-four-steps" class="nav-link" data-scroll-target="#homology-modeling-in-four-steps"> <span class="header-section-number">3</span> Homology modeling in four steps</a>
   <ul class="collapse">
-  <li><a href="#homology-modeling-practice-a-quick-modeling-with-swiss-model." id="toc-homology-modeling-practice-a-quick-modeling-with-swiss-model." class="nav-link" data-scroll-target="#homology-modeling-practice-a-quick-modeling-with-swiss-model."> <span class="header-section-number">3.0.0.1</span> <span style="color:green">Homology Modeling Practice A: Quick Modeling with SWISS-MODEL.</span></a></li>
+  <li><a href="#in-class-homology-modeling-exercise-quick-modeling-with-swiss-model." id="toc-in-class-homology-modeling-exercise-quick-modeling-with-swiss-model." class="nav-link" data-scroll-target="#in-class-homology-modeling-exercise-quick-modeling-with-swiss-model."> <span class="header-section-number">3.0.0.1</span> <span style="color:green">In-class Homology Modeling exercise: Quick Modeling with SWISS-MODEL.</span></a></li>
   <li><a href="#template" id="toc-template" class="nav-link" data-scroll-target="#template"> <span class="header-section-number">3.1</span> Step 1+2. Template search and align.</a>
   <ul class="collapse">
   <li><a href="#where-can-we-search" id="toc-where-can-we-search" class="nav-link" data-scroll-target="#where-can-we-search"> <span class="header-section-number">3.1.1</span> Where can we search?</a></li>
@@ -216,7 +221,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 16, 2022</p>
+      <p class="date">September 20, 2022</p>
     </div>
   </div>
     
@@ -332,10 +337,10 @@ Important
 </figure>
 </div>
 <p>A basic workflow of homology modeling requires three steps: (1) identification of the best-suitable template, (2) alignment of the query sequence and the template, and (3) construction of the model. These steps can be addressed with diverse methodological alternatives and can provide different outputs that must be assessed (step 4) in order to decide the best solution for each step. For a more detailed review on homology modeling, I suggest reading <span class="citation" data-cites="haddad2020">Haddad, Adam, and Heger (<a href="#ref-haddad2020" role="doc-biblioref">2020</a>)</span>.</p>
-<p>In this course, we are focusing on end-to-end modeling with <a href="https://swissmodel.expasy.org/">SWISS-MODEL</a> <span class="citation" data-cites="waterhouse2018">(<a href="#ref-waterhouse2018" role="doc-biblioref">Waterhouse et al. 2018</a>)</span>, a fully automated modeling server that allows you the construction of models without the requirement of a strong bioinformatics background or coding skills.</p>
+<p>In this course, we are focusing on end-to-end modeling with <a href="https://swissmodel.expasy.org/">SWISS-MODEL</a> <span class="citation" data-cites="waterhouse2018">(<a href="#ref-waterhouse2018" role="doc-biblioref">Waterhouse et al. 2018</a>)</span>, a fully automated modeling server that allows you the construction of models without the requirement of a strong bioinformatics background or coding skills. The early versions of SWISS-MODEL only allowed modeling sequences with close homologs in databases but, as discussed below, implementation of advances in template recognition and model building, increased the modeling proficiency and accuracy, particularly during the last decade.</p>
 <p>SWISS-MODEL has different supported inputs. Usually, you provide a single sequence query for template searching, but you can bypass this step and provide directly the template you want to use and even a template and a custom alignment. We will start with the first alternative.</p>
-<section id="homology-modeling-practice-a-quick-modeling-with-swiss-model." class="level4" data-number="3.0.0.1">
-<h4 data-number="3.0.0.1" class="anchored" data-anchor-id="homology-modeling-practice-a-quick-modeling-with-swiss-model."><span class="header-section-number">3.0.0.1</span> <span style="color:green">Homology Modeling Practice A: Quick Modeling with SWISS-MODEL.</span></h4>
+<section id="in-class-homology-modeling-exercise-quick-modeling-with-swiss-model." class="level4" data-number="3.0.0.1">
+<h4 data-number="3.0.0.1" class="anchored" data-anchor-id="in-class-homology-modeling-exercise-quick-modeling-with-swiss-model."><span class="header-section-number">3.0.0.1</span> <span style="color:green">In-class Homology Modeling exercise: Quick Modeling with SWISS-MODEL.</span></h4>
 <p>As an exercise, we are modeling a human DNA repair protein, NEIL2, and a viral DNA polymerase (HAdV-2 pol). We will intersperse discussion about modeling with the exercise steps.</p>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -379,12 +384,11 @@ Rather than provide just a recipe to make a model in two clics, the goal is to u
 </figure>
 </div>
 <p>Template searches in SWISS-MODEL have evolved through the years and currently, this step is performed with HHblits <span class="citation" data-cites="remmert2011">(<a href="#ref-remmert2011" role="doc-biblioref">Remmert et al. 2011</a>)</span>, a specific profile-profile method. We could search for templates also with Blast or other profile-profile methods, like <a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastSearch&amp;PROGRAM=blastp&amp;BLAST_PROGRAMS=psiBlast">Psi-BLAST</a>, <a href="https://toolkit.tuebingen.mpg.de/tools/hhpred">HHPred</a>, or <a href="https://www.ebi.ac.uk/Tools/hmmer/search/jackhmmer">JackHMMER</a>. Then, templates are ranked by two different numeric parameters ranging between 0 and 1: <strong>GMQE</strong> (global model quality estimate) and <strong>QSQE</strong> (quaternary structure quality estimate). Briefly, GMQE uses probability functions to assess several properties of the target-template alignment (sequence identity, sequence similarity, HHblits score, the agreement between predicted secondary structure of target and template, the agreement between predicted solvent accessibility between target and template; all normalized by alignment length) to predict the expected quality of the resulting model. QSQE assesses the oligomeric state probability of the model.</p>
-<p>Now, paste your sequences and click on Search.</p>
 <p>Note: If you click on “Build Model”, it will directly use the top-ranked template, so you’ll miss some fun, but you can go back for that later on if you change your mind.</p>
 <div id="fig-swissmodel" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><a href="https://swissmodel.expasy.org/interactive"><img src="pics/seach.png" title="SWISS-MODEL modeling" class="img-fluid figure-img"></a></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 12: SWISS-MODEL modeling start</figcaption><p></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 12: SWISS-MODEL modeling start. Just paste your sequences and click on Search.</figcaption><p></p>
 </figure>
 </div>
 <section id="could-you-foresee-which-of-our-queries-will-give-rise-to-a-better-model-why" class="level4" data-number="3.1.2.1">
@@ -396,7 +400,7 @@ Rather than provide just a recipe to make a model in two clics, the goal is to u
 <h2 data-number="3.2" class="anchored" data-anchor-id="step-3.-model-building."><span class="header-section-number">3.2</span> Step 3. Model Building.</h2>
 <p>By default, SWISS-MODEL will provide 50 ranked possible templates. The output also contains information about the method and resolution of the templates, the % of identity (and alignment coverage) with the query sequence, and the GMQE and QSQE.</p>
 <p>The top template is marked by default and it likely will give the best model, but it is also interesting to try some alternative templates depending on the downstream application of the model (see <a href="#corollary">below</a>). For instance with a different substrate/cofactor that can have a key role in the protein function or with different coverage or % identity.</p>
-<p>Once the template(s) is selected, model coordinates are constructed based on the alignment of the query and template sequence. SWISS-MODEL uses a fragment assembly, as well as <a href="https://new.rosettacommons.org/demos/latest/tutorials/rosetta_cm/rosetta_cm_tutorial">RosettaCM</a>, another very well-known homology modeling algorithm by the <a href="https://www.bakerlab.org/">Baker lab</a>, implemented in <a href="https://www.rosettacommons.org/software">Rosetta</a> software and the <a href="https://robetta.bakerlab.org/">Robetta</a> server. Other programs, like <a href="https://salilab.org/modeller/">Modeller</a>, are based in the satisfaction of spatial restraints <span class="citation" data-cites="janson2019">(<a href="#ref-janson2019" role="doc-biblioref">Janson et al. 2019</a>)</span>. Like Rosetta, Modeller is a command-line tool that allow a full customization of the modeling, which requires more knowledge about the process but can be very useful for some types of proteins. However, both methods have been implemented in some online servers and user-friendly applications.</p>
+<p>Once the template(s) is selected, model coordinates are constructed based on the alignment of the query and template sequence. SWISS-MODEL uses a fragment assembly, which is also the bases of <em>Fold-recognition</em> or <em>Threading</em> methods (see…). Other programs, like <a href="https://salilab.org/modeller/">Modeller</a>, are based in the satisfaction of general spatial restraints <span class="citation" data-cites="janson2019">(<a href="#ref-janson2019" role="doc-biblioref">Janson et al. 2019</a>)</span>. Modeller is a command-line tool that allow full customization of the modeling, which requires more knowledge about the process but can be very useful for some types of proteins. However, both methods have been implemented in some online servers and user-friendly applications, including ChimeraX and Pymol. Modeller can be also called from the HHPred output (if you included PDB as a searchable database), which is very convenient to model remote homologs using several templates in a few minutes.</p>
 <p>Fragment assembly will use the template core backbone atoms to build a core structure of the model, leaving non-conserved regions (mostly loops) for later. Then, it will find compatible fragments in a dedicated loop database and also use <em>ab initio</em> building or missing loops.</p>
 <div id="fig-backbone" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -406,7 +410,7 @@ Rather than provide just a recipe to make a model in two clics, the goal is to u
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 13: Backbone and loop modeling. From <a href="https://swissmodel.expasy.org/static/course/files/PartII_homology_modelling.pdf">Expasy Protein Structure, Comparative Protein Modelling, and Visualisation</a>.</figcaption><p></p>
 </figure>
 </div>
-<p>Then, side chain of non conserved amino acids in undertook. The goal is findig the most likely side chain conformation, using template structure information, rotamer libraries (from known protein structures) and energetic and packaging criteria. If many side chains have to be placed in the structure it will lead to a “chicken and egg problem”. Thus, the more residues correctly positioned, the best model. That means that identification of hydrogen bonds between residues side chains and between side chains and the backbone reduce the optimization calculations.</p>
+<p>Then, side chain of non conserved amino acids is undertook. The goal is finding the most likely side chain conformation, using template structure information, rotamer libraries (from a curated set known protein structures) and energetic and packaging criteria. If many side chains have to be placed in the structure it will lead to a “chicken and egg problem”, as positioning one rotamer would affect others. That means that identification of possible hydrogen bonds between residues side chains and between side chains and the backbone reduce the optimization calculations. At the end of the day, the more residues correctly positioned, the best model.</p>
 <div id="fig-rotamers" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <figure class="figure">
@@ -415,11 +419,11 @@ Rather than provide just a recipe to make a model in two clics, the goal is to u
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 14: Side chain modeling. From <a href="https://swift.cmbi.umcn.nl/teach/B1SEM/B1SEM_8.html">CMBI Seminars on Bioinformatics</a>.</figcaption><p></p>
 </figure>
 </div>
-<p>Finally, a short energy minimization is carry out to reduce the unfavorable contacts and bonds by adapting the angle geometries and relax close contacts. This energy minimization step or refinement can be useful to achieve better models but only when the folding is already accurate.</p>
+<p>Finally, a short energy minimization is carried out to reduce the unfavorable contacts and bonds by adapting the angle geometries and relax close contacts. This energy minimization step or refinement can be useful to achieve better models but only when the folding is already accurate.</p>
 </section>
 <section id="step-4.-result-assessing." class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="step-4.-result-assessing."><span class="header-section-number">3.3</span> Step 4. Result assessing.</h2>
-<p>The computer always give you a model but it doesn’t mean that you have a model that makes sense. How can we know if we can rely in the model? Output models are colored in a temperature color scale, from navy blue (good quality) to red (bad quality). That can help us to understand our model in a first sight. Also, this is an interactive site and you can zoom-in, zoom-out the model. Many other features are available to work on your model. For instance, you can compare multiple models, you can change the display options. You can also download all the files and reports on the “Project Data” button.</p>
+<p>The computer always give you a model but it doesn’t mean that you have a model that makes sense. How can we know if we can rely on the model? Output models are colored in a temperature color scale, from navy blue (good quality) to red (bad quality). That can help us to understand our model in a first sight. Also, this is an interactive site and you can zoom-in, zoom-out the model. Many other features are available to work on your model. For instance, you can compare multiple models, you can change the display options. You can also download all the files and reports on the “Project Data” button.</p>
 <div id="fig-neil" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><a href="https://swissmodel.expasy.org/interactive/TWq8LD/models/"><img src="pics/neil2.png" title="NEIL2 model" class="img-fluid figure-img"></a></p>

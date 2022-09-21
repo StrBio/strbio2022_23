@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-0.9.318">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Modesto Redrejo Rodríguez">
+<meta name="dcterms.date" content="2022-09-21">
+
+<title>Structural Bioinformatics 2022-23 - Advanced homology modeling</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<meta name="twitter:title" content="Structural Bioinformatics 2022-23 - Advanced homology modeling">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Advanced homology modeling</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Structural Bioinformatics 2022-23</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://twitter.com/mredrejo" title="" class="sidebar-tool px-1"><i class="bi bi-twitter"></i></a>
+    <a href="mailto:modesto.redrejo@uam.es" title="" class="sidebar-tool px-1"><i class="bi bi-envelope-paper"></i></a>
+    <a href="https://github.com/strBio/strbio2022_23" title="" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">StrBio 2022-23</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Basics</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">Introduction</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ddbb.html" class="sidebar-item-text sidebar-link">Protein Databases</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pdb.html" class="sidebar-item-text sidebar-link">Protein Structures</a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Modeling</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./homology.html" class="sidebar-item-text sidebar-link">Homology Modeling</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./advanced.html" class="sidebar-item-text sidebar-link active">Advanced homology modeling</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ai.html" class="sidebar-item-text sidebar-link">State-of-the-art protein modeling (in 2022)</a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./links.html" class="sidebar-item-text sidebar-link">Modeling Resources</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#from-homology-modeling-to-threading" id="toc-from-homology-modeling-to-threading" class="nav-link active" data-scroll-target="#from-homology-modeling-to-threading">From homology modeling to threading</a>
+  <ul class="collapse">
+  <li><a href="#threading-or-fold-recognition-methods" id="toc-threading-or-fold-recognition-methods" class="nav-link" data-scroll-target="#threading-or-fold-recognition-methods">Threading or Fold-recognition methods</a></li>
+  <li><a href="#d-features-prediction" id="toc-d-features-prediction" class="nav-link" data-scroll-target="#d-features-prediction">1D features prediction</a>
+  <ul class="collapse">
+  <li><a href="#secondary-structure-prediction" id="toc-secondary-structure-prediction" class="nav-link" data-scroll-target="#secondary-structure-prediction">Secondary structure prediction</a></li>
+  <li><a href="#structural-disorder-and-solvent-accessibility" id="toc-structural-disorder-and-solvent-accessibility" class="nav-link" data-scroll-target="#structural-disorder-and-solvent-accessibility">Structural disorder and solvent accessibility</a></li>
+  <li><a href="#trans-membrane-motifs-and-membrane-topology" id="toc-trans-membrane-motifs-and-membrane-topology" class="nav-link" data-scroll-target="#trans-membrane-motifs-and-membrane-topology">Trans-membrane motifs and membrane topology</a></li>
+  <li><a href="#subcellular-localization-tags-and-post-translational-modification-sites" id="toc-subcellular-localization-tags-and-post-translational-modification-sites" class="nav-link" data-scroll-target="#subcellular-localization-tags-and-post-translational-modification-sites">Subcellular localization tags and post-translational modification sites</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#maps" id="toc-maps" class="nav-link" data-scroll-target="#maps">From contact maps to pairwise high-res feature maps</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Advanced homology modeling</h1>
+</div>
+
+
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Modesto Redrejo Rodríguez </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 21, 2022</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Under construction
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<p><img src="pics/8275a.jpg" title="Under construction..." class="img-fluid"></p>
+<p>Although we do not intend to compile the evolution of modeling methods, I briefly outline below the origin and transformation of advanced protocols that outperform single-template homology modeling during the last three decades. This stepwise evolution of modeling methods is the origin of the revolution of Alphafold, which we will review <a href="ai.html">later</a>.</p>
+<section id="from-homology-modeling-to-threading" class="level1">
+<h1>From homology modeling to threading</h1>
+<section id="threading-or-fold-recognition-methods" class="level2">
+<h2 class="anchored" data-anchor-id="threading-or-fold-recognition-methods">Threading or Fold-recognition methods</h2>
+<p>As mentioned earlier, the introduction of HMM-based profiles during the first decade of this century led to a great improvement in template detection and protein modeling in the twilight zone, i.e., proteins with only distant homologs (&lt;25-30% identity) in databases. Current version of SwissModel and the use of HHPred+Modeller already rely on HMM profiles for template identification and alignment. In order to exploit the power of HMM searches, those methods naturally evolved into iterative <u>threading</u> methods, based on multitemplate model construction, implemented in <a href="https://zhanggroup.org/I-TASSER/">I-TASSER</a> <span class="citation" data-cites="roy2010">(<a href="#ref-roy2010" role="doc-biblioref">Roy, Kucukural, and Zhang 2010</a>)</span>, <a href="http://www.sbg.bio.ic.ac.uk/phyre2/">Phyre2</a> <span class="citation" data-cites="kelley2015">(<a href="#ref-kelley2015" role="doc-biblioref">L. A. Kelley et al. 2015</a>)</span>, and <a href="https://new.rosettacommons.org/demos/latest/tutorials/rosetta_cm/rosetta_cm_tutorial">RosettaCM</a> <span class="citation" data-cites="song2013">(<a href="#ref-song2013" role="doc-biblioref">Song et al. 2013</a>)</span>, among others. These methods methods are usually referred as <strong>Threading</strong> or <strong>Fold-recognition</strong> methods. Both terms can be often used interchangeably, although some authors see threading as any technique that uses structural information in addition to sequence information to identify remote homologies, while threading would be a more complex process of modeling including remote homologies and also modeling of pairwise amino acid interactions in the structure. Therefore, although we have already used HHPred along with the use of HHPred to identify templates for a subsequent modeling, could be indeed considered as threading.</p>
+<div id="fig-frost" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="pics/fr.png" class="figure img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1: The idea behind fold-recognition is that instead of comparing sequences, we intend to compare structures. In the Frozen approximation (left), one residue is aligned with the template structure and then we evaluate the probability of the nearby residues in the query sequence to be in the same position than the equivalent in the template. On the other hand, Defrost methods use profiles to generate improved alignments that allow better starting points to the energy calculations during the iterative modeling steps. From <span class="citation" data-cites="kelley2009a">Lawrence A. Kelley (<a href="#ref-kelley2009a" role="doc-biblioref">2009</a>)</span>.</figcaption><p></p>
+</figure>
+</div>
+<p>The iterative threading assembly refinement (<a href="http://zhanglab.ccmb.med.umich.edu/I-TASSER">I-TASSER</a>) from <a href="https://zhanggroup.org/">Yang Zhang lab</a> is one of the most widely used threading methods and servers. This method was was ranked as the No 1 server for protein structure prediction in the community-wide <a href="https://zhanggroup.org/casp7/21.html">CASP7</a>, <a href="https://predictioncenter.org/casp8/groups_analysis.cgi?target_type=0&amp;gr_type=server">CASP8</a>, <a href="https://predictioncenter.org/casp9/CD/data/html/groups.2.html">CASP9</a>, <a href="http://predictioncenter.org/casp10/groups_analysis.cgi?type=server">CASP10</a>, <a href="http://www.predictioncenter.org/casp11/zscores_final.cgi?gr_type=server_only">CASP11</a>, <a href="http://www.predictioncenter.org/casp12/zscores_final.cgi?&amp;gr_type=server_only">CASP12</a>, <a href="http://www.predictioncenter.org/casp13/zscores_final.cgi?model_type=best&amp;gr_type=server_only">CASP13</a>, and <a href="http://www.predictioncenter.org/casp14/zscores_final.cgi?gr_type=server_only">CASP14</a> experiments. I-TASSER first generates three-dimensional (3D) atomic models from multiple threading alignments and iterative structural assembly simulations that are iteratively selected and improved. The quality of the template alignments (and therefore the difficulty of modeling the targets) is judged based on the statistical significance of the best threading alignment, i.e., the <em>Z</em>-score, which is defined as the energy score in standard deviation units relative to the statistical mean of all alignments.</p>
+<div id="fig-tasser" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/paste-29011FF5.png" class="figure img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2: Flowchart of I-TASSER protein structure modeling. From <span class="citation" data-cites="rigden2017a">Rigden (<a href="#ref-rigden2017a" role="doc-biblioref">2017</a>)</span>.</figcaption><p></p>
+</figure>
+</div>
+<p>First, I-TASSER uses Psi-BLAST against a curated databases to select sequence homologs and generate a sequence profile. That profile is used to predict secondary structure and generate multiple fragmented models using several programs. The top template hits from each threading program are then selected for the following steps. In the second stage, continuous fragments in threading alignments are excised from the template structures, and are used to assemble structural conformations of the sections that aligned well, with the unaligned regions (mainly loops/tails) built by <em>ab initio</em> modeling. The fragment assembly is performed using a modified replica-exchange Monte Carlo random simulation technique, which implements several replica simulations in parallel using different conditions that are periodically exchanged. Those simulations consider multiple parameters, including model statistics (stereochemical outliers, H-bond, hydrophobicity…), spatial restrains and amino acid pairwise contact predicions (<a href="#maps">see below</a>). In each step, output models are clustered to select the representative ones for the next stage. A final refinement step include rotamers modeling and filtering out steric clashes.</p>
+<p>One interesting thing about I-TASSER is that it is integrated within a server with many other applications, including some of the tools that I-TASSER uses and other advanced methods based by I-TASSER, like I-TASSER-MTD for large, multidomain proteins or C-I-TASSER that implements a deep learning step, similar to Alphafold2 (see below).</p>
+<div id="fig-rosettacm" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<figure class="figure">
+<img src="pics/rosettaCM.jpg" title="RosettaCM Protocol" class="figure img-fluid figure-img" width="664">
+</figure>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 3: RosettaCM Protocol. (A) Flowchart of the RosettaCM protocol. (B–D) RosettaCM conformational sampling. From <span class="citation" data-cites="song2013">Song et al. (<a href="#ref-song2013" role="doc-biblioref">2013</a>)</span>.</figcaption><p></p>
+</figure>
+</div>
+<p><strong>RosettaCM</strong> is an advanced homology modeling or threading algorithm by the <a href="https://www.bakerlab.org/">Baker lab</a>, implemented in <a href="https://www.rosettacommons.org/software">Rosetta</a> software and the <a href="https://robetta.bakerlab.org/">Robetta</a> webserver. RosettaCM assemblies the model by recombining aligned segments in a set of selected templates and close the model by a minimization of the junctions between segments by fragments torsion and iterative optimization steps that include Monte Carlo sampling. Finally, an <em>all-atom</em> refinement towards a minimum of free energy <span class="citation" data-cites="song2013">(<a href="#ref-song2013" role="doc-biblioref">Song et al. 2013</a>)</span>.</p>
+</section>
+<section id="d-features-prediction" class="level2">
+<h2 class="anchored" data-anchor-id="d-features-prediction">1D features prediction</h2>
+<p>Threading methods often incorporate additional information beyond MSAs. By definition 1D features are protein features that can be decoded directly from the protein primary structure and represented as values (categories, %, …) associated to individual residues in the sequence. For instance, we can assign a secondary structure state (symbol or probability) to each residue. Threading and <em>ab initio</em> structure prediction methods implement or call third parties methods to predict secondary structure and other 1D features, as important additional information during modeling process.</p>
+<p>You can find links to several 1D features prediction tools in the <a href="links.html">Modeling Resources</a> section.</p>
+<section id="secondary-structure-prediction" class="level3">
+<h3 class="anchored" data-anchor-id="secondary-structure-prediction">Secondary structure prediction</h3>
+<p>Regarding experimentally-based structures, secondary structures can be automatically assigned using <strong>DSSP</strong> (<em>Define Secondary Structure of Proteins</em>) algorithm, originally written in 1983 and updated several times throughout the years, being the last version from 2021 (available on <a href="https://github.com/PDB-REDO/dssp">GitHub</a>). This algorithm classifies each residue considering its geometry and H-bonds prediction by comparison with pre-existing patterns in DSSP database. Remarkably, <u>DSSP does not predict</u> secondary structures, it just extracts this information from the 3D coordinates.</p>
+<p>Prediction of secondary structure (SS) from protein sequences is based in the hypothesis that Segments of consecutive residues have preferences for certain secondary structure states. Similar to other methods in bioinformatics, including protein modeling, approaches to SS prediction evolved during the last 50 years (see Table 1).</p>
+<p>First generation methods rely on statistics approaches and prediction depends on assigning a set of prediction values to a residue and then applying a simple algorithm to those numbers. I.e. apply a probability score based on single amino acid propensity. In the 1990’s, new algorithms included the information of the flanking residues (3-50 nearby amino acids) in the so-called Nearest Neighbor (N-N) Methods. These methods increased the accuracy in many cases but still had strong limitations, as they only considered three possible states (helix, strand or turn). Moreover, as you know from the secondary structure practice, β-strands predictions are more difficult and did not improve much thanks to N-N methods. Additionally, predicted helices and strands were usually too short.</p>
+<p>By the end of 1990 decade, new methods boosted the accuracy to values near to 80% and even 90%. These methods included two innovations, one conceptual and one methodological. The conceptual innovation was the inclusion of evolutionary information in the predictions, by considering the information of multiple sequence alignments or profiles. If a residue or a type of residue is evolutionary conserved, it is likely that it is important to define SS stretches. The second innovation was the use of neural networks in which multiple layers of sequence-to-structure predictions were compared with a independently trained networks (see PHD paper by Burkhard Rost <a href="https://www.rostlab.org/papers/1996_phd/paper.html">here</a>).</p>
+<p>In the last years, most commoly used methods are meta-servers that compare several algorithms, mostly based o neural-networks, like <a href="http://www.compbio.dundee.ac.uk/jpred/">JPred</a> or <a href="https://www.ibi.vu.nl/programs/sympredwww/">SYMPRED</a>, among others.</p>
+<table class="table">
+<caption>Evolution of secondary structure prediction methods</caption>
+<tbody>
+<tr class="odd">
+<td><strong>Type</strong></td>
+<td><strong>Method</strong></td>
+<td><strong>Accuracy</strong></td>
+</tr>
+<tr class="even">
+<td>Statistics</td>
+<td><a href="http://ww%20w.bioge%20m.org/tool/chou-fasman/">Chow &amp; Fassman</a> (1974-)</td>
+<td>57%</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><a href="https%20://npsa-prabi.ibcp%20.fr/cgi-bin/nps%20a_automat%20.pl?page=npsa_gor4.html">GOR</a> (1978-)</td>
+<td>63-73.5%<br>
+(Version V)</td>
+</tr>
+<tr class="even">
+<td>Nearest Neighbor (N-N) methods</td>
+<td>PREDATOR (1996)</td>
+<td>75%</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>NNSSP (1995)</td>
+<td>72%</td>
+</tr>
+<tr class="even">
+<td>N-N neural network</td>
+<td><a href="http:%20//imtec%20h.res.in/raghava/apssp/">APSSP</a></td>
+<td>Up to 86%</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><a href="http:%20//bioin%20f.cs.ucl.ac.uk/psipred/">PsiPRED</a> (1999-)</td>
+<td><p>75.7% (1999)</p>
+<p>84% (2019)</p></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><a href="http%20s://npsa-p%20rabi.ibcp.fr/c%20gi-bin/npsa_autom%20at.pl?p%20age=/NPSA/npsa_phd.html">PHD</a> (1997)</td>
+<td>74%</td>
+</tr>
+<tr class="odd">
+<td>HMM</td>
+<td><a href="https://%20compbio%20.soe.ucsc.edu/HMM-apps/">SAM</a></td>
+<td>76%</td>
+</tr>
+<tr class="even">
+<td><strong> META-Servers</strong></td>
+<td><a href="http://www%20.compbio.%20dundee.ac.uk/www-jpred/"><strong>Jpred4</strong></a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>GeneSilico (Discontinued)</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><a href="https://ww%20w.ibi.vu.%20nl/programs/sympredwww/">SYMPRED</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="structural-disorder-and-solvent-accessibility" class="level3">
+<h3 class="anchored" data-anchor-id="structural-disorder-and-solvent-accessibility">Structural disorder and solvent accessibility</h3>
+<p>The expression <em>disorder</em> denote protein stretches that cannot be assigned to any SS. They are usually dynamic/flexible, thus with high B-factor or even missing in crystal structures. These fragments show a low complexity and they are usually rich in polar residues, whereas aromatic residues are rarely found in disordered regions. These motifs are usually at the ends of proteins or domain boundaries (as linkers). Additionally, they are frequently related to specific functionalities, such in the case of proteolytic targets or protein-protein interactions (PPI). More rarely, large disordered domains can be conserved in protein families and associated with relevant functions, as in the case of some transcription factors, transcription regulators, kinases…</p>
+<p>There are many methods and servers to predict disordered regions. You can see a list in the Wikipedia <a href="https://en.wikipedia.org/wiki/List_of_disorder_prediction_software">here</a> or in the review by <span class="citation" data-cites="atkins2015">Atkins et al. (<a href="#ref-atkins2015" role="doc-biblioref">2015</a>)</span>. The best-known server is <a href="https://www.disprot.org/">DisProt</a>, which uses a large curated database of intrinsically disordered proteins and regions from the literature, which has been recently improved to version 9 in 2022, as described in <span class="citation" data-cites="quaglia2022">Quaglia et al. (<a href="#ref-quaglia2022" role="doc-biblioref">2022</a>)</span>.</p>
+<div id="fig-disprot" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="http://original.disprot.org/images/imageSwap.gif" class="figure img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 4: Examples of disordered regions. From <a href="http://original.disprot.org/index.php">Database of disordered regions</a>.</figcaption><p></p>
+</figure>
+</div>
+<p><em>Hydrophobic collapse</em> is usually referred to as a key step in protein folding. Hydrophobic residues tend to be buried inside the protein, whereas hydrophilic, polar amino acids are exposed to the aqueous solvent.</p>
+<div id="fig-collapse" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<figure class="figure">
+<img src="pics/collapse.png" title="Hydrophobic collapse" class="figure img-fluid figure-img">
+</figure>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 5: Hydrophobic collapse as a early step in protein folding. From Feenstra &amp; Abeln, <a href="https://www.studocu.com/row/document/bangladesh-agricultural-university/protein-folding/introduction-to-structural-bioinformatics/11627608">Introduction to Structural Bioinformatics</a>.</figcaption><p></p>
+</figure>
+</div>
+<p>Solvent accessibility correlates with residue hydrofobicity (accessibility methods usually better performance). Therefore, estimation of how likely each residue is exposed to the solvent or buried inside the protein is useful to obtain and analyze protein models. Moreover, this information is useful to predict PPIs as well as ligand binding or functional sites. Most methods only classify each residue into two groups: Buried, for those with relative accessibility probability &lt;16% and Exposed, for accessibility residues &gt;16%.</p>
+<p>Most common recent methods, like <a href="http://webapps.bifi.es/ProtSA/">ProtSA</a> or <a href="www.rostab.org">PROFacc</a>, combine evolutionary information with neural networks to predict accessibility.</p>
+</section>
+<section id="trans-membrane-motifs-and-membrane-topology" class="level3">
+<h3 class="anchored" data-anchor-id="trans-membrane-motifs-and-membrane-topology">Trans-membrane motifs and membrane topology</h3>
+<p>Identification of transmembrane motifs is also a key step in protein modeling. About 25-30% of human proteins contain transmembrane elements, most of them in alpha helices.</p>
+<div id="fig-TM" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="pics/mb.png" class="figure img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 6: Different topologies of transmembrane proteins</figcaption><p></p>
+</figure>
+</div>
+<p>The PDBTM (<a href="http://pdbtm.enzim.hu/">Protein Data Bank of Transmembrane Proteins</a>) is a comprehensive and up-to-date transmembrane protein selection. As of September 2022, it contains more than 7600 transmembrane proteins, 92.6% of them with alpha helices TM elements. This number of TM proteins is relatively low, as compared with more than 160k structures in PDB, as TM proteins are usually harder to purify and crystalization conditions are often elusive. Thus, although difficult, accurate predictions of TM motifs and overall protein topology can be essential to define protein architecture and identify domains that could be structurally or functionally studied independently.</p>
+<div id="fig-topo" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="pics/alphaTM.jpg" class="figure img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 7: Different topologies of TM helices.</figcaption><p></p>
+</figure>
+</div>
+<p>Current state-of-the-art TM prediction protocols show an accuracy of 90% for definition of TM elements, but only a 80% regarding the protein topology. However, some authors claim that in some types of proteins, the accuracy is not over 70%, due to the small datasets of TM proteins. Most recent methods, based in deep-learning seem to have increased the accuracy to values near 90% for several groups of proteins <span class="citation" data-cites="hallgren">(<a href="#ref-hallgren" role="doc-biblioref">Hallgren et al., n.d.</a>)</span>.</p>
+</section>
+<section id="subcellular-localization-tags-and-post-translational-modification-sites" class="level3">
+<h3 class="anchored" data-anchor-id="subcellular-localization-tags-and-post-translational-modification-sites">Subcellular localization tags and post-translational modification sites</h3>
+<p>Many cellular functions are compartmentalized in the nucleus, mitochondria, endoplasmatic reticulum (ER), or other organules. Therefore, many proteins should be located in those compartments. That is achieved by the presence of some labels, in form of short peptidic sequences that regulate traffic and compartmentalization of proteins within the cells. Typically, N-terminal signals direct proteins to the mitochondrial matrix, ER, or peroxisomes, whereas nucleus traffic is regulated by nuclear localization signals (NLS) and nuclear export signals (NES).</p>
+<p>Similarly, post-translational modifications very often occur in conserved motifs that contain target residues for phosphorylation or ubiquitination, among other modifications.</p>
+<p>These short motifs are difficult to predict, as datasets of validated signals are small. The use of consensus sequences allowed predictions, although in many cases with a high level of uncertainty.</p>
+</section>
+</section>
+</section>
+<section id="maps" class="level1">
+<h1>From contact maps to pairwise high-res feature maps</h1>
+<div id="fig-contact" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<figure class="figure">
+<img src="pics/contact.png" title="Contact-based map" class="figure img-fluid figure-img">
+</figure>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 8: Contact-based map of representative proteins. The map represents a matrix of amino acid positions in the protein sequences (on both, the X and Y axis); with contacts indicated as blue dots. When a number of consecutive residues in the sequence interact the dots form diagonal stretches. Maps obtained at <a href="http://cmweb.enzim.hu/" class="uri">http://cmweb.enzim.hu/</a></figcaption><p></p>
+</figure>
+</div>
+<p>During the last decade, the introduction of <strong>residue-residue contact or distance maps</strong> prediction based on sequence co-evolution and <em>deep learning</em> started a revolution in the field that crystallize with the arrival of Alphafold2 and RoseTTAfold as major breakthroughs with great repercussions in diverse fields. As shown in <a href="#fig-contact">Figure 3</a>, residue-residue contact maps can be obtained from structures as a matrix that show close residues and show a pattern that clearly show differences between motifs and secondary structure stretches.</p>
+<div id="fig-coevol" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="pics/coevolution.png" class="figure img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 9: Schematic of how co-evolution methods extract information about protein structure from a multiple sequence alignment (MSA). Image modified from doi: <code>10.5281/zenodo.1405369</code>, which in turn was modified from <span class="citation" data-cites="marks2011">Marks et al. (<a href="#ref-marks2011" role="doc-biblioref">2011</a>)</span>.</figcaption><p></p>
+</figure>
+</div>
+<p>An accurate information of protein’s residue–residue contacts is sufficient to elucidate the fold of a protein <span class="citation" data-cites="olmea1997">(<a href="#ref-olmea1997" role="doc-biblioref">Olmea and Valencia 1997</a>)</span>; however implementation of these maps in protein modeling is not trivial, as predicting that map is not always easy. The introduction of <strong>evolutionary coupling analysis (ECA)</strong>, i.e., extract the residue coevolution from MSAs (<a href="#fig-coevol">Figure 4</a>) improved contact maps and allowed their implementation for protein folding in several methods, like PSICOV <span class="citation" data-cites="jones2012">(<a href="#ref-jones2012" role="doc-biblioref">Jones et al. 2012</a>)</span> or Gremlin <span class="citation" data-cites="kamisetty2013">(<a href="#ref-kamisetty2013" role="doc-biblioref">Kamisetty, Ovchinnikov, and Baker 2013</a>)</span>, among others. However, it should be noted for proteins without many sequence homologs, the predicted contacts were of low quality and insufficient for accurate contact-assisted protein modeling.</p>
+<div id="fig-families" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="pics/contact2.png" class="figure img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 10: Illustration of column pair and precision submatrix grouping for advanced prediction of contact maps. In the example, Columns 5 and 14 in the first family are aligned to columns 5 and 11 in the second family, respectively, so column pair (5,14) in the first family and the pair (5,11) in the second family are assigned to the same group. Accordingly, the two precision submatrices will be asigned to the same group. From <span class="citation" data-cites="ma2015">Ma et al. (<a href="#ref-ma2015" role="doc-biblioref">2015</a>)</span>.</figcaption><p></p>
+</figure>
+</div>
+<p>The next level of complexity in contact maps is their application to distantly related proteins (<a href="#fig-families">Figure 5</a>). This kind of analysis entails processing a huge amount of information, which increases the computational resources requirements.</p>
+<p>Deep learning is a sub-field of machine learning which is based on artificial neural networks (NN). Neural networks were introduced actually in the late 40’s and 50’s, but they reappeared in the 2000’s thanks to the increase in computational capacities and, more recently, the use of <a href="https://en.wikipedia.org/wiki/Graphics_processing_unit">GPUs</a>. Briefly, a NN uses multiple interconnected layers to transform multiple inputs (MSAs, high-resolution contact-based maps…) into compound features that can be used to predict a complex output, like a 3D protein structure. As their name indicates, NNs attempt to simulate the behavior of the human brain that processes large amounts of data and can be trained to “learn” from that data. Deep learning is based on the use of multiple layer-NN to optimize and refine for accuracy.</p>
+<p>In this context, the introduction of supervised machine learning methods that predict contacts from distant protein families, outperforms ECA methods by the use of multilayer neural networks <span class="citation" data-cites="jones2015">Ma et al. (<a href="#ref-ma2015" role="doc-biblioref">2015</a>)</span>. These methods allowed the use of the so-called high resolution contact maps, which contains enriched information with not only contacts but also distances, and angles, represented in a heatmap-like probability scale.</p>
+<div id="high-res" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<figure class="figure">
+<img src="pics/high_res_maps.png" title="High-resolution contact maps" class="figure img-fluid figure-img">
+</figure>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Example of high-resolution contact maps of 6MSP. From <span class="citation" data-cites="yang2020">Yang et al. (<a href="#ref-yang2020" role="doc-biblioref">2020</a>)</span></figcaption><p></p>
+</figure>
+</div>
+
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-atkins2015" class="csl-entry" role="doc-biblioentry">
+Atkins, Jennifer D., Samuel Y. Boateng, Thomas Sorensen, and Liam J. McGuffin. 2015. <span>“Disorder Prediction Methods, Their Applicability to Different Protein Targets and Their Usefulness for Guiding Experimental Studies.”</span> <em>International Journal of Molecular Sciences</em> 16 (8): 19040–54. <a href="https://doi.org/10.3390/ijms160819040">https://doi.org/10.3390/ijms160819040</a>.
+</div>
+<div id="ref-hallgren" class="csl-entry" role="doc-biblioentry">
+Hallgren, Jeppe, Konstantinos D. Tsirigos, Mads Damgaard Pedersen, José Juan Almagro Armenteros, Paolo Marcatili, Henrik Nielsen, Anders Krogh, and Ole Winther. n.d. <span>“DeepTMHMM Predicts Alpha and Beta Transmembrane Proteins Using Deep Neural Networks.”</span> <a href="https://doi.org/10.1101/2022.04.08.487609">https://doi.org/10.1101/2022.04.08.487609</a>.
+</div>
+<div id="ref-jones2012" class="csl-entry" role="doc-biblioentry">
+Jones, David T., Daniel W. A. Buchan, Domenico Cozzetto, and Massimiliano Pontil. 2012. <span>“PSICOV: precise structural contact prediction using sparse inverse covariance estimation on large multiple sequence alignments.”</span> <em>Bioinformatics (Oxford, England)</em> 28 (2): 184–90. <a href="https://doi.org/10.1093/bioinformatics/btr638">https://doi.org/10.1093/bioinformatics/btr638</a>.
+</div>
+<div id="ref-jones2015" class="csl-entry" role="doc-biblioentry">
+Jones, David T., Tanya Singh, Tomasz Kosciolek, and Stuart Tetchner. 2015. <span>“MetaPSICOV: combining coevolution methods for accurate prediction of contacts and long range hydrogen bonding in proteins.”</span> <em>Bioinformatics (Oxford, England)</em> 31 (7): 999–1006. <a href="https://doi.org/10.1093/bioinformatics/btu791">https://doi.org/10.1093/bioinformatics/btu791</a>.
+</div>
+<div id="ref-kamisetty2013" class="csl-entry" role="doc-biblioentry">
+Kamisetty, Hetunandan, Sergey Ovchinnikov, and David Baker. 2013. <span>“Assessing the utility of coevolution-based residue-residue contact predictions in a sequence- and structure-rich era.”</span> <em>Proceedings of the National Academy of Sciences of the United States of America</em> 110 (39): 15674–79. <a href="https://doi.org/10.1073/pnas.1314045110">https://doi.org/10.1073/pnas.1314045110</a>.
+</div>
+<div id="ref-kelley2015" class="csl-entry" role="doc-biblioentry">
+Kelley, L. A., S. Mezulis, C. M. Yates, M. N. Wass, and M. J. Sternberg. 2015. <span>“The Phyre2 Web Portal for Protein Modeling, Prediction and Analysis.”</span> <em>Nat Protoc</em> 10 (6): 845–58. <a href="https://doi.org/10.1038/nprot.2015.053">https://doi.org/10.1038/nprot.2015.053</a>.
+</div>
+<div id="ref-kelley2009a" class="csl-entry" role="doc-biblioentry">
+Kelley, Lawrence A. 2009. <span>“Fold Recognition.”</span> In, edited by Daniel John Rigden, 27–55. Dordrecht: Springer Netherlands. <a href="https://doi.org/10.1007/978-1-4020-9058-5_2">https://doi.org/10.1007/978-1-4020-9058-5_2</a>.
+</div>
+<div id="ref-ma2015" class="csl-entry" role="doc-biblioentry">
+Ma, Jianzhu, Sheng Wang, Zhiyong Wang, and Jinbo Xu. 2015. <span>“Protein contact prediction by integrating joint evolutionary coupling analysis and supervised learning.”</span> <em>Bioinformatics (Oxford, England)</em> 31 (21): 3506–13. <a href="https://doi.org/10.1093/bioinformatics/btv472">https://doi.org/10.1093/bioinformatics/btv472</a>.
+</div>
+<div id="ref-marks2011" class="csl-entry" role="doc-biblioentry">
+Marks, Debora S., Lucy J. Colwell, Robert Sheridan, Thomas A. Hopf, Andrea Pagnani, Riccardo Zecchina, and Chris Sander. 2011. <span>“Protein 3d Structure Computed from Evolutionary Sequence Variation.”</span> <em>PLOS ONE</em> 6 (12): e28766. <a href="https://doi.org/10.1371/journal.pone.0028766">https://doi.org/10.1371/journal.pone.0028766</a>.
+</div>
+<div id="ref-olmea1997" class="csl-entry" role="doc-biblioentry">
+Olmea, O., and A. Valencia. 1997. <span>“Improving contact predictions by the combination of correlated mutations and other sources of sequence information.”</span> <em>Folding &amp; Design</em> 2 (3): S25–32. <a href="https://doi.org/10.1016/s1359-0278(97)00060-6">https://doi.org/10.1016/s1359-0278(97)00060-6</a>.
+</div>
+<div id="ref-quaglia2022" class="csl-entry" role="doc-biblioentry">
+Quaglia, Federica, Bálint Mészáros, Edoardo Salladini, András Hatos, Rita Pancsa, Lucía B. Chemes, Mátyás Pajkos, et al. 2022. <span>“DisProt in 2022: improved quality and accessibility of protein intrinsic disorder annotation.”</span> <em>Nucleic Acids Research</em> 50 (D1): D480–87. <a href="https://doi.org/10.1093/nar/gkab1082">https://doi.org/10.1093/nar/gkab1082</a>.
+</div>
+<div id="ref-rigden2017a" class="csl-entry" role="doc-biblioentry">
+Rigden, D. J. 2017. <em>From Protein Structure to Function with Bioinformatics</em>. Springer Netherlands. <a href="https://books.google.hn/books?id=l4LynAAACAAJ">https://books.google.hn/books?id=l4LynAAACAAJ</a>.
+</div>
+<div id="ref-roy2010" class="csl-entry" role="doc-biblioentry">
+Roy, A., A. Kucukural, and Y. Zhang. 2010. <span>“I-TASSER: a unified platform for automated protein structure and function prediction.”</span> <em>Nat Protoc</em> 5 (4): 725–38. <a href="https://doi.org/nprot.2010.5 [pii] 10.1038/nprot.2010.5">https://doi.org/nprot.2010.5 [pii] 10.1038/nprot.2010.5</a>.
+</div>
+<div id="ref-song2013" class="csl-entry" role="doc-biblioentry">
+Song, Yifan, Frank DiMaio, Ray Yu-Ruei Wang, David Kim, Chris Miles, TJ Brunette, James Thompson, and David Baker. 2013. <span>“High-Resolution Comparative Modeling with RosettaCM.”</span> <em>Structure</em> 21 (10): 1735–42. https://doi.org/<a href="https://doi.org/10.1016/j.str.2013.08.005">https://doi.org/10.1016/j.str.2013.08.005</a>.
+</div>
+<div id="ref-yang2020" class="csl-entry" role="doc-biblioentry">
+Yang, Jianyi, Ivan Anishchenko, Hahnbeom Park, Zhenling Peng, Sergey Ovchinnikov, and David Baker. 2020. <span>“Improved Protein Structure Prediction Using Predicted Interresidue Orientations.”</span> <em>Proceedings of the National Academy of Sciences</em> 117 (3): 1496–1503. <a href="https://doi.org/10.1073/pnas.1914677117">https://doi.org/10.1073/pnas.1914677117</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          // default icon
+          link.classList.add("external");
+      }
+    }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
