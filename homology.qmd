@@ -194,7 +194,11 @@ more detailed review on homology modeling, I suggest reading @haddad2020.
 In this course, we are focusing on end-to-end modeling with
 [SWISS-MODEL](https://swissmodel.expasy.org/) [@waterhouse2018], a fully
 automated modeling server that allows you the construction of models without the
-requirement of a strong bioinformatics background or coding skills. The early versions of SWISS-MODEL only allowed modeling sequences with close homologs in databases but, as discussed below, implementation of advances in template recognition and model building, increased the modeling proficiency and accuracy, particularly during the last decade.
+requirement of a strong bioinformatics background or coding skills. The early
+versions of SWISS-MODEL only allowed modeling sequences with close homologs in
+databases but, as discussed below, implementation of advances in template
+recognition and model building, increased the modeling proficiency and accuracy,
+particularly during the last decade.
 
 SWISS-MODEL has different supported inputs. Usually, you provide a single
 sequence query for template searching, but you can bypass this step and provide
@@ -225,7 +229,7 @@ modeling. Similar to other end-to-end software, SWISS-MODEL has its own curated
 database, called **SMLT** (SWISS-MODEL template library). This is based on PDB,
 updated weekly, and also annotated and indexed to boost searches. As of 6 July
 2022, SMLT contains 133,049 unique protein sequences that map to 332,864
-biological units (protein structures classified by their quaternary structure).
+[biological units](https://proteopedia.org/wiki/index.php/Biological_Unit).
 
 Now, you first need your sequences. A protein sequence database like
 [Uniprot](https://www.uniprot.org/) or [NCBI
@@ -292,8 +296,8 @@ Note: If you click on "Build Model", it will directly use the top-ranked
 template, so you'll miss some fun, but you can go back for that later on if you
 change your mind.
 
-[![SWISS-MODEL modeling
-start. Just paste your sequences and click on Search.](pics/seach.png "SWISS-MODEL modeling"){#fig-swissmodel
+[![SWISS-MODEL modeling start. Just paste your sequences and click on
+Search.](pics/seach.png "SWISS-MODEL modeling"){#fig-swissmodel
 .figure}](https://swissmodel.expasy.org/interactive)
 
 #### [Could you foresee which of our queries will give rise to a better model? Why?]{style="color:green"}
@@ -312,34 +316,41 @@ a different substrate/cofactor that can have a key role in the protein function
 or with different coverage or % identity.
 
 Once the template(s) is selected, model coordinates are constructed based on the
-alignment of the query and template sequence. SWISS-MODEL uses a fragment
-assembly, which is also the bases of *Fold-recognition* or *Threading* methods (see...).
-Other programs, like
-[Modeller](https://salilab.org/modeller/), are based in the satisfaction of general
-spatial restraints [@janson2019]. Modeller is a command-line tool
-that allow full customization of the modeling, which requires more knowledge
-about the process but can be very useful for some types of proteins. However,
-both methods have been implemented in some online servers and user-friendly
-applications, including ChimeraX and Pymol. Modeller can be also called from the HHPred output (if you included PDB as a searchable database), which is very convenient to model remote homologs using several templates in a few minutes.
+alignment of the query and template sequence using ProMod3 module [@studer2021].
+SWISS-MODEL uses a fragment assembly, which is also the bases of
+*Fold-recognition* or *Threading* methods (see Threading
+[section](advanced.html#sec-threading)). Other programs, like
+[Modeller](https://salilab.org/modeller/), are based in the satisfaction of
+general spatial restraints [@janson2019]. Modeller is a command-line tool that
+allow full customization of the modeling, which requires more knowledge about
+the process but can be very useful for some types of proteins. However, it has
+been implemented in some online servers
+([ModWeb](https://modbase.compbio.ucsf.edu/modweb/)) and user-friendly
+applications, including ChimeraX and Pymol (Pymod plugin, @janson2021). Modeller
+can be also called from the HHPred output (if you included PDB as a searchable
+database), which is very convenient to model remote homologs using several
+templates in a few minutes.
 
 Fragment assembly will use the template core backbone atoms to build a core
 structure of the model, leaving non-conserved regions (mostly loops) for later.
-Then, it will find compatible fragments in a dedicated loop database and also
-use *ab initio* building or missing loops.
+**Loops modeling** includes the use of a homologs subset of a dedicated loop
+database, [Monte Carlo](https://en.wikipedia.org/wiki/Monte_Carlo_method)
+sampling as a fallback and even *ab initio* building or missing loops.
 
 ![Backbone and loop modeling. From [Expasy Protein Structure, Comparative
 Protein Modelling, and
 Visualisation](https://swissmodel.expasy.org/static/course/files/PartII_homology_modelling.pdf).](pics/loops.png "Backbone and loop modeling"){#fig-backbone
 .figure}
 
-Then, side chain of non conserved amino acids is undertook. The goal is finding
-the most likely side chain conformation, using template structure information,
-rotamer libraries (from a curated set known protein structures) and energetic and packaging
-criteria. If many side chains have to be placed in the structure it will lead to
-a "chicken and egg problem", as positioning one rotamer would affect others. That means that identification of possible hydrogen bonds between residues
-side chains and between side chains and the backbone reduce the optimization
-calculations. At the end of the day, the more residues correctly positioned, the
-best model. 
+Then, positioning of **side chain** of non conserved amino acids is undertook.
+The goal is finding the most likely side chain conformation, using template
+structure information, rotamer libraries (from a curated set known protein
+structures) and energetic and packaging criteria. If many side chains have to be
+placed in the structure it will lead to a "chicken and egg problem", as
+positioning one rotamer would affect others. That means that identification of
+possible hydrogen bonds between residues side chains and between side chains and
+the backbone reduce the optimization calculations. At the end of the day, the
+more residues correctly positioned, the best model.
 
 ![Side chain modeling. From [CMBI Seminars on
 Bioinformatics](https://swift.cmbi.umcn.nl/teach/B1SEM/B1SEM_8.html).](pics/Rotamers.png "Backbone and loop modeling"){#fig-rotamers
@@ -470,4 +481,3 @@ HAdV-2pol?**]{style="color:green"}
 
 This is a [Evernote](https://evernote.com/intl/es) note that you can consult
 online and also copy into your Evenote account if you wish.
-

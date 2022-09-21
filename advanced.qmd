@@ -34,7 +34,7 @@ Alphafold, which we will review [later](ai.html).
 
 # From homology modeling to threading
 
-## Threading or Fold-recognition methods
+## Threading or Fold-recognition methods {#sec-threading}
 
 As mentioned earlier, the introduction of HMM-based profiles during the first
 decade of this century led to a great improvement in template detection and
@@ -132,11 +132,11 @@ Finally, an *all-atom* refinement towards a minimum of free energy [@song2013].
 Threading methods often incorporate additional information beyond MSAs. By
 definition 1D features are protein features that can be decoded directly from
 the protein primary structure and represented as values (categories, %, ...)
-associated to individual residues in the sequence. For instance, we can assign
-a secondary structure state (symbol or probability) to each residue. Threading
-and *ab initio* structure prediction methods implement or call third parties
-methods to predict secondary structure and other 1D features, as important
-additional information during modeling process.
+associated to individual residues in the sequence. For instance, we can assign a
+secondary structure state (symbol or probability) to each residue. Threading and
+*ab initio* structure prediction methods implement or call third parties methods
+to predict secondary structure and other 1D features, as important additional
+information during modeling process.
 
 You can find links to several 1D features prediction tools in the [Modeling
 Resources](links.html) section.
@@ -186,48 +186,47 @@ several algorithms, mostly based o neural-networks, like
 [JPred](http://www.compbio.dundee.ac.uk/jpred/) or
 [SYMPRED](https://www.ibi.vu.nl/programs/sympredwww/), among others.
 
-+----------------+------------------------------------+--------------------+
-| **Type**       | **Method**                         | **Accuracy**       |
-+----------------+------------------------------------+--------------------+
-| Statistics     | [Chow &                            | 57%                |
-|                | Fassman](http://ww                 |                    |
-|                | w.bioge%20m.org/tool/chou-fasman/) |                    |
-|                | (1974-)                            |                    |
-+----------------+------------------------------------+--------------------+
-|                | [GOR](https                        | 63-73.5%\          |
-|                | ://npsa-prabi.ibcp .fr/cgi-bin/nps | (Version V)        |
-|                | a_automat .pl?page=npsa_gor4.html) |                    |
-|                | (1978-)                            |                    |
-+----------------+------------------------------------+--------------------+
-| Nearest        | PREDATOR (1996)                    | 75%                |
-| Neighbor (N-N) |                                    |                    |
-| methods        |                                    |                    |
-+----------------+------------------------------------+--------------------+
-|                | NNSSP (1995)                       | 72%                |
-+----------------+------------------------------------+--------------------+
-| N-N neural     | [APSSP](http:                      | Up to 86%          |
-| network        | //imtec%20h.res.in/raghava/apssp/) |                    |
-+----------------+------------------------------------+--------------------+
-|                | [PsiPRED](http:                    | 75.7% (1999)       |
-|                | //bioin%20f.cs.ucl.ac.uk/psipred/) |                    |
-|                | (1999-)                            | 84% (2019)         |
-+----------------+------------------------------------+--------------------+
-|                | [PHD](http%20s://npsa-p            | 74%                |
-|                | rabi.ibcp.fr/c%20gi-bin/npsa_autom |                    |
-|                | at.pl?p%20age=/NPSA/npsa_phd.html) |                    |
-|                | (1997)                             |                    |
-+----------------+------------------------------------+--------------------+
-| HMM            | [SAM](https://                     | 76%                |
-|                | compbio%20.soe.ucsc.edu/HMM-apps/) |                    |
-+----------------+------------------------------------+--------------------+
-| **             | [**Jpred4**](http://www            |                    |
-| META-Servers** | .compbio. dundee.ac.uk/www-jpred/) |                    |
-+----------------+------------------------------------+--------------------+
-|                | GeneSilico (Discontinued)          |                    |
-+----------------+------------------------------------+--------------------+
-|                | [SYMPRED](https://ww               |                    |
-|                | w.ibi.vu. nl/programs/sympredwww/) |                    |
-+----------------+------------------------------------+--------------------+
++------------------+-------------------------------------+--------------------+
+| **Type**         | **Method**                          | **Accuracy**       |
++------------------+-------------------------------------+--------------------+
+| Statistics       | [Chow &                             | 57%                |
+|                  | Fassman](http:%20                   |                    |
+|                  | //www.biogem.org/tool/chou-fasman/) |                    |
+|                  | (1974-)                             |                    |
++------------------+-------------------------------------+--------------------+
+|                  | [GOR](h%20ttp                       | 63-73.5%\          |
+|                  | s://npsa-prabi.ibcp.fr/cgi-bin/n%20 | (Version V)        |
+|                  | psa_automat.pl?page=npsa_gor4.html) |                    |
+|                  | (1978-)                             |                    |
++------------------+-------------------------------------+--------------------+
+| Nearest Neighbor | PREDATOR (1996)                     | 75%                |
+| (N-N) methods    |                                     |                    |
++------------------+-------------------------------------+--------------------+
+|                  | NNSSP (1995)                        | 72%                |
++------------------+-------------------------------------+--------------------+
+| N-N neural       | [APSSP](h%20                        | Up to 86%          |
+| network          | ttp://imtech.res.in/raghava/apssp/) |                    |
++------------------+-------------------------------------+--------------------+
+|                  | [PsiPRED](h%20                      | 75.7% (1999)       |
+|                  | ttp://bioinf.cs.ucl.ac.uk/psipred/) |                    |
+|                  | (1999-)                             | 84% (2019)         |
++------------------+-------------------------------------+--------------------+
+|                  | [PHD](https:%20//n                  | 74%                |
+|                  | psa-prabi.ibcp.fr/cgi-bin/npsa_a%20 |                    |
+|                  | utomat.pl?page=/NPSA/npsa_phd.html) |                    |
+|                  | (1997)                              |                    |
++------------------+-------------------------------------+--------------------+
+| HMM              | [SAM](http%20                       | 76%                |
+|                  | s://compbio.soe.ucsc.edu/HMM-apps/) |                    |
++------------------+-------------------------------------+--------------------+
+| **META-Servers** | [**Jpred4**](http://w%20            |                    |
+|                  | ww.compbio.dundee.ac.uk/www-jpred/) |                    |
++------------------+-------------------------------------+--------------------+
+|                  | GeneSilico (Discontinued)           |                    |
++------------------+-------------------------------------+--------------------+
+|                  | [SYMPRED](https://%20               |                    |
+|                  | www.ibi.vu.nl/programs/sympredwww/) |                    |
++------------------+-------------------------------------+--------------------+
 
 : Evolution of secondary structure prediction methods
 
@@ -386,10 +385,10 @@ for accuracy.
 
 In this context, the introduction of supervised machine learning methods that
 predict contacts from distant protein families, outperforms ECA methods by the
-use of multilayer neural networks [@jones2015, @ma2015]. These methods allowed
-the use of the so-called high resolution contact maps, which contains enriched
-information with not only contacts but also distances, and angles, represented
-in a heatmap-like probability scale.
+use of multilayer neural networks [@jones2015; @ma2015a; @wang2017a; @yang2020].
+These methods implemented the use of the so-called high resolution contact maps,
+which contains enriched information with not only contacts but also distances,
+and angles, represented in a heatmap-like probability scale.
 
 ![Example of high-resolution contact maps of 6MSP. From
 @yang2020](pics/high_res_maps.png "High-resolution contact maps"){#high-res

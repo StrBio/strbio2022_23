@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2022-09-20">
+<meta name="dcterms.date" content="2022-09-21">
 
 <title>Structural Bioinformatics 2022-23 - Homology Modeling</title>
 <style>
@@ -157,16 +157,21 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./advanced.html" class="sidebar-item-text sidebar-link">From advanced homology modeling to deep Learning-based methods</a>
+  <a href="./advanced.html" class="sidebar-item-text sidebar-link">Advanced homology modeling</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ai.html" class="sidebar-item-text sidebar-link">State-of-the-art protein modeling with Deep Learning-based methods</a>
+  <a href="./ai.html" class="sidebar-item-text sidebar-link">State-of-the-art protein modeling (in 2022)</a>
   </div>
 </li>
     </ul>
   </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./links.html" class="sidebar-item-text sidebar-link">Modeling Resources</a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -221,7 +226,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 20, 2022</p>
+      <p class="date">September 21, 2022</p>
     </div>
   </div>
     
@@ -360,7 +365,7 @@ Rather than provide just a recipe to make a model in two clics, the goal is to u
 <h2 data-number="3.1" class="anchored" data-anchor-id="template"><span class="header-section-number">3.1</span> Step 1+2. Template search and align.</h2>
 <section id="where-can-we-search" class="level3" data-number="3.1.1">
 <h3 data-number="3.1.1" class="anchored" data-anchor-id="where-can-we-search"><span class="header-section-number">3.1.1</span> Where can we search?</h3>
-<p>Template searching consists in finding a protein with known structure that has a sequence similar to our protein. As we mentioned above, the <a href="https://www.rcsb.org/">RCSB Protein Data Bank</a> (PDB) is the largest database of protein structures, so we can search templates by comparing the sequence of our protein with the sequence of all the proteins in PDB. However, PDB was constructed to contain all the macromolecular structures, not for searching templates for modeling. Similar to other end-to-end software, SWISS-MODEL has its own curated database, called <strong>SMLT</strong> (SWISS-MODEL template library). This is based on PDB, updated weekly, and also annotated and indexed to boost searches. As of 6 July 2022, SMLT contains 133,049 unique protein sequences that map to 332,864 biological units (protein structures classified by their quaternary structure).</p>
+<p>Template searching consists in finding a protein with known structure that has a sequence similar to our protein. As we mentioned above, the <a href="https://www.rcsb.org/">RCSB Protein Data Bank</a> (PDB) is the largest database of protein structures, so we can search templates by comparing the sequence of our protein with the sequence of all the proteins in PDB. However, PDB was constructed to contain all the macromolecular structures, not for searching templates for modeling. Similar to other end-to-end software, SWISS-MODEL has its own curated database, called <strong>SMLT</strong> (SWISS-MODEL template library). This is based on PDB, updated weekly, and also annotated and indexed to boost searches. As of 6 July 2022, SMLT contains 133,049 unique protein sequences that map to 332,864 <a href="https://proteopedia.org/wiki/index.php/Biological_Unit">biological units</a>.</p>
 <p>Now, you first need your sequences. A protein sequence database like <a href="https://www.uniprot.org/">Uniprot</a> or <a href="https://www.ncbi.nlm.nih.gov/protein/">NCBI Protein</a>, is a good place for this task.</p>
 <p>If you want to cheat yourself, I give you the <a href="https://rest.uniprot.org/uniprotkb/P03261.fasta">HAdV-2pol</a> and <a href="https://rest.uniprot.org/uniprotkb/Q969S2.fasta">NEIL2</a> sequences.</p>
 </section>
@@ -400,8 +405,8 @@ Rather than provide just a recipe to make a model in two clics, the goal is to u
 <h2 data-number="3.2" class="anchored" data-anchor-id="step-3.-model-building."><span class="header-section-number">3.2</span> Step 3. Model Building.</h2>
 <p>By default, SWISS-MODEL will provide 50 ranked possible templates. The output also contains information about the method and resolution of the templates, the % of identity (and alignment coverage) with the query sequence, and the GMQE and QSQE.</p>
 <p>The top template is marked by default and it likely will give the best model, but it is also interesting to try some alternative templates depending on the downstream application of the model (see <a href="#corollary">below</a>). For instance with a different substrate/cofactor that can have a key role in the protein function or with different coverage or % identity.</p>
-<p>Once the template(s) is selected, model coordinates are constructed based on the alignment of the query and template sequence. SWISS-MODEL uses a fragment assembly, which is also the bases of <em>Fold-recognition</em> or <em>Threading</em> methods (see…). Other programs, like <a href="https://salilab.org/modeller/">Modeller</a>, are based in the satisfaction of general spatial restraints <span class="citation" data-cites="janson2019">(<a href="#ref-janson2019" role="doc-biblioref">Janson et al. 2019</a>)</span>. Modeller is a command-line tool that allow full customization of the modeling, which requires more knowledge about the process but can be very useful for some types of proteins. However, both methods have been implemented in some online servers and user-friendly applications, including ChimeraX and Pymol. Modeller can be also called from the HHPred output (if you included PDB as a searchable database), which is very convenient to model remote homologs using several templates in a few minutes.</p>
-<p>Fragment assembly will use the template core backbone atoms to build a core structure of the model, leaving non-conserved regions (mostly loops) for later. Then, it will find compatible fragments in a dedicated loop database and also use <em>ab initio</em> building or missing loops.</p>
+<p>Once the template(s) is selected, model coordinates are constructed based on the alignment of the query and template sequence using ProMod3 module <span class="citation" data-cites="studer2021">(<a href="#ref-studer2021" role="doc-biblioref">Studer et al. 2021</a>)</span>. SWISS-MODEL uses a fragment assembly, which is also the bases of <em>Fold-recognition</em> or <em>Threading</em> methods (see Threading <a href="advanced.html#sec-threading">section</a>). Other programs, like <a href="https://salilab.org/modeller/">Modeller</a>, are based in the satisfaction of general spatial restraints <span class="citation" data-cites="janson2019">(<a href="#ref-janson2019" role="doc-biblioref">Giacomo Janson et al. 2019</a>)</span>. Modeller is a command-line tool that allow full customization of the modeling, which requires more knowledge about the process but can be very useful for some types of proteins. However, it has been implemented in some online servers (<a href="https://modbase.compbio.ucsf.edu/modweb/">ModWeb</a>) and user-friendly applications, including ChimeraX and Pymol (Pymod plugin, <span class="citation" data-cites="janson2021">G. Janson and Paiardini (<a href="#ref-janson2021" role="doc-biblioref">2021</a>)</span>). Modeller can be also called from the HHPred output (if you included PDB as a searchable database), which is very convenient to model remote homologs using several templates in a few minutes.</p>
+<p>Fragment assembly will use the template core backbone atoms to build a core structure of the model, leaving non-conserved regions (mostly loops) for later. <strong>Loops modeling</strong> includes the use of a homologs subset of a dedicated loop database, <a href="https://en.wikipedia.org/wiki/Monte_Carlo_method">Monte Carlo</a> sampling as a fallback and even <em>ab initio</em> building or missing loops.</p>
 <div id="fig-backbone" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <figure class="figure">
@@ -410,7 +415,7 @@ Rather than provide just a recipe to make a model in two clics, the goal is to u
 <p></p><figcaption aria-hidden="true" class="figure-caption">Figure 13: Backbone and loop modeling. From <a href="https://swissmodel.expasy.org/static/course/files/PartII_homology_modelling.pdf">Expasy Protein Structure, Comparative Protein Modelling, and Visualisation</a>.</figcaption><p></p>
 </figure>
 </div>
-<p>Then, side chain of non conserved amino acids is undertook. The goal is finding the most likely side chain conformation, using template structure information, rotamer libraries (from a curated set known protein structures) and energetic and packaging criteria. If many side chains have to be placed in the structure it will lead to a “chicken and egg problem”, as positioning one rotamer would affect others. That means that identification of possible hydrogen bonds between residues side chains and between side chains and the backbone reduce the optimization calculations. At the end of the day, the more residues correctly positioned, the best model.</p>
+<p>Then, positioning of <strong>side chain</strong> of non conserved amino acids is undertook. The goal is finding the most likely side chain conformation, using template structure information, rotamer libraries (from a curated set known protein structures) and energetic and packaging criteria. If many side chains have to be placed in the structure it will lead to a “chicken and egg problem”, as positioning one rotamer would affect others. That means that identification of possible hydrogen bonds between residues side chains and between side chains and the backbone reduce the optimization calculations. At the end of the day, the more residues correctly positioned, the best model.</p>
 <div id="fig-rotamers" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <figure class="figure">
@@ -487,6 +492,9 @@ Haddad, Yazan, Vojtech Adam, and Zbynek Heger. 2020. <span>“Ten Quick Tips for
 <div id="ref-janson2019" class="csl-entry" role="doc-biblioentry">
 Janson, Giacomo, Alessandro Grottesi, Marco Pietrosanto, Gabriele Ausiello, Giulia Guarguaglini, and Alessandro Paiardini. 2019. <span>“Revisiting the <span>“</span>Satisfaction of Spatial Restraints<span>”</span> Approach of MODELLER for Protein Homology Modeling.”</span> <em>PLOS Computational Biology</em> 15 (12): e1007219. <a href="https://doi.org/10.1371/journal.pcbi.1007219">https://doi.org/10.1371/journal.pcbi.1007219</a>.
 </div>
+<div id="ref-janson2021" class="csl-entry" role="doc-biblioentry">
+Janson, G., and A. Paiardini. 2021. <span>“PyMod 3: a complete suite for structural bioinformatics in PyMOL.”</span> <em>Bioinformatics</em> 37 (May): 1471–72. <a href="https://doi.org/10.1093/bioinformatics/btaa849">https://doi.org/10.1093/bioinformatics/btaa849</a>.
+</div>
 <div id="ref-kelley2009" class="csl-entry" role="doc-biblioentry">
 Kelley, Lawrence A. 2009. <span>“Fold Recognition.”</span> In, edited by Daniel John Rigden, 27–55. Dordrecht: Springer Netherlands. <a href="https://doi.org/10.1007/978-1-4020-9058-5_2">https://doi.org/10.1007/978-1-4020-9058-5_2</a>.
 </div>
@@ -510,6 +518,9 @@ Remmert, Michael, Andreas Biegert, Andreas Hauser, and Johannes Söding. 2011. <
 </div>
 <div id="ref-studer2020" class="csl-entry" role="doc-biblioentry">
 Studer, Gabriel, Christine Rempfer, Andrew M. Waterhouse, Rafal Gumienny, Juergen Haas, and Torsten Schwede. 2020. <span>“QMEANDisCo-distance constraints applied on model quality estimation.”</span> <em>Bioinformatics (Oxford, England)</em> 36 (6): 1765–71. <a href="https://doi.org/10.1093/bioinformatics/btz828">https://doi.org/10.1093/bioinformatics/btz828</a>.
+</div>
+<div id="ref-studer2021" class="csl-entry" role="doc-biblioentry">
+Studer, Gabriel, Gerardo Tauriello, Stefan Bienert, Marco Biasini, Niklaus Johner, and Torsten Schwede. 2021. <span>“ProMod3-A versatile homology modelling toolbox.”</span> <em>PLoS computational biology</em> 17 (1): e1008667. <a href="https://doi.org/10.1371/journal.pcbi.1008667">https://doi.org/10.1371/journal.pcbi.1008667</a>.
 </div>
 <div id="ref-waterhouse2018" class="csl-entry" role="doc-biblioentry">
 Waterhouse, Andrew, Martino Bertoni, Stefan Bienert, Gabriel Studer, Gerardo Tauriello, Rafal Gumienny, Florian T Heer, et al. 2018. <span>“SWISS-MODEL: Homology Modelling of Protein Structures and Complexes.”</span> <em>Nucleic Acids Research</em> 46 (W1): W296–303. <a href="https://doi.org/10.1093/nar/gky427">https://doi.org/10.1093/nar/gky427</a>.
