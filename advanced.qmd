@@ -91,12 +91,13 @@ several algorithms, mostly based o neural-networks, like
 | **Type**         | **Method**                          | **Accuracy**       |
 +------------------+-------------------------------------+--------------------+
 | Statistics       | [Chow &                             | 57%                |
-|                  | Fassman](http:%20%20%20%20          |                    |
+|                  | Fassman](http:%20%20%20%20%20       |                    |
 |                  | //www.biogem.org/tool/chou-fasman/) |                    |
 |                  | (1974-)                             |                    |
 +------------------+-------------------------------------+--------------------+
-|                  | [GOR](h%20ttp%20s:/%20/np%20sa-     | 63-73.5%\          |
-|                  | prabi.ibcp.fr/cgi-bin/n%20%20%20%20 | (Version V)        |
+|                  | [G                                  | 63-73.5%\          |
+|                  | OR](h%20ttp%20s:/%20/np%20sa-%20pra | (Version V)        |
+|                  | bi.ibcp.fr/cgi-bin/n%20%20%20%20%20 |                    |
 |                  | psa_automat.pl?page=npsa_gor4.html) |                    |
 |                  | (1978-)                             |                    |
 +------------------+-------------------------------------+--------------------+
@@ -105,28 +106,29 @@ several algorithms, mostly based o neural-networks, like
 +------------------+-------------------------------------+--------------------+
 |                  | NNSSP (1995)                        | 72%                |
 +------------------+-------------------------------------+--------------------+
-| N-N neural       | [APSSP](h%20%20%20%20               | Up to 86%          |
+| N-N neural       | [APSSP](h%20%20%20%20%20            | Up to 86%          |
 | network          | ttp://imtech.res.in/raghava/apssp/) |                    |
 +------------------+-------------------------------------+--------------------+
-|                  | [PsiPRED](h%20%20%20%20             | 75.7% (1999)       |
+|                  | [PsiPRED](h%20%20%20%20%20          | 75.7% (1999)       |
 |                  | ttp://bioinf.cs.ucl.ac.uk/psipred/) |                    |
 |                  | (1999-)                             | 84% (2019)         |
 +------------------+-------------------------------------+--------------------+
-|                  | [                                   | 74%                |
-|                  | PHD](https:%20//n%20psa%20-pr%20abi |                    |
-|                  | .ibcp.fr/cgi-bin/npsa_a%20%20%20%20 |                    |
+|                  | [PHD](h                             | 74%                |
+|                  | ttps:%20//n%20psa%20-pr%20abi%20.ib |                    |
+|                  | cp.fr/cgi-bin/npsa_a%20%20%20%20%20 |                    |
 |                  | utomat.pl?page=/NPSA/npsa_phd.html) |                    |
 |                  | (1997)                              |                    |
 +------------------+-------------------------------------+--------------------+
-| HMM              | [SAM](http%20%20%20%20              | 76%                |
+| HMM              | [SAM](http%20%20%20%20%20           | 76%                |
 |                  | s://compbio.soe.ucsc.edu/HMM-apps/) |                    |
 +------------------+-------------------------------------+--------------------+
-| **META-Servers** | [**Jpred4**](http://w%20%20%20%20   |                    |
+| **META-Servers** | [                                   |                  |
+|                  | **Jpred4**](http://w%20%20%20%20%20 |                    |
 |                  | ww.compbio.dundee.ac.uk/www-jpred/) |                    |
 +------------------+-------------------------------------+--------------------+
 |                  | GeneSilico (Discontinued)           |                    |
 +------------------+-------------------------------------+--------------------+
-|                  | [SYMPRED](https://%20%20%20%20      |                    |
+|                  | [SYMPRED](https://%20%20%20%20%20   |                    |
 |                  | www.ibi.vu.nl/programs/sympredwww/) |                    |
 +------------------+-------------------------------------+--------------------+
 
@@ -158,7 +160,7 @@ models has been also suggested as a good indicator of protein disorder
 [@wilson2022].
 
 ![Examples of disordered regions. From [Database of disordered
-regions](http://original.disprot.org/index.php).](http://original.disprot.org/images/imageSwap.gif){#fig-disprot
+regions](http://original.disprot.org/index.php).](pics/imageSwap.gif){#fig-disprot
 .figure}
 
 *Hydrophobic collapse* is usually referred to as a key step in protein folding.
