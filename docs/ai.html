@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Modesto Redrejo Rodríguez">
-<meta name="dcterms.date" content="2022-09-20">
+<meta name="dcterms.date" content="2022-09-26">
 
 <title>Structural Bioinformatics 2022-23 - State-of-the-art protein modeling (in 2022)</title>
 <style>
@@ -168,6 +168,11 @@ div.csl-indent {
 </li>
     </ul>
   </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./links.html" class="sidebar-item-text sidebar-link">Modeling Resources</a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -179,7 +184,7 @@ div.csl-indent {
   <ul>
   <li><a href="#the-recent-history-of-protein-structure-modeling-telling-by-a-contest-casp" id="toc-the-recent-history-of-protein-structure-modeling-telling-by-a-contest-casp" class="nav-link active" data-scroll-target="#the-recent-history-of-protein-structure-modeling-telling-by-a-contest-casp">The recent history of protein structure modeling telling by a contest (CASP)</a></li>
   <li><a href="#casp14-or-when-protein-structure-prediction-come-to-age-for-non-structural-biologists" id="toc-casp14-or-when-protein-structure-prediction-come-to-age-for-non-structural-biologists" class="nav-link" data-scroll-target="#casp14-or-when-protein-structure-prediction-come-to-age-for-non-structural-biologists">CASP14 or when protein structure prediction come to age for (non structural) biologists</a></li>
-  <li><a href="#alphafold2-as-the-paradigm-of-a-new-era" id="toc-alphafold2-as-the-paradigm-of-a-new-era" class="nav-link" data-scroll-target="#alphafold2-as-the-paradigm-of-a-new-era">Alphafold2 as the paradigm of a New Era</a>
+  <li><a href="#sec-AF2" id="toc-sec-AF2" class="nav-link" data-scroll-target="#sec-AF2">Alphafold2 as the paradigm of a New Era</a>
   <ul class="collapse">
   <li><a href="#why-is-alphafold2-so-freaking-accurate" id="toc-why-is-alphafold2-so-freaking-accurate" class="nav-link" data-scroll-target="#why-is-alphafold2-so-freaking-accurate">Why is Alphafold2 so freaking accurate?</a></li>
   <li><a href="#lets-try-alphafold2." id="toc-lets-try-alphafold2." class="nav-link" data-scroll-target="#lets-try-alphafold2.">Let’s try Alphafold2.</a></li>
@@ -214,7 +219,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 20, 2022</p>
+      <p class="date">September 26, 2022</p>
     </div>
   </div>
     
@@ -245,7 +250,7 @@ Under construction
 <figure class="figure">
 <img src="pics/casp13.png" title="CASP13 results" class="img-fluid figure-img">
 </figure>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Comparative z-core of CASP13 participants. The score is based in the GDT_TS (Global distance test).</figcaption><p></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Comparative Z-score of CASP13 participants. The score is based in the GDT_TS (Global distance test).</figcaption><p></p>
 </figure>
 </div>
 <p>The best research groups in the field test their new methods and protocols in CASP. However, in CASP13 (2018) an AI company called <a href="https://en.wikipedia.org/wiki/DeepMind">Deepmind</a> (Google Subsidiary) entered in the scene. Their method, named Alphafold <span class="citation" data-cites="senior2020">(<a href="#ref-senior2020" role="doc-biblioref">Senior et al. 2020</a>)</span> clearly won CASP13. Alphafold implemented some improvements in a few recently used approaches, creating a new whole pipeline. Basically, instead of create contact maps from the alignment to then fold the structure, they used a MRF unit (Markov Random Field) to extract in advance the main features of sequence and the MSA and process all of that info into a multilayer NN (called ResNet) that provides the distant map and other information. Then, Alphafold uses all the possibly obtained information to create the structure and then improve it by energy minimization and substitution of portions with a selected DB of protein fragments.</p>
@@ -276,7 +281,7 @@ Under construction
 </div>
 <p>Alphafold took some time (eight months, an eternity nowadays) to publish the method (<span class="citation" data-cites="jumper2021">Jumper et al. (<a href="#ref-jumper2021" role="doc-biblioref">2021</a>)</span>) and making it available on <a href="https://github.com/deepmind/alphafold">Github</a>, but other new methods, like RoseTTAfold (<span class="citation" data-cites="baek2021">Baek et al. (<a href="#ref-baek2021" role="doc-biblioref">2021</a>)</span>) and C-I-Tasser (<span class="citation" data-cites="zheng2021">Zheng et al. (<a href="#ref-zheng2021" role="doc-biblioref">2021</a>)</span>) could reproduce their results and were available on public servers, which may have push Deepmind to make everything available to the scientific community (see the Grace Huckins’ <a href="https://www.wired.com/story/without-code-for-deepminds-protein-ai-this-lab-wrote-its-own/">article</a> on Wired). Not surprisingly (at least for me), a group of independent scientists (<a href="https://twitter.com/sokrypton">Sergey Ovchinnikov</a>, <a href="https://twitter.com/milot_mirdita">Milot Mirdita</a>, and <a href="https://twitter.com/thesteinegger">Martin Steinegger</a>), decided to implement Alphafold2 in a <a href="https://github.com/sokrypton/ColabFold">Colab notebook</a>, named ColabFold <span class="citation" data-cites="mirdita2022">Mirdita et al. (<a href="#ref-mirdita2022" role="doc-biblioref">2022</a>)</span>, freely available online. Other free implementations of Alphafold have been and are available, but ColabFold has been the most widely discussed and known. They implemented some tricks to accelerate the modeling, mainly the use of <a href="https://docs.google.com/presentation/d/1mnffk23ev2QMDzGZ5w1skXEadTe54l8-Uei6ACce8eI/present#slide=id.ge58c80b745_0_15">MMSeqs2</a> (developed by Martin Steinegger’s group) to search for homolog structures on Uniref30, which made Colabfold a quick method that made all the previous advanced methods almost useless. This was the real breakthrough in the protein structure field, making Alphafold2 available to every one and, also very important, facilitate the evolution of the method, implementing new features, like the prediction of protein complexes ( <span class="citation" data-cites="evans2022">Evans et al. (<a href="#ref-evans2022" role="doc-biblioref">2022</a>)</span>), which was actually mentioned first on <a href="https://docs.google.com/presentation/d/1mnffk23ev2QMDzGZ5w1skXEadTe54l8-Uei6ACce8eI/present#slide=id.ge58c80b745_0_15">Twitter</a>.</p>
 </section>
-<section id="alphafold2-as-the-paradigm-of-a-new-era" class="level1">
+<section id="sec-AF2" class="level1">
 <h1>Alphafold2 as the paradigm of a New Era</h1>
 <section id="why-is-alphafold2-so-freaking-accurate" class="level2">
 <h2 class="anchored" data-anchor-id="why-is-alphafold2-so-freaking-accurate">Why is Alphafold2 so freaking accurate?</h2>
@@ -302,7 +307,7 @@ Under construction
 </div>
 <p>Like for most of the previous methods Alphafold would give your better results with proteins with related structures known and with a lot of homologs in Uniref databases. However, comparing to nothing, it will likely give you (limited) useful results for the so-called “dark genome”. I work with phages and bacterial mobile elements, and sequencing that is often frustrating as more than 50% of the proteins have no homologs in the database. So you have a bunch of proteins of unknown function… However, as we do know that structure is more conserved than sequence, we may use the structure to find out the function of our dark proteins. There are a few resources for this, I’d suggest you to try <a href="https://search.foldseek.com/search">FoldSeek</a> <span class="citation" data-cites="kempen">(<a href="#ref-kempen" role="doc-biblioref">Kempen et al., n.d.</a>)</span> and <a href="http://ekhidna2.biocenter.helsinki.fi/dali/">Dali</a> <span class="citation" data-cites="holm2022">(<a href="#ref-holm2022" role="doc-biblioref">Holm 2022</a>)</span> servers. You can upload the PDB of your model and search for related structures in PDB and also in Alphafold database.</p>
 <p>As mentioned above, Colabfold aims to make the process faster by using MMSeqs in the first block. Additionally, the number of recycling steps can also be adapted. Moreover, different Colabfold notebooks have been developed (and evolved) to allow some customization and other feature, like batch processing of multiple proteins avoiding recompilation and identification of protein-protein interactions <span class="citation" data-cites="mirdita2022">(<a href="#ref-mirdita2022" role="doc-biblioref">Mirdita et al. 2022</a>)</span>.</p>
-<p>Alphafold models can be evaluated by the mean <strong>pLDDT</strong>, a per-residue confidence metric. It is stored in the B-factor fields of the mmCIF and PDB files available for download (although unlike a B-factor, higher pLDDT is better). The model confidence can vary greatly along a chain so it is important to consult the confidence when interpreting structural features. Very often, the lower confidence fragments are not product of a poor prediction but an indicator of protein disorder.</p>
+<p>Alphafold models can be evaluated by the mean <strong>pLDDT</strong>, a per-residue confidence metric. It is stored in the B-factor fields of the mmCIF and PDB files available for download (although unlike a B-factor, higher pLDDT is better). The model confidence can vary greatly along a chain so it is important to consult the confidence when interpreting structural features. Very often, the lower confidence fragments are not product of a poor prediction but an indicator of protein disorder <span class="citation" data-cites="wilson2022">(<a href="#ref-wilson2022" role="doc-biblioref">Wilson, Choy, and Karttunen 2022</a>)</span>.</p>
 <p>Alphafold also partnered with EMBL-EBI and Uniprot and generated a huge curated database of proteins from model organisms <span class="citation" data-cites="varadi2022">(<a href="#ref-varadi2022" role="doc-biblioref">Varadi et al. 2022</a>)</span>, the <a href="https://alphafold.ebi.ac.uk/">Alphafold database</a>. This is an amazing resource that may be also very helpful for you. Just consider that this database increased from 48% to 76% the fraction of human proteome with structural data, and also it also means great increases in the case of other model organisms, like, including microorganisms and plants <span class="citation" data-cites="portapardo2022">(<a href="#ref-portapardo2022" role="doc-biblioref">Porta-Pardo et al. 2022</a>)</span>.</p>
 <div id="fig-afDDBB" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -413,6 +418,9 @@ Senior, Andrew W., Richard Evans, John Jumper, James Kirkpatrick, Laurent Sifre,
 </div>
 <div id="ref-varadi2022" class="csl-entry" role="doc-biblioentry">
 Varadi, Mihaly, Stephen Anyango, Mandar Deshpande, Sreenath Nair, Cindy Natassia, Galabina Yordanova, David Yuan, et al. 2022. <span>“AlphaFold Protein Structure Database: Massively Expanding the Structural Coverage of Protein-Sequence Space with High-Accuracy Models.”</span> <em>Nucleic Acids Research</em> 50 (D1): D439–44. <a href="https://doi.org/10.1093/nar/gkab1061">https://doi.org/10.1093/nar/gkab1061</a>.
+</div>
+<div id="ref-wilson2022" class="csl-entry" role="doc-biblioentry">
+Wilson, Carter J., Wing-Yiu Choy, and Mikko Karttunen. 2022. <span>“AlphaFold2: A Role for Disordered Protein/Region Prediction?”</span> <em>International Journal of Molecular Sciences</em> 23 (9): 4591. <a href="https://doi.org/10.3390/ijms23094591">https://doi.org/10.3390/ijms23094591</a>.
 </div>
 <div id="ref-yang2020" class="csl-entry" role="doc-biblioentry">
 Yang, Jianyi, Ivan Anishchenko, Hahnbeom Park, Zhenling Peng, Sergey Ovchinnikov, and David Baker. 2020. <span>“Improved Protein Structure Prediction Using Predicted Interresidue Orientations.”</span> <em>Proceedings of the National Academy of Sciences</em> 117 (3): 1496–1503. <a href="https://doi.org/10.1073/pnas.1914677117">https://doi.org/10.1073/pnas.1914677117</a>.

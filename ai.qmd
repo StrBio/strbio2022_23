@@ -34,7 +34,7 @@ controlled, blind-test-like competition and comparing their output with the
 experimentally obtained structure. This is the **CASP** or [*Critical assessment
 of Protein Structure Prediction*](https://predictioncenter.org/).
 
-![Comparative z-core of CASP13 participants. The score is based in the GDT_TS
+![Comparative Z-score of CASP13 participants. The score is based in the GDT_TS
 (Global distance test).](pics/casp13.png "CASP13 results")
 
 The best research groups in the field test their new methods and protocols in
@@ -108,7 +108,7 @@ like the prediction of protein complexes ( @evans2022), which was actually
 mentioned first on
 [Twitter](https://docs.google.com/presentation/d/1mnffk23ev2QMDzGZ5w1skXEadTe54l8-Uei6ACce8eI/present#slide=id.ge58c80b745_0_15).
 
-# Alphafold2 as the paradigm of a New Era
+# Alphafold2 as the paradigm of a New Era {#sec-AF2}
 
 ## Why is Alphafold2 so freaking accurate?
 
@@ -188,7 +188,7 @@ files available for download (although unlike a B-factor, higher pLDDT is
 better). The model confidence can vary greatly along a chain so it is important
 to consult the confidence when interpreting structural features. Very often, the
 lower confidence fragments are not product of a poor prediction but an indicator
-of protein disorder.
+of protein disorder [@wilson2022].
 
 Alphafold also partnered with EMBL-EBI and Uniprot and generated a huge curated
 database of proteins from model organisms [@varadi2022], the [Alphafold

@@ -20,123 +20,24 @@ editor_options:
     wrap: 80
 ---
 
-::: callout-warning
-## Under construction
-:::
-
-![](pics/8275a.jpg "Under construction...")
-
 Although we do not intend to compile the evolution of modeling methods, I
 briefly outline below the origin and transformation of advanced protocols that
 outperform single-template homology modeling during the last three decades. This
-stepwise evolution of modeling methods is the origin of the revolution of
-Alphafold, which we will review [later](ai.html).
+step-wise evolution of modeling methods is the origin of the revolution of
+Alphafold and related protocols, which we will discuss in the next
+[section](ai.html).
 
 # From homology modeling to threading
 
-## Threading or Fold-recognition methods {#sec-threading}
-
-As mentioned earlier, the introduction of HMM-based profiles during the first
-decade of this century led to a great improvement in template detection and
-protein modeling in the twilight zone, i.e., proteins with only distant homologs
-(\<25-30% identity) in databases. Current version of SwissModel and the use of
-HHPred+Modeller already rely on HMM profiles for template identification and
-alignment. In order to exploit the power of HMM searches, those methods
-naturally evolved into iterative [threading]{.ul} methods, based on
-multitemplate model construction, implemented in
-[I-TASSER](https://zhanggroup.org/I-TASSER/) [@roy2010],
-[Phyre2](http://www.sbg.bio.ic.ac.uk/phyre2/) [@kelley2015], and
-[RosettaCM](https://new.rosettacommons.org/demos/latest/tutorials/rosetta_cm/rosetta_cm_tutorial)
-[@song2013], among others. These methods methods are usually referred as
-**Threading** or **Fold-recognition** methods. Both terms can be often used
-interchangeably, although some authors see threading as any technique that uses
-structural information in addition to sequence information to identify remote
-homologies, while threading would be a more complex process of modeling
-including remote homologies and also modeling of pairwise amino acid
-interactions in the structure. Therefore, although we have already used HHPred
-along with the use of HHPred to identify templates for a subsequent modeling,
-could be indeed considered as threading.
-
-![The idea behind fold-recognition is that instead of comparing sequences, we
-intend to compare structures. In the Frozen approximation (left), one residue is
-aligned with the template structure and then we evaluate the probability of the
-nearby residues in the query sequence to be in the same position than the
-equivalent in the template. On the other hand, Defrost methods use profiles to
-generate improved alignments that allow better starting points to the energy
-calculations during the iterative modeling steps. From
-@kelley2009a.](pics/fr.png){#fig-frost .figure}
-
-The iterative threading assembly refinement
-([I-TASSER](http://zhanglab.ccmb.med.umich.edu/I-TASSER)) from [Yang Zhang
-lab](https://zhanggroup.org/) is one of the most widely used threading methods
-and servers. This method was was ranked as the No 1 server for protein structure
-prediction in the community-wide [CASP7](https://zhanggroup.org/casp7/21.html),
-[CASP8](https://predictioncenter.org/casp8/groups_analysis.cgi?target_type=0&gr_type=server),
-[CASP9](https://predictioncenter.org/casp9/CD/data/html/groups.2.html),
-[CASP10](http://predictioncenter.org/casp10/groups_analysis.cgi?type=server),
-[CASP11](http://www.predictioncenter.org/casp11/zscores_final.cgi?gr_type=server_only),
-[CASP12](http://www.predictioncenter.org/casp12/zscores_final.cgi?&gr_type=server_only),
-[CASP13](http://www.predictioncenter.org/casp13/zscores_final.cgi?model_type=best&gr_type=server_only),
-and
-[CASP14](http://www.predictioncenter.org/casp14/zscores_final.cgi?gr_type=server_only)
-experiments. I-TASSER first generates three-dimensional (3D) atomic models from
-multiple threading alignments and iterative structural assembly simulations that
-are iteratively selected and improved. The quality of the template alignments
-(and therefore the difficulty of modeling the targets) is judged based on the
-statistical significance of the best threading alignment, i.e., the *Z*-score,
-which is defined as the energy score in standard deviation units relative to the
-statistical mean of all alignments.
-
-![Flowchart of I-TASSER protein structure modeling. From
-@rigden2017a.](images/paste-29011FF5.png){#fig-tasser .figure}
-
-First, I-TASSER uses Psi-BLAST against a curated databases to select sequence
-homologs and generate a sequence profile. That profile is used to predict
-secondary structure and generate multiple fragmented models using several
-programs. The top template hits from each threading program are then selected
-for the following steps. In the second stage, continuous fragments in threading
-alignments are excised from the template structures, and are used to assemble
-structural conformations of the sections that aligned well, with the unaligned
-regions (mainly loops/tails) built by *ab initio* modeling. The fragment
-assembly is performed using a modified replica-exchange Monte Carlo random
-simulation technique, which implements several replica simulations in parallel
-using different conditions that are periodically exchanged. Those simulations
-consider multiple parameters, including model statistics (stereochemical
-outliers, H-bond, hydrophobicity...), spatial restrains and amino acid pairwise
-contact predicions ([see below](#maps)). In each step, output models are
-clustered to select the representative ones for the next stage. A final
-refinement step include rotamers modeling and filtering out steric clashes.
-
-One interesting thing about I-TASSER is that it is integrated within a server
-with many other applications, including some of the tools that I-TASSER uses and
-other advanced methods based by I-TASSER, like I-TASSER-MTD for large,
-multidomain proteins or C-I-TASSER that implements a deep learning step, similar
-to Alphafold2 (see below).
-
-![RosettaCM Protocol. (A) Flowchart of the RosettaCM protocol. (B--D) RosettaCM
-conformational sampling. From
-@song2013.](pics/rosettaCM.jpg "RosettaCM Protocol"){#fig-rosettacm .figure
-width="664"}
-
-**RosettaCM** is an advanced homology modeling or threading algorithm by the
-[Baker lab](https://www.bakerlab.org/), implemented in
-[Rosetta](https://www.rosettacommons.org/software) software and the
-[Robetta](https://robetta.bakerlab.org/) webserver. RosettaCM assemblies the
-model by recombining aligned segments in a set of selected templates and close
-the model by a minimization of the junctions between segments by fragments
-torsion and iterative optimization steps that include Monte Carlo sampling.
-Finally, an *all-atom* refinement towards a minimum of free energy [@song2013].
-
 ## 1D features prediction
 
-Threading methods often incorporate additional information beyond MSAs. By
-definition 1D features are protein features that can be decoded directly from
+By definition 1D features are protein features that can be decoded directly from
 the protein primary structure and represented as values (categories, %, ...)
 associated to individual residues in the sequence. For instance, we can assign a
-secondary structure state (symbol or probability) to each residue. Threading and
-*ab initio* structure prediction methods implement or call third parties methods
-to predict secondary structure and other 1D features, as important additional
-information during modeling process.
+secondary structure state (symbol or probability) to each residue. Many
+structure prediction methods implement or call third parties methods to predict
+secondary structure and other 1D features, as important additional information
+during modeling process.
 
 You can find links to several 1D features prediction tools in the [Modeling
 Resources](links.html) section.
@@ -176,10 +77,10 @@ methodological. The conceptual innovation was the inclusion of evolutionary
 information in the predictions, by considering the information of multiple
 sequence alignments or profiles. If a residue or a type of residue is
 evolutionary conserved, it is likely that it is important to define SS
-stretches. The second innovation was the use of neural networks in which
-multiple layers of sequence-to-structure predictions were compared with a
-independently trained networks (see PHD paper by Burkhard Rost
-[here](https://www.rostlab.org/papers/1996_phd/paper.html)).
+stretches. The second innovation was the use of neural networks (see
+[below](#sec-NN)) in which multiple layers of sequence-to-structure predictions
+were compared with a independently trained networks (see PHD paper by Burkhard
+Rost [here](https://www.rostlab.org/papers/1996_phd/paper.html)).
 
 In the last years, most commoly used methods are meta-servers that compare
 several algorithms, mostly based o neural-networks, like
@@ -190,12 +91,12 @@ several algorithms, mostly based o neural-networks, like
 | **Type**         | **Method**                          | **Accuracy**       |
 +------------------+-------------------------------------+--------------------+
 | Statistics       | [Chow &                             | 57%                |
-|                  | Fassman](http:%20                   |                    |
+|                  | Fassman](http:%20%20%20%20          |                    |
 |                  | //www.biogem.org/tool/chou-fasman/) |                    |
 |                  | (1974-)                             |                    |
 +------------------+-------------------------------------+--------------------+
-|                  | [GOR](h%20ttp                       | 63-73.5%\          |
-|                  | s://npsa-prabi.ibcp.fr/cgi-bin/n%20 | (Version V)        |
+|                  | [GOR](h%20ttp%20s:/%20/np%20sa-     | 63-73.5%\          |
+|                  | prabi.ibcp.fr/cgi-bin/n%20%20%20%20 | (Version V)        |
 |                  | psa_automat.pl?page=npsa_gor4.html) |                    |
 |                  | (1978-)                             |                    |
 +------------------+-------------------------------------+--------------------+
@@ -204,27 +105,28 @@ several algorithms, mostly based o neural-networks, like
 +------------------+-------------------------------------+--------------------+
 |                  | NNSSP (1995)                        | 72%                |
 +------------------+-------------------------------------+--------------------+
-| N-N neural       | [APSSP](h%20                        | Up to 86%          |
+| N-N neural       | [APSSP](h%20%20%20%20               | Up to 86%          |
 | network          | ttp://imtech.res.in/raghava/apssp/) |                    |
 +------------------+-------------------------------------+--------------------+
-|                  | [PsiPRED](h%20                      | 75.7% (1999)       |
+|                  | [PsiPRED](h%20%20%20%20             | 75.7% (1999)       |
 |                  | ttp://bioinf.cs.ucl.ac.uk/psipred/) |                    |
 |                  | (1999-)                             | 84% (2019)         |
 +------------------+-------------------------------------+--------------------+
-|                  | [PHD](https:%20//n                  | 74%                |
-|                  | psa-prabi.ibcp.fr/cgi-bin/npsa_a%20 |                    |
+|                  | [                                   | 74%                |
+|                  | PHD](https:%20//n%20psa%20-pr%20abi |                    |
+|                  | .ibcp.fr/cgi-bin/npsa_a%20%20%20%20 |                    |
 |                  | utomat.pl?page=/NPSA/npsa_phd.html) |                    |
 |                  | (1997)                              |                    |
 +------------------+-------------------------------------+--------------------+
-| HMM              | [SAM](http%20                       | 76%                |
+| HMM              | [SAM](http%20%20%20%20              | 76%                |
 |                  | s://compbio.soe.ucsc.edu/HMM-apps/) |                    |
 +------------------+-------------------------------------+--------------------+
-| **META-Servers** | [**Jpred4**](http://w%20            |                    |
+| **META-Servers** | [**Jpred4**](http://w%20%20%20%20   |                    |
 |                  | ww.compbio.dundee.ac.uk/www-jpred/) |                    |
 +------------------+-------------------------------------+--------------------+
 |                  | GeneSilico (Discontinued)           |                    |
 +------------------+-------------------------------------+--------------------+
-|                  | [SYMPRED](https://%20               |                    |
+|                  | [SYMPRED](https://%20%20%20%20      |                    |
 |                  | www.ibi.vu.nl/programs/sympredwww/) |                    |
 +------------------+-------------------------------------+--------------------+
 
@@ -250,6 +152,10 @@ the review by @atkins2015. The best-known server is
 [DisProt](https://www.disprot.org/), which uses a large curated database of
 intrinsically disordered proteins and regions from the literature, which has
 been recently improved to version 9 in 2022, as described in @quaglia2022.
+
+Interestingly, a low plDDT (see [below](ai.html#sec-AF2)) score in Alphafold2
+models has been also suggested as a good indicator of protein disorder
+[@wilson2022].
 
 ![Examples of disordered regions. From [Database of disordered
 regions](http://original.disprot.org/index.php).](http://original.disprot.org/images/imageSwap.gif){#fig-disprot
@@ -323,6 +229,102 @@ These short motifs are difficult to predict, as datasets of validated signals
 are small. The use of consensus sequences allowed predictions, although in many
 cases with a high level of uncertainty.
 
+## Threading or Fold-recognition methods {#sec-threading}
+
+As mentioned earlier, the introduction of HMM-based profiles during the first
+decade of this century led to a great improvement in template detection and
+protein modeling in the twilight zone, i.e., proteins with only distant homologs
+(\<25-30% identity) in databases. In order to exploit the power of HMM searches,
+those methods naturally evolved into iterative [threading]{.ul} methods, based
+on multitemplate model construction, implemented in
+[I-TASSER](https://zhanggroup.org/I-TASSER/) [@roy2010],
+[Phyre2](http://www.sbg.bio.ic.ac.uk/phyre2/) [@kelley2015], and
+[RosettaCM](https://new.rosettacommons.org/demos/latest/tutorials/rosetta_cm/rosetta_cm_tutorial)
+[@song2013], among others. These methods are usually referred to as
+**Threading** or **Fold-recognition** methods. Note that the classification of
+modeling methods is often blurry. The current version of SwissModel and the use
+of HHPred+Modeller already rely on HMM profiles for template identification and
+alignment; being thus strictly also fold-recognition methods.
+
+Both terms can be often used interchangeably, although some authors see
+**Fold-Recognition** as any technique that uses structural information in
+addition to sequence information to identify remote homologies, while
+**Threading** would refer to a more complex process of modeling including remote
+homologies and also the modeling of pairwise amino acid interactions in the
+structure. Therefore, although we have already used HHPred along with the use of
+HHPred to identify templates for subsequent modeling, could be indeed considered
+threading.
+
+![The idea behind fold-recognition is that instead of comparing sequences, we
+intend to compare structures. In the Frozen approximation (left), one residue is
+aligned with the template structure and then we evaluate the probability of the
+nearby residues in the query sequence to be in the same position than the
+equivalent in the template. On the other hand, Defrost methods use profiles to
+generate improved alignments that allow better starting points to the energy
+calculations during the iterative modeling steps. From
+@kelley2009a.](pics/fr.png){#fig-frost .figure}
+
+The Iterative Threading ASSembly Refinement
+([I-TASSER](http://zhanglab.ccmb.med.umich.edu/I-TASSER)) from [Yang Zhang
+lab](https://zhanggroup.org/) is one of the most widely used threading methods
+and servers. This method was was ranked as the No 1 server for protein structure
+prediction in the community-wide [CASP7](https://zhanggroup.org/casp7/21.html),
+[CASP8](https://predictioncenter.org/casp8/groups_analysis.cgi?target_type=0&gr_type=server),
+[CASP9](https://predictioncenter.org/casp9/CD/data/html/groups.2.html),
+[CASP10](http://predictioncenter.org/casp10/groups_analysis.cgi?type=server),
+[CASP11](http://www.predictioncenter.org/casp11/zscores_final.cgi?gr_type=server_only),
+[CASP12](http://www.predictioncenter.org/casp12/zscores_final.cgi?&gr_type=server_only),
+[CASP13](http://www.predictioncenter.org/casp13/zscores_final.cgi?model_type=best&gr_type=server_only),
+and
+[CASP14](http://www.predictioncenter.org/casp14/zscores_final.cgi?gr_type=server_only)
+experiments. I-TASSER first generates three-dimensional (3D) atomic models from
+multiple threading alignments and iterative structural assembly simulations that
+are iteratively selected and improved. The quality of the template alignments
+(and therefore the difficulty of modeling the targets) is judged based on the
+statistical significance of the best threading alignment, i.e., the *Z*-score,
+which is defined as the energy score in standard deviation units relative to the
+statistical mean of all alignments.
+
+![Flowchart of I-TASSER protein structure modeling. From
+@rigden2017a.](images/paste-29011FF5.png){#fig-tasser .figure}
+
+First, I-TASSER uses Psi-BLAST against curated databases to select sequence
+homologs and generate a sequence profile. That profile is used to predict the
+secondary structure and generate multiple fragmented models using several
+programs. The top template hits from each threading program are then selected
+for the following steps. In the second stage, continuous fragments in threading
+alignments are excised from the template structures and are used to assemble
+structural conformations of the sections that aligned well, with the unaligned
+regions (mainly loops/tails) built by *ab initio* modeling. The fragment
+assembly is performed using a modified replica-exchange Monte Carlo random
+simulation technique, which implements several replica simulations in parallel
+using different conditions that are periodically exchanged. Those simulations
+consider multiple parameters, including model statistics (stereochemical
+outliers, H-bond, hydrophobicity...), spatial restraints and amino acid pairwise
+contact predictions ([see below](#maps)). In each step, output models are
+clustered to select the representative ones for the next stage. A final
+refinement step includes rotamers modeling and filtering out steric clashes.
+
+One interesting thing about I-TASSER is that it is integrated within a server
+with many other applications, including some of the tools that I-TASSER uses and
+other advanced methods based on I-TASSER, like I-TASSER-MTD for large,
+multidomain proteins or C-I-TASSER that implements a deep learning step, similar
+to Alphafold2 (see [next section](ai.html)).
+
+![RosettaCM Protocol. (A) Flowchart of the RosettaCM protocol. (B--D) RosettaCM
+conformational sampling. From
+@song2013.](pics/rosettaCM.jpg "RosettaCM Protocol"){#fig-rosettacm .figure
+width="664"}
+
+**RosettaCM** is an advanced homology modeling or threading algorithm by the
+[Baker lab](https://www.bakerlab.org/), implemented in
+[Rosetta](https://www.rosettacommons.org/software) software and the
+[Robetta](https://robetta.bakerlab.org/) webserver. RosettaCM assemblies the
+model by recombining aligned segments in a set of selected templates and close
+the model by a minimization of the junctions between segments by fragments
+torsion and iterative optimization steps that include Monte Carlo sampling.
+Finally, an *all-atom* refinement towards a minimum of free energy [@song2013].
+
 # From contact maps to pairwise high-res feature maps {#maps}
 
 ![Contact-based map of representative proteins. The map represents a matrix of
@@ -336,39 +338,35 @@ During the last decade, the introduction of **residue-residue contact or
 distance maps** prediction based on sequence co-evolution and *deep learning*
 started a revolution in the field that crystallize with the arrival of
 Alphafold2 and RoseTTAfold as major breakthroughs with great repercussions in
-diverse fields. As shown in [Figure 3](#fig-contact), residue-residue contact
-maps can be obtained from structures as a matrix that show close residues and
-show a pattern that clearly show differences between motifs and secondary
-structure stretches.
+diverse fields. As shown in the [Figure 9](#fig-contact), residue-residue
+contact maps can be obtained from structures as a matrix that show close
+residues and show a pattern that clearly show differences between motifs and
+secondary structure stretches.
 
 ![Schematic of how co-evolution methods extract information about protein
-structure from a multiple sequence alignment (MSA). Image modified from doi:
-`10.5281/zenodo.1405369`, which in turn was modified from
-@marks2011.](pics/coevolution.png){#fig-coevol .figure}
+structure from a multiple sequence alignment (MSA). From
+@bittrich2019](pics/contact_evol.png){#fig-coevol .figure}
 
 An accurate information of protein's residue--residue contacts is sufficient to
 elucidate the fold of a protein [@olmea1997]; however implementation of these
 maps in protein modeling is not trivial, as predicting that map is not always
-easy. The introduction of **evolutionary coupling analysis (ECA)**, i.e.,
-extract the residue coevolution from MSAs ([Figure 4](#fig-coevol)) improved
-contact maps and allowed their implementation for protein folding in several
-methods, like PSICOV [@jones2012] or Gremlin [@kamisetty2013], among others.
-However, it should be noted for proteins without many sequence homologs, the
-predicted contacts were of low quality and insufficient for accurate
-contact-assisted protein modeling.
+easy. The introduction of **direct-coupling analysis (DCA)**, i.e., extract the
+residue coevolution from MSAs ([Figure 4](#fig-coevol)) improved contact maps
+and allowed their implementation for protein folding in several methods, like
+PSICOV [@jones2012] or Gremlin [@kamisetty2013], among others. However, it
+should be noted for proteins without many sequence homologs, the predicted
+contacts were of low quality and insufficient for accurate contact-assisted
+protein modeling.
 
-![Illustration of column pair and precision submatrix grouping for advanced
+![Illustration of column pair and precision sub-matrix grouping for advanced
 prediction of contact maps. In the example, Columns 5 and 14 in the first family
 are aligned to columns 5 and 11 in the second family, respectively, so column
 pair (5,14) in the first family and the pair (5,11) in the second family are
-assigned to the same group. Accordingly, the two precision submatrices will be
-asigned to the same group. From @ma2015.](pics/contact2.png){#fig-families
+assigned to the same group. Accordingly, the two precision sub-matrices will be
+assigned to the same group. From @ma2015.](pics/contact2.png){#fig-families
 .figure}
 
-The next level of complexity in contact maps is their application to distantly
-related proteins ([Figure 5](#fig-families)). This kind of analysis entails
-processing a huge amount of information, which increases the computational
-resources requirements.
+### Implementation of several layers of information processed by neural network and deep learning methods {#sec-NN .section}
 
 Deep learning is a sub-field of machine learning which is based on artificial
 neural networks (NN). Neural networks were introduced actually in the late 40's
@@ -383,13 +381,21 @@ processes large amounts of data and can be trained to "learn" from that data.
 Deep learning is based on the use of multiple layer-NN to optimize and refine
 for accuracy.
 
+The next level of complexity in contact maps is their application to distantly
+related proteins by comparing sets of DCA from different protein families, a
+method sometimes referred as joint evolutionary coupling analysis ([Figure
+10](#fig-families)). This kind of analysis entails processing a huge amount of
+information, which increases the computational resources requirements. Thus, the
+use of trained neural networks and state-of-the-art deep-learning methods
+boosted the capacities of protein modeling.
+
 In this context, the introduction of supervised machine learning methods that
-predict contacts from distant protein families, outperforms ECA methods by the
-use of multilayer neural networks [@jones2015; @ma2015a; @wang2017a; @yang2020].
-These methods implemented the use of the so-called high resolution contact maps,
-which contains enriched information with not only contacts but also distances,
-and angles, represented in a heatmap-like probability scale.
+predict contacts, outperforms DCA methods by the use of multilayer neural
+networks [@jones2015; @ma2015; @wang2017a; @yang2020]. These methods implemented
+the use of the so-called high resolution contact maps, which contains enriched
+information with not only contacts but also distances, and angles, represented
+in a heatmap-like probability scale.
 
 ![Example of high-resolution contact maps of 6MSP. From
-@yang2020](pics/high_res_maps.png "High-resolution contact maps"){#high-res
+@yang2020](pics/high_res_maps.png "High-resolution contact maps"){#fig-highres
 .figure}
