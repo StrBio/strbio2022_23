@@ -1,5 +1,7 @@
-# Structural Bioinformatics
-
+# Structural Bioinformatics @UAM (Year 2022-2023).
+_____________________
+NOTE: A more recent version of this site for year 2023 is available [here](https://github.com/StrBio/strbio.github.io).
+_____________________
 
 This site contains the materials for the Structural Bioinformatics course of fall 2022 in the Master’s Degree in Bioinformatics & Computational Biology @UAM. This materials are the basis for GitHub-pages-based website that can be accessed [here](https://strbio.github.io/strbio2022_23/). Detailed academic information about the course contents, dates and assessment only can be found at the UAM Moodle site.
 
